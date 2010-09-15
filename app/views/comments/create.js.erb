@@ -1,0 +1,5 @@
+﻿$("#comments").append("<%= escape_javascript(render @comment) %>");
+$(".comment:last-child").slideDown("slow");
+$('#comment_username').val("");
+$('#comment_title').val("");
+$('#comment_memo').val("");

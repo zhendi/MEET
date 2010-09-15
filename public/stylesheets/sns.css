@@ -1,0 +1,108 @@
+#bloglist li {
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+.blog-entry {
+  min-height: 60px;
+  padding-left: 60px;
+  position: relative;
+}
+
+.blog-entry .image {
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  margin:0px;
+}
+
+.blog-entry .info {
+  background: #EEE none repeat scroll 0px 0px;
+  border-bottom: ;
+  border-top: 1px solid #2782D6;
+  color: #666;
+  padding: 3px 5px 2px 8px;
+}
+
+
+.blog-entry .info h4 {
+  color: #333;
+  font-size: 14px;
+  display:block;
+  margin:0px;
+}
+
+
+.blog-entry .info .author {
+  margin-right: 0.5em;
+}
+
+.blog-entry .info .time {
+  color: #999;
+}
+
+.blog-entry .summary {
+  margin: 8px 5px 5px 8px;
+}
+
+.blog-entry .summary p {
+  font-size: 14px;
+  margin-bottom: 0.25em;
+  display:block;
+}
+
+#threadlist li
+{
+  margin-bottom: 1em;
+  list-style: none;
+}
+.na {
+padding-left: 0px;
+width:auto;
+}
+
+.post {
+min-height: 60px;
+padding-left: 60px;
+position: relative;
+}
+.post .image {
+left: 0px;
+position: absolute;
+top: 0px;
+}
+.post .info {
+background: #EEE;
+border-bottom: 1px solid #DDD;
+color: #666;
+line-height: 180%;
+padding: 0px 5px 0px 8px;
+text-align: right;
+}
+.post .info .author, .post .info .time, .post .info .subinfo, .post .info .actions {
+float: left;
+margin-right: 0.5em;
+}
+.post .info {
+color: #666;
+line-height: 180%;
+text-align: right;
+}
+.post::after, .post .info::after {
+clear: both;
+content: '';
+display: block;
+height: 0px;
+overflow: hidden;
+visibility: hidden;
+}
+
+.post .info .floor, .post .info span.delete {
+float: right;
+margin-left: 0.5em;
+}
+.post .content {
+overflow: hidden;
+padding: 5px 5px 5px 8px;
+}
+

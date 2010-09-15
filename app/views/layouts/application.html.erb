@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MEET</title>
+    <%= stylesheet_link_tag "reset", "main", "form", "sns", "courses" %>
+    <%= javascript_include_tag 'jquery-1.4.1.min', 'rails.js' %>
+    <%= csrf_meta_tag %>
+    
+  </head>
+  <body id="mainBody">
+    <div id="divHeader">
+      <h1 class="logo_umv_black"><a href="/" title="MEET-属于你的精英教育" 
+          class="logo_umv_black_a"></a></h1>
+      <div class="dl_gonggao_umv"> 
+        <div class="login_header_umv">
+          <p class="user_date_p">
+          <span id="head_loggedin" style="display:none">
+            你好，<tt class="a_user_login"></tt>！
+            <a href="/account/profile.php" class="a_login">个人中心</a> 
+            <a href="javascript:logout();" class="a_login">退出登录</a>
+          </span>
+          <span id="head_login">
+          	<%= link_to	"登录", new_user_session_path %>
+          	|
+          	<%= link_to	"注册", new_user_registration_path %>
+            </span>
+          </p>
+        </div> 
+      </div>
+
+      <div id="headerMenu">
+        <a href="">课程</a>
+        <a href="">教师</a>
+        <a href="">个人中心</a>
+        <a href="">问答</a>
+        <a href="">应用</a>
+        
+        <%= link_to '博客', blogs_path %>
+      </div>
+    </div>
+    <div id="divall">
+      <div id="sider_a">
+        <%= yield :sidebar %>
+      </div>
+      <div id="main">
+      	  <p class="notice"><%= notice %></p>
+		  <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer_umv">
+      <p class="border_footer"></p>
+      <p class="footer_menu">
+
+      <a href="/help/aboutus" target="_blank">关于我们</a>|
+      <a href="/partner/jiyu.php" target="_blank">媒体寄语</a>|
+      <a href="/help/joinus" target="_blank">诚聘英才</a>|
+      <a href="/help/contactus" target="_blank">联系我们</a>|
+      <a href="/help/conditions">使用条款</a>|
+      <a href="/help/questionanswer" target="_blank">帮助中心</a>|
+      <a href="/help/sitemap" target="_blank">网站地图</a>|
+      <a href="/help/rss" target="_blank">RSS订阅</a>|
+      <a href="javascript:;" id="foot_feedback" style="color:#ffae00;">意见反馈</a>
+
+      </p>
+      <p class="footer_copy">广告招商热线：010-85894686 &nbsp;&nbsp;咨询合作热线：59530300-8011/8057</p>
+      <p class="footer_copy">Umiwi 版权所有 视听许可证号：0110567 京ICP证：090644号</p> 	
+    </div>
+
+  </body>
+</html>

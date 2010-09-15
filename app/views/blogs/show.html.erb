@@ -1,0 +1,35 @@
+<div class="blog-entry na">
+  <div class="info">
+    <h4><%= @blog.title %>
+      <span style="float:right;">
+        <span style="margin-right:0;">
+          <img src="/images/ding.gif" 
+          align="absmiddle">(<span style="margin-right:0;" 
+            id="dig-good-41975">0</span>)</span>
+        <span style="margin-right:0;">
+          <img src="/images/cai.gif" 
+          align="absmiddle">(<span style="margin-right:0;" 
+            id="dig-good-41975">0</span>)</span>
+      </span>
+    </h4>
+    <span class="time"><%= @blog.updated_at %></span>
+    <span class="pipe">|</span>
+    <%= link_to 'Edit', edit_blog_path(@blog) %>
+    <span class="pipe">|</span>
+    <%= link_to 'Destroy', blog_path(@blog), :method=>:delete,:confirm=>"是否删除?" %>
+  </div>
+  <div class="content">
+    <%= @blog.content %>
+  </div>
+  <p class="stat">
+  <%= @blog.readcount %> 次阅读 |
+  <span id="plnum">0</span> 个评论
+  </p>
+</div>
+
+<ol id="comments">
+  <%= render  @blog.comments %>
+</ol>
+
+<h2>添加留言</h2>
+<%= render  :partial=>"comments/form" %>

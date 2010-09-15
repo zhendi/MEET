@@ -1,0 +1,19 @@
+<li class="comment" display="none" id="comment_<%= comment.id %>">
+<div class="post parent-post">
+  <p class="image">
+  <a href="/index.php/space/1806293">
+    <img src="/images/male.gif" width="48">
+  </a>
+  </p>
+  <div class="info">
+    <span class="author"></span>
+    <span class="time">21秒前</span>
+    <span class="delete">
+      <%= link_to '删除', blog_comment_path(comment.blog, comment), :method=>:delete,
+					:remote=>true, :class=>"Qconfirm" %>
+  </span>									</div>
+  <div class="content">
+    <div><%= comment.memo %></div>
+  </div>
+</div>
+</li>
