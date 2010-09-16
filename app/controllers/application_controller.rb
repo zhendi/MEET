@@ -3,8 +3,4 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authenticate
-    return true
-  end
-
 end
