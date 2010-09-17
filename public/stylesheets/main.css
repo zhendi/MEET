@@ -17,20 +17,19 @@
   background:url(/images/bj_top_02.jpg) repeat-x top center #454545;
 }
 
-.logo_umv_black
-{ 
-  margin:10px 0 0 0;
-  padding:0;
-  width:266px;
-  height:64px;
-  background:url(/images/umv_logo_03.png?1) no-repeat;
-  float:left
+.login_header_logo{
+  float: left;
+  margin: 5px;
 }
 
-.dl_gonggao_umv{ display:block; width:300px; height:auto; margin:13px 0 0 115px; display:inline; float:left; padding:0; overflow:hidden; text-align:left; line-height:21px;}
-
-.login_header_umv{ /*position:absolute; top:0; right:0; */ margin:2px auto 0 auto; padding:0; width:300px; height:auto; overflow:hidden; text-align:right;}
-.user_date_p{ color:#ccc; margin:0 auto 10px auto; padding:0; height:auto; overflow:hidden;}
+.login_header_umv{
+  margin:2px auto 0 auto; 
+  padding:0; 
+  width:300px; 
+  height:auto; 
+  overflow:hidden; 
+  text-align:right;
+}
 
 #headerMenu {
   padding: 5px;
@@ -70,7 +69,6 @@
 #sider_a
 {
     float: left;
-    display:none;
     width:220px; 
     /*border: 1px solid #b7b7b7;*/
 }
@@ -80,6 +78,12 @@
     margin-right: 5px;
     margin-left: 0px;
     /*border: 1px solid #b7b7b7;*/
+}
+
+#user_info ul li {
+border-top: 1px solid #C1B9AE;
+line-height: 23px;
+padding-left: 14px;
 }
 
 /*页脚开始*/

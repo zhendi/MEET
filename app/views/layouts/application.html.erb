@@ -5,36 +5,34 @@
     <%= stylesheet_link_tag "reset", "main", "form", "sns", "courses" %>
     <%= javascript_include_tag 'jquery-1.4.1.min', 'rails.js' %>
     <%= csrf_meta_tag %>
-    
+    <%= yield :header %>
   </head>
   <body id="mainBody">
     <div id="divHeader">
-      <h1 class="logo_umv_black"><a href="/" title="MEET-属于你的精英教育" 
-          class="logo_umv_black_a"></a></h1>
-      <div class="dl_gonggao_umv"> 
-        <div class="login_header_umv">
-          <p class="user_date_p">
-          <span id="head_loggedin" style="display:none">
-            你好，<tt class="a_user_login"></tt>！
-            <a href="/account/profile.php" class="a_login">个人中心</a> 
-            <a href="javascript:logout();" class="a_login">退出登录</a>
-          </span>
-          <span id="head_login">
-          	<%= link_to	"登录", new_user_session_path %>
-          	|
-          	<%= link_to	"注册", new_user_registration_path %>
-            </span>
-          </p>
-        </div> 
-      </div>
+      <span class="login_header_logo">
+        <a href="/" title="MEET-属于你的精英教育" 
+          class="logo_umv_black_a">MEET-属于你的精英教育</a>
+      </span>
+      <div class="login_header_umv">
+        <% if user_signed_in? %>
+          <%= link_to current_user.display_name %>
+          |
+          <%= link_to "登出", destroy_user_session_path %>
+        <% else %>
+          <%= link_to	"登录", new_user_session_path %>
+          |
+          <%= link_to	"注册", new_user_registration_path %>
+        <% end %>
+      </div> 
 
       <div id="headerMenu">
         <a href="">课程</a>
         <a href="">教师</a>
         <a href="">个人中心</a>
+        <%= link_to '个人中心', profile_path(current_user) %>
         <a href="">问答</a>
         <a href="">应用</a>
-        
+
         <%= link_to '博客', blogs_path %>
       </div>
     </div>
@@ -43,9 +41,8 @@
         <%= yield :sidebar %>
       </div>
       <div id="main">
-      	  <p class="notice"><%= notice %></p>
-		  <p class="alert"><%= alert %></p>
-
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>
     </div>

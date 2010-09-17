@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
-  respond_to :html
-  before_filter :authenticate, :except => [:index, :show]
+  respond_to :html,:js
+  before_filter :authenticate_user!
 	before_filter	:tag_cloud
 	
   def index
