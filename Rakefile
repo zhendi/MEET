@@ -8,7 +8,7 @@ MEET::Application.load_tasks
 
 desc  "recreate entire database"
 task  :recreate do |t|
-  Rake::Task["db:drop"].invoke
-  Rake::Task["db:create"].invoke
-  Rake::Task["db:migrate"].invoke
+	Rake::Task["db:drop"].invoke
+	Rake::Task["db:create"].invoke
+	Rake::Task["db:migrate"].invoke
 end
