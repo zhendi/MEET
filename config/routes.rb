@@ -2,8 +2,10 @@ MEET::Application.routes.draw do
   devise_for :admins
   devise_for :teachers
   devise_for :users
+  
   resources	:blogs	do
-    resources	:comments,:tags
+    resources	:comments
+    resources	:tags
   end
 
   # 课程相关的resources
@@ -19,5 +21,5 @@ MEET::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  #match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))'
 end

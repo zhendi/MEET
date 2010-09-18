@@ -1,0 +1,24 @@
+<% content_for	:sidebar do %>
+	<%= render	:partial=>"/shared/user_info" %>
+<% end %>
+
+<script type="text/javascript">
+	$(function() {
+		$("#tabs").tabs();
+	});
+	</script>
+
+<div class="demo">
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">全部课程</a></li>
+			<li><a href="#tabs-2">热门课程</a></li>
+		</ul>
+		<div id="tabs-1">
+			<ul><%= render	:partial=>"course", :collection=>@all_courses %></ul>
+		</div>
+		<div id="tabs-2">
+			<ul><%= render	:partial=>"course", :collection=>@rated_courses %></ul>
+		</div>
+	</div>
+</div><!-- End demo -->

@@ -68,21 +68,22 @@
 
 #sider_a
 {
+	margin-left: 5px;
     float: left;
-    width:220px; 
-    /*border: 1px solid #b7b7b7;*/
+    width:120px; 
 }
 
 #main
 {
-    margin-right: 5px;
-    margin-left: 225px;
+	float: left;
+    margin-left: 15px;
+    width: 850px;
 }
 
 #user_info ul li {
-border-top: 1px solid #C1B9AE;
-line-height: 23px;
-padding-left: 14px;
+	border-top: 1px solid #C1B9AE;
+	line-height: 23px;
+	padding-left: 14px;
 }
 
 /*页脚开始*/

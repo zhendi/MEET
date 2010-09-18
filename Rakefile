@@ -12,3 +12,8 @@ task  :recreate do |t|
 	Rake::Task["db:create"].invoke
 	Rake::Task["db:migrate"].invoke
 end
+
+desc	"create some initial data"
+task :initialdata do |t|
+		
+end
