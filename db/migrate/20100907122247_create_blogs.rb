@@ -7,7 +7,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.integer       :ding,  :default=>0
       t.integer       :cai,   :default=>0
       t.integer       :readcount, :default=>0
-      t.references    :user
+      t.references    :user,	:null=>false
 
       t.timestamps
     end
