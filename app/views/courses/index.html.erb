@@ -1,5 +1,6 @@
 <% content_for	:sidebar do %>
 	<%= render	:partial=>"/shared/user_info" %>
+	<%= render	:partial=>"/shared/teacher_info" %>
 <% end %>
 
 <script type="text/javascript">
@@ -17,9 +18,9 @@
 		<li><a href="#tabs-2">热门课程</a></li>
 	</ul>
 	<div id="tabs-1">
-		<ul><%= render	:partial=>"course", :collection=>@all_courses %></ul>
-	</div>
-	<div id="tabs-2">
-		<ul><%= render	:partial=>"course", :collection=>@rated_courses %></ul>
-	</div>
+		<ul>
+		<% @all_courses.each do |course| %>
+			<%= render	:partial=>"course" %>
+		<% end %>
+		</ul>
 </div>

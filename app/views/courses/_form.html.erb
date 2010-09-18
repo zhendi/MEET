@@ -1,0 +1,41 @@
+<%= form_for (@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="errorExplanation">
+      <h2>一共有 <%= @course.errors.count %> 个错误:</h2>
+      <ul>
+        <% @course.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "标题" %>
+    <%= f.text_field :name, {:size=>50} %>
+  </div>
+  <div class="field">
+    <%= f.label "介绍"  %>
+    <%= f.text_area :description, {:rows=>5,:cols=>80} %>
+  </div>
+  <div class="field">
+    <%= f.label "说金" %>
+    <%= f.text_field :gold, {:size=>50}%>
+  </div>
+
+	<div class="field">
+		<%= f.label "类别" %>
+		<%= select_tag 'category', options_from_collection_for_select(Category.all, 'id', 'name')
+ %>
+	</div>
+
+	<div class="field">
+		<%= f.label "级别" %>
+		<%= select_tag 'level', options_from_collection_for_select(Level.all, 'id', 'name')
+ %>
+	</div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

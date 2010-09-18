@@ -1,6 +1,9 @@
 MEET::Application.routes.draw do
+
   devise_for :admins
+
   devise_for :teachers
+
   devise_for :users
   
   resources	:blogs	do
