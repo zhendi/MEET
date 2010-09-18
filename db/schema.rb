@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20100917095201) do
     t.datetime "updated_at"
   end
 
+  create_table "courses_users", :id => false, :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "forum_posts", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -133,13 +140,6 @@ ActiveRecord::Schema.define(:version => 20100917095201) do
     t.datetime "updated_at"
     t.integer  "gold",                               :default => 0
     t.integer  "score",                              :default => 0
-  end
-
-  create_table "users_courses", :id => false, :force => true do |t|
-    t.integer  "users_id"
-    t.integer  "courses_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

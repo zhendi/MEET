@@ -76,8 +76,7 @@
 #main
 {
     margin-right: 5px;
-    margin-left: 0px;
-    /*border: 1px solid #b7b7b7;*/
+    margin-left: 225px;
 }
 
 #user_info ul li {
@@ -94,11 +93,4 @@ padding-left: 14px;
 .footer_copy{margin:0 auto; width:100%; padding:0; height:auto; line-height:30px; color:#666666;}
 .footer_menu a{ text-decoration:none; color:#666; padding:0 7px}
 .footer_menu a:hover{ text-decoration:none; color:#ffae00;}
-
-
-  .css1 { font-size: 1.0em; }
-  .css2 { font-size: 1.2em; }
-  .css3 { font-size: 1.4em; }
-  .css4 { font-size: 1.6em; }
-
 
