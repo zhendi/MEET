@@ -1,7 +1,52 @@
 /* 
-    Document   : courses
-    Created on : 2010-9-12
-    Author     : James
-    Description:
-        定义课程类型的CSS
-*/
+Document   : courses
+Created on : 2010-9-12
+Author     : James
+Description:
+定义课程类型的CSS
+ */
+.course_style{
+border:1px solid #BBB1A7;
+min-height:100px;
+margin-top:15px;
+width:100%;
+}
+
+.course_pic{
+float:left;
+margin: 5px;
+}
+
+.course_body{
+float:left;
+margin: 5px;
+width: 80%;
+}
+
+.course_header {
+  border-bottom:1px dashed #BDB1A3;
+  height:20px;
+  margin-bottom:5px;
+}
+
+.course_title
+{
+  color:#CC0000;
+}
+.course_info
+{
+  margin-top: 8px;
+}
+.f-button {
+background:none repeat scroll 0 0 #F26024;
+border-color:#F7B595 #6B2F15 #6B2F15 #F7B595;
+border-style:solid;
+border-width:1px;
+color:#FFFFFF;
+height:21px;
+letter-spacing:1px;
+line-height:17px;
+padding:1px 10px;
+text-align:center;
+}
+

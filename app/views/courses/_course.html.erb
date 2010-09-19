@@ -1,32 +1,32 @@
 <div class="course_style">
-	<div class="course_pic">
-		<img src="">		
-	</div>
-	<div class="course_header">
-    	<p>
-    		<span class="course_title" title="<%= course.name %>"><%= course.name %></span> 
-    		<span class="nonehui12 STYLE3" style="float:right;"> 
-    			<a href="javascript:void(0)" onclick="lessonSave(648,1);" style="cursor:pointer">加入收藏</a>
-			</span>
-		</p>
+  <div class="course_pic">
+    <img src="/images/course_tmp.png">		
+  </div>
+  <div class="course_body">
+    <div class="course_header">
+      <p>
+      <span class="course_title" title="<%= course.name %>"><%= course.name %></span> 
+      <span class="nonehui12 STYLE3" style="float:right;"> 
+        <a href="javascript:void(0)" onclick="lessonSave(648,1);" style="cursor:pointer">加入收藏</a>
+      </span>
+      </p>
     </div>
-    
+
     <div class="col_riht_text">
-        <ul>
-        	<li class="course_description">
-        		出国留学你将住在哪里？Lucy要问你一些问题，并仔细确认你的生活安排选择。
-    		</li>
-        	<li class="course_info">
-				<span> 等级：</span><a href="/index.php/Lesson/index/levelId/3"><%= course.level.name %></a> 
-				| <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= course.category.name %></a> 
-				| 主题：<a href="/index.php/Lesson/index/topicId/60">学习</a> 
-				| 说金： <a><%= course.gold %><img src="/SNS/Tpl/speak2me/Public/images/appicons/ico_money.gif"></a>
-			</li>
-			<li>
-				<div align="left">
-					<a href="/index.php/Lesson/lessonDetail/lessonId/648" class="f-button" style="color:#FFFFFF">开始课程</a>
-				</div>
-			</li>
-        </ul>
+      <ul>
+        <li class="course_description">
+        <%= course.description %>
+        </li>
+        <li class="course_info">
+        <span> 等级：</span><a href="/index.php/Lesson/index/levelId/3"><%= course.level.name %></a> 
+        | <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= course.category.name %></a> 
+        | 主题：<a href="/index.php/Lesson/index/topicId/60">学习</a> 
+        | 说金： <a><%= course.gold %><img src="/SNS/Tpl/speak2me/Public/images/appicons/ico_money.gif"></a>
+        </li>
+        <li>
+          <a href="/index.php/Lesson/lessonDetail/lessonId/648" class="f-button" style="color:#FFFFFF">开始课程</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>
