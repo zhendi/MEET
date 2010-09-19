@@ -48,4 +48,11 @@ class CoursesController < ApplicationController
       redirect_to	:action=>"index", :notice=>"Destroy Succeed"
     end
   end
+
+  def collect
+    @course = Course.find(params[:id])
+    current_user.courses << @course
+
+    logger.info("add succeed")
+  end
 end

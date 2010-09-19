@@ -12,7 +12,11 @@ MEET::Application.routes.draw do
   end
 
   # 课程相关的resources
-  resources	:courses
+  resources	:courses  do
+    member  do
+      post  "collect"
+    end
+  end
  
   resources	:profile
   

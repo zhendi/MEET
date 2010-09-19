@@ -78,6 +78,7 @@ Purpose of the stylesheet follows.
   float: left;
   margin-left: 15px;
   width: 850px;
+  overflow: hidden;
 }
 
 #user_info ul li {

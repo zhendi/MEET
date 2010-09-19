@@ -17,6 +17,8 @@ gem 'will_paginate', "~> 3.0.pre2"
 gem 'devise'
 gem 'jrails'
 
+gem 'newrelic_rpm'
+
 # Deploy with Capistrano
 gem 'capistrano'
 

@@ -1,33 +1,37 @@
 form  input,form  textarea
 {
-	border: 1px solid #999;
-	outline:  none;
-	padding:  2px 3px;
-	margin: 2px;
-	background-color:#fff;
+  border: 1px solid #999;
+  outline:  none;
+  padding:  2px 3px;
+  margin: 2px;
+  background-color:#fff;
 }
 
 form input.focus, form textarea.focus,  form input:focus, form textarea:focus
 {
-	border:2px 
-	solid #39c;
-	padding:1px 2px;
+  border:2px 
+  solid #39c;
+  padding:1px 2px;
 }
 
 form  select{outline:none;}
 
 form label, form li fieldset legend span, form li fieldset.details fieldset legend {
-	background-color: transparent;
-	color: #333;
-	display: block;
-	float: left;
-	font-weight: bold;
-	margin-right: 10px;
-	text-align: right;
-	width: 140px;
+  background-color: transparent;
+  color: #333;
+  display: block;
+  float: left;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: right;
+  width: 140px;
 }
 
 form input, form select, form textarea {
   font: normal normal normal 12px/1.5 tahoma, arial, simsun, sans-serif;
 }
 
+.submit_action{
+  margin-left: 140px;
+  margin-top: 10px;
+}

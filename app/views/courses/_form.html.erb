@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <%= f.label "介绍"  %>
-    <%= f.text_area :description, {:rows=>5,:cols=>80} %>
+    <%= f.text_area :description, {:rows=>6,:cols=>80} %>
   </div>
   <div class="field">
     <%= f.label "说金" %>
@@ -36,6 +36,6 @@
 	</div>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "提交", :class=>"submit_action" %>
     </div>
   <% end %>
