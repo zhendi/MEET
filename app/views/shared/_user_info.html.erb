@@ -1,5 +1,6 @@
 <div id="user_info">
 	<img src="http://www.speak2me.cn/Public/Images/male.gif"/>
+	<% if user_signed_in? %>
 	<ul>
 		<li>
 		用户名:	<%= current_user.display_name %>
@@ -10,5 +11,23 @@
 		<li>
 		金币:	0
 		</li>
-	</ul>
+      </ul>
+    <% elsif teacher_signed_in? %>
+   	<ul>
+		<li>
+		用户名:	<%= current_teacher.display_name %>
+		</li>
+		<li>
+		金币:	0
+		</li>
+      </ul>
+    <% elsif admin_signed_in? %>
+	<ul>
+		<li>
+		用户名:	<%= current_admin.display_name %>
+		</li>
+      </ul>
+      <% end　%>
+    <% else %>
+    <% end %>
 </div>

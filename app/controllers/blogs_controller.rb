@@ -1,10 +1,10 @@
 class BlogsController < ApplicationController
   respond_to :html,:js
-	before_filter	:tag_cloud
-	
+  before_filter	:tag_cloud
+
   def index
     @blogs = Blog.paginate :page => params[:page], :order => 'created_at DESC'
-    
+
     respond_with(@blogs)
   end
 
@@ -49,11 +49,11 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
-    
+
     respond_with(@blog, :notice=>"destroy succeed")
   end
-  
-	def tag_cloud
-      @tags = Blog.tag_counts_on(:tags)
-    end
+
+  def tag_cloud
+    @tags = Blog.tag_counts_on(:tags)
+  end
 end

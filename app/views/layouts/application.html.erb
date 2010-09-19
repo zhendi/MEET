@@ -15,10 +15,19 @@
           class="logo_umv_black_a">MEET-属于你的精英教育</a>
       </span>
       <div class="login_header_umv">
-        <% if user_signed_in? %>
+        <% if user_signed_in?  %>
           <%= link_to current_user.display_name %>
           |
           <%= link_to "登出", destroy_user_session_path %>
+        <% elsif teacher_signed_in?%>
+          <%= current_teacher.display_name %>
+          <%= link_to current_teacher.display_name %>
+          |
+          <%= link_to "登出", destroy_teacher_session_path %>
+        <% elsif admin_signed_in? %>
+          <%= link_to current_admin.display_name %>
+          |
+          <%= link_to "登出", destroy_admin_session_path %>
         <% else %>
           <%= link_to	"登录", new_user_session_path %>
           |
@@ -27,10 +36,10 @@
       </div> 
 
       <div id="headerMenu">
-      	<%= link_to	'课程', courses_path %>
+        <%= link_to	'课程', courses_path %>
         <a href="">教师</a>
         <% if user_signed_in? %>
-        <%= link_to '个人中心', profile_path(current_user) %>
+          <%= link_to '个人中心', profile_path(current_user) %>
         <% end %>
         <a href="">问答</a>
         <a href="">应用</a>
