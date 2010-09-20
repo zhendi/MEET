@@ -19,6 +19,8 @@ gem 'jrails'
 
 gem 'newrelic_rpm'
 
+gem 'metric_fu'
+
 # Deploy with Capistrano
 gem 'capistrano'
 

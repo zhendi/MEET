@@ -20,6 +20,13 @@ class MakeDevelopInitialData < ActiveRecord::Migration
   		c.category = Category.where(:name=>"Listen").first
   		c.teacher = t
   		c.save
+
+
+  		f = Forum.new(:name=>"First Forum", :description=>"This is the first and the main forum", :priority=>0);
+  		f.save
+  		
+        t = Topic.new(:name=>"", :content=>"This is the default content", :forum=>f)
+        t.save
 	end
 
   	def self.down

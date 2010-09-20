@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100918144719) do
+ActiveRecord::Schema.define(:version => 20110918144719) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -83,11 +83,19 @@ ActiveRecord::Schema.define(:version => 20100918144719) do
   end
 
   create_table "forum_posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "forums", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "priority",     :default => 0
+    t.integer  "topics_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -137,6 +145,14 @@ ActiveRecord::Schema.define(:version => 20100918144719) do
   add_index "teachers", ["reset_password_token"], :name => "index_teachers_on_reset_password_token", :unique => true
 
   create_table "topics", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.integer  "forum_id"
+    t.integer  "forum_posts_count", :default => 0
+    t.boolean  "stick",             :default => false
+    t.integer  "ding",              :default => 0
+    t.integer  "cai",               :default => 0
+    t.integer  "gold"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
