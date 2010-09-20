@@ -1,8 +1,26 @@
-<% content_for	:sidebar do %>
-	<%= render	:partial=>"/shared/user_info" %>
-<% end %>
-
-
-<div class="field">
-
+<div class="profile-show">
+  <table>
+    <tr>
+      <th>title</th>
+      <th>Content</th>
+    </tr>
+    <tr>
+      <td>
+        Name:
+      </td>
+      <td>
+        <%= @profile.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Image:
+      </td>
+      <td>
+        <%= image_tag @profile.avatar.url %>
+      </td>
+    </tr>
+</table>
 </div>
+
+<%= link_to "编辑", edit_profile_path(@profile) %>
