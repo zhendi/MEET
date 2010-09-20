@@ -16,10 +16,12 @@ gem 'will_paginate', "~> 3.0.pre2"
 # 身份认证组件.http://github.com/plataformatec/devise
 gem 'devise'
 gem 'jrails'
-
+# 
 gem 'newrelic_rpm'
-
+# calc the code metrics
 gem 'metric_fu'
+# upload file's plugin
+gem 'paperclip'
 
 # Deploy with Capistrano
 gem 'capistrano'
