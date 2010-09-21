@@ -1,12 +1,13 @@
 set :application, "meet"
-set :repository,  "http://svn2.xp-dev.com/svn/meet/trunk/"
+set :repository, "git://github.com/wuhy80/MEET.git" 
+set :scm, "git"
 
-set :scm, :subversion
+set :deploy_to, "/home/wuhy80/#{application}"
+set :use_sudo,  false
 
-role :web, "blog.jameswu.me"                          # Your HTTP server, Apache/etc
-role :app, "blog.jameswu.me"                          # This may be the same as your `Web` server
-role :db,  "blog.jameswu.me", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "www.jameswu.me"                         
+role :app, "www.jameswu.me"                          
+role :db,  "www.jameswu.me", :primary => true 
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
