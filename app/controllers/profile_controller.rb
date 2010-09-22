@@ -1,6 +1,10 @@
 class ProfileController < ApplicationController
   respond_to :html
 
+  def index
+    @blogs = Blog.paginate :page => params[:page], :order => 'created_at DESC' 
+  end
+
   def show
     @profile = current_user.profile
     @user = current_user

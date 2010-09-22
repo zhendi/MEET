@@ -24,7 +24,7 @@
         | 说金： <a><%= course.gold %><%= image_tag "ico_money.gif" %>
         </li>
         <li class="course_start">
-          <a href="/index.php/Lesson/lessonDetail/lessonId/648" class="f-button" style="color:#FFFFFF">开始课程</a>
+        <%= link_to "开始课程", study_course_course_path(course), :class=>"f-button", :style=>"color:#FFFFFF" %>
         </li>
       </ul>
     </div>
