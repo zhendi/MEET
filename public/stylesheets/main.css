@@ -55,6 +55,9 @@ Purpose of the stylesheet follows.
   overflow: hidden;
 }
 
+.field{
+  clear:both;
+}
 /*页脚开始*/
 
 #footer_umv{ 

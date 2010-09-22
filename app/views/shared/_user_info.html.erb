@@ -7,7 +7,7 @@
   <% if user_signed_in? %>
     <ul>
       <li>
-      用户名:	<%= current_user.display_name %>
+      用户名:	<%= current_user.profile.name %>
       </li>
       <li>
       积分:	<%= current_user.score %>

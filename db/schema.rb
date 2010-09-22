@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100920092957) do
+ActiveRecord::Schema.define(:version => 20100922151655) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(:version => 20100920092957) do
     t.string   "name",       :limit => 12
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "cities", :force => true do |t|
+    t.string  "name",         :limit => 30
+    t.integer "provinces_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -120,6 +125,39 @@ ActiveRecord::Schema.define(:version => 20100920092957) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "english_name"
+    t.date     "birthday"
+    t.string   "star"
+    t.string   "home_province"
+    t.string   "home_city"
+    t.string   "english_level"
+    t.string   "msn"
+    t.string   "qq"
+    t.string   "gmail"
+    t.string   "blog"
+    t.string   "homepage"
+    t.string   "company"
+    t.text     "company_description"
+    t.string   "company_province"
+    t.string   "company_city"
+    t.string   "education_level"
+    t.string   "school_name"
+    t.integer  "income_year"
+    t.text     "interest"
+    t.text     "loved_music"
+    t.text     "loved_movie"
+    t.text     "loved_game"
+    t.text     "loved_sport"
+    t.text     "loved_person"
+    t.text     "self_description"
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string "name", :limit => 30
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string "name", :limit => 20
   end
 
   create_table "taggings", :force => true do |t|
@@ -185,11 +223,11 @@ ActiveRecord::Schema.define(:version => 20100920092957) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "blogs_count",                        :default => 0
-    t.string   "display_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "gold",                               :default => 0
     t.integer  "score",                              :default => 0
+    t.integer  "role_id"
   end
 
 end

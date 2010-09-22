@@ -1,24 +1,33 @@
 <%= form_for @profile, :html => { :multipart => true } do |f| %>
   <div class="field">
-    <%= f.label "姓名" %>
+    <%= f.label "中文姓名" %>
     <%= f.text_field  :name,:size=>50 %>
   </div>
 
   <div class="field">
-    <%= f.label "年龄"%>
-    <%= f.text_field :age,:size=>50 %>
+    <%= f.label "英文名字"  %>
+    <%= f.text_field  :english_name,  :size=>50 %>
   </div>
 
   <div class="field">
-    <%= f.label "性别" %>
+    <%= f.label "生日" %>
+    <%= f.date_select :birthday %>
+  </div>
+
+  <div class="field" style="clear:both">
+    <%= f.label "星座",{:style=>"margin-top:5px"} %>
+    <%= f.select :star, ["水牛", "白鹤", "双瓶", "天马"] %>
+  </div>
+  <div class="field" style="clear:both">
+    <%= f.label "性别",{:style=>"margin-top:5px"} %>
     <%= f.check_box :sex, :size=>50 %>
   </div>
 
   <div class="field" style="clear:both">
     <%= f.label "头像",{:style=>"margin-top:5px"} %>
     <span style="display:block;float:left">
-    <%= image_tag @profile.avatar.url %><br/>
-    <%= f.file_field :avatar %>
+      <%= image_tag @profile.avatar.url %><br/>
+      <%= f.file_field :avatar %>
     </span>
   </div> 
 

@@ -1,5 +1,10 @@
 <%= form_for @profile do |f| %>
+	<div class="field">
+		<%= f.label "水平"  %>
+	<%= f.select :english_level, ["初级", "中级", "高级"] %>
+	</div>
 
+<%= f.submit %>
 <% end %>
 
 
