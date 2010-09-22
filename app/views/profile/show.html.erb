@@ -1,26 +1,31 @@
-<div class="profile-show">
-  <table>
-    <tr>
-      <th>title</th>
-      <th>Content</th>
-    </tr>
-    <tr>
-      <td>
-        Name:
-      </td>
-      <td>
-        <%= @profile.name %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Image:
-      </td>
-      <td>
-        <%= image_tag @profile.avatar.url %>
-      </td>
-    </tr>
-</table>
-</div>
+<script type="text/javascript">
+  $(function() {
+      $("#tabs").tabs();
+      });
+</script>
 
-<%= link_to "编辑", edit_profile_path(@profile) %>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-base">基本信息</a></li>
+    <li><a href="#tabs-level">英语水平</a></li>
+    <li><a href="#tabs-contact">联系信息</a></li>
+    <li><a href="#tabs-interesting">兴趣爱好</a></li>
+    <li><a href="#tabs-work">工作信息</a></li>
+  </ul>
+  <div id="tabs-base">
+    <%= render  "base_info" %>
+  </div>
+  <div id="tabs-level">
+    <%= render  "level_info" %>
+  </div>
+  <div id="tabs-contact">
+    <%= render  "contact_info" %>
+  </div>
+  <div id="tabs-interesting">
+    <%= render  "interesting_info" %>
+  </div>
+  <div id="tabs-work">
+    <%= render  "work_info" %>
+  </div>
+</div>

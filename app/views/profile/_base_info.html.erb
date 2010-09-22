@@ -1,0 +1,30 @@
+<%= form_for @profile, :html => { :multipart => true } do |f| %>
+  <div class="field">
+    <%= f.label "姓名" %>
+    <%= f.text_field  :name,:size=>50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "年龄"%>
+    <%= f.text_field :age,:size=>50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "性别" %>
+    <%= f.check_box :sex, :size=>50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "头像" %>
+    <span style="display:block;float:left">
+    <%= image_tag @profile.avatar.url %><br/>
+    <%= f.file_field :avatar %>
+    </span>
+  </div> 
+
+  <div class="field" style="clear:both">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

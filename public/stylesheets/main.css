@@ -24,32 +24,7 @@ Purpose of the stylesheet follows.
 
 .login_header_umv{
   margin:2px auto 0 auto; 
-  padding:0; 
-  width:300px; 
-  height:auto; 
-  overflow:hidden; 
-  text-align:right;
-}
-
-#headerMenu {
-  padding: 5px;
-  color: #FFFFFF;
-  clear:both;
-  float: right;
-}
-
-#headerMenu a {
-  color:#FFFFFF;
-  text-decoration: none;
-  outline-style: none;
-  padding: 5px;
-}
-
-#headerMenu a:hover {
-  background: #6D84B4;
-  padding: 5px;
-  text-decoration: none;
-  font-weight: bold;
+  padding
 }
 
 #mainBody {
@@ -73,18 +48,11 @@ Purpose of the stylesheet follows.
   width:120px; 
 }
 
-#main
-{
+#main{
   float: left;
   margin-left: 15px;
   width: 850px;
   overflow: hidden;
-}
-
-#user_info ul li {
-  border-top: 1px solid #C1B9AE;
-  line-height: 23px;
-  padding-left: 14px;
 }
 
 /*页脚开始*/
