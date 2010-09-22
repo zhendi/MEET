@@ -1,6 +1,6 @@
 <div class="course_style">
   <div class="course_pic">
-    <img src="/images/course_tmp.png">		
+    <%= image_tag "course_tmp.png" %>
   </div>
   <div class="course_body">
     <div class="course_header">
@@ -18,10 +18,10 @@
         <%= course.description %>
         </li>
         <li class="course_info">
-        <span> 等级：</span><a href="/index.php/Lesson/index/levelId/3"><%= course.level.name %></a> 
-        | <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= course.category.name %></a> 
-        | 主题：<a href="/index.php/Lesson/index/topicId/60">学习</a> 
-        | 说金： <a><%= course.gold %><img src="/SNS/Tpl/speak2me/Public/images/appicons/ico_money.gif"></a>
+        <span> 等级：</span><%= course.level.name %> 
+        | <span>类别：</span><%= course.category.name %> 
+        | 主题：学习 
+        | 说金： <a><%= course.gold %><%= image_tag "ico_money.gif" %>
         </li>
         <li class="course_start">
           <a href="/index.php/Lesson/lessonDetail/lessonId/648" class="f-button" style="color:#FFFFFF">开始课程</a>
