@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>MEET</title>
-    <%= stylesheet_link_tag :all %>
+    <%= stylesheet_link_tag :all,:cache=>true %>
     <%= stylesheet_link_tag 'smoothness/jquery-ui-1.8.5.custom' %>
-    <%= javascript_include_tag 'jquery-1.4.2.min', 'rails.js','jquery-ui-1.8.5.custom.min' %>
+    <%= javascript_include_tag :all, :cache=>true %>
     <%= csrf_meta_tag %>
     <%= yield :header %>
   </head>
