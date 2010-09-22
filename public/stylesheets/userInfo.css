@@ -1,6 +1,7 @@
 #user_info{
   border: 1px solid rgb(193, 185, 174); 
   margin-top: 5px;
+  float: left;
 }
 #user_info ul li {
   border-top: 1px solid #C1B9AE;

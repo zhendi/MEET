@@ -15,7 +15,9 @@ class ProfileController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if @profile.update_attributes(params[:profile])
-      redirect_to profile_path(@profile)
+      render  :action=>"show"
+    else
+      render  :action=>"show", :error=>"save failed"
     end
   end
 end

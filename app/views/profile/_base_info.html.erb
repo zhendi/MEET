@@ -14,8 +14,8 @@
     <%= f.check_box :sex, :size=>50 %>
   </div>
 
-  <div class="field">
-    <%= f.label "头像" %>
+  <div class="field" style="clear:both">
+    <%= f.label "头像",{:style=>"margin-top:5px"} %>
     <span style="display:block;float:left">
     <%= image_tag @profile.avatar.url %><br/>
     <%= f.file_field :avatar %>
