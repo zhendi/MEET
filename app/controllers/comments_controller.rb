@@ -1,8 +1,6 @@
 ﻿class CommentsController < ApplicationController
   respond_to :html,:js
 
-  before_filter :authenticate, :only => [:destroy]
-
   def create
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.build(params[:comment])

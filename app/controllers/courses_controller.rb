@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  respond_to :html, :js
+  respond_to :html,:js
 
   def index
     @all_courses = Course.all #.paginate :page=>5, :order=>"created_at desc"
@@ -54,6 +54,7 @@ class CoursesController < ApplicationController
     current_user.collected_courses << @course
     
     logger.info("add succeed #{current_user.collected_courses.count}")
-    respond_with(@course)
+    #respond_with(@course)
+    
   end
 end
