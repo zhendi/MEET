@@ -3,10 +3,7 @@ class CoursesController < ApplicationController
 
   def index
     @all_courses = Course.all #.paginate :page=>5, :order=>"created_at desc"
-    #@rated_courses = Course.all #paginate	:page=>5, :order=>"users_count"
-    logger.info("begin paginate")
-    @rated_courses = Course.paginate  :page => params[:page], :order=>"users_count"
-    logger.info("end paginate")
+    @rated_courses = Course.paginate  :page => params[:page]
   end
 
   def new
@@ -53,9 +50,10 @@ class CoursesController < ApplicationController
   end
 
   def collect
-    @course = Course.find(params[:id])
-    current_user.courses << @course
-
-    logger.info("add succeed")
+    course = Course.find(params[:id])
+    current_user.collected_courses << course
+    
+    logger.info("add succeed #{current_user.collected_courses.count}")
+    redirect_to :action=>"index"
   end
 end

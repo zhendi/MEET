@@ -1,8 +1,8 @@
 <div id="user_info">
-  <% if current_user.profile.avatar_file_name == "" %>
-    <%= image_tag current_user.profile.avatar.url(:thumb) %>
-  <% else %>
+  <% if current_user.profile == nil or current_user.profile.avatar_file_name == "" %>
     <%= image_tag("male.gif") %>
+  <% else %>
+    <%= image_tag current_user.profile.avatar.url(:thumb) %>
   <% end %> 
   <% if user_signed_in? %>
     <ul>

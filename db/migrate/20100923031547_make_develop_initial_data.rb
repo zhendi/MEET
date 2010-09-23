@@ -1,9 +1,11 @@
 class MakeDevelopInitialData < ActiveRecord::Migration
 
   	def self.up
-  		u = User.create(:email=>"wuhy80@sohu.com", :display_name=>"James Wu", :password=>"123456")
-  		t = Teacher.create(:email=>"wuhy80@gmail.com", :display_name=>"James Wu", :password=>"123456")
-		
+  		u = User.create(:email=>"wuhy80@sohu.com", :password=>"123456")
+  		u.profile = Profile.new()
+  		t = User.create(:email=>"wuhy80@gmail.com", :password=>"123456")
+		t.profile = Profile.new()
+
   		Category.create(:name=>"Listen")
   		Category.create(:name=>"Read")
   		Category.create(:name=>"Write")
@@ -18,11 +20,12 @@ class MakeDevelopInitialData < ActiveRecord::Migration
   		c = Course.new(:name=>"first", :description=>"This is a description", :gold=>"23")
   		c.level = Level.where(:name=>"Low").first
   		c.category = Category.where(:name=>"Listen").first
-  		c.teacher = t
+  		#c.author = u
   		c.save
 
 
-  		f = Forum.new(:name=>"First Forum", :description=>"This is the first and the main forum", :priority=>0);
+  		f = Forum.new(:name=>"First Forum", 
+  		              :description=>"This is the first and the main forum", :priority=>0);
   		f.save
   		
         t = Topic.new(:name=>"", :content=>"This is the default content", :forum=>f)
