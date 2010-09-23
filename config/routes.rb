@@ -14,7 +14,7 @@ MEET::Application.routes.draw do
   # 课程相关的resources
   resources	:courses  do
     member  do
-      get "collect"
+      post "collect"
       get "study_course"
     end
   end
