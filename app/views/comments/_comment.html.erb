@@ -1,9 +1,7 @@
 <li class="comment" display="none" id="comment_<%= comment.id %>">
 <div class="post parent-post">
   <p class="image">
-  <a href="/index.php/space/1806293">
-    <img src="/images/male.gif" width="48">
-  </a>
+  <%= link_to image_tag("male.gif", :height=>48, :width=>48), blog_comment_path(comment.blog, comment) %>
   </p>
   <div class="info">
     <span class="author"></span>

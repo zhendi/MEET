@@ -21,7 +21,5 @@
     comment.destroy
 	
 	respond_with(@comment_id)
-	
-    # redirect_to blog_path(@blog)
   end
 end

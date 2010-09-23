@@ -50,10 +50,10 @@ class CoursesController < ApplicationController
   end
 
   def collect
-    course = Course.find(params[:id])
-    current_user.collected_courses << course
+    @course = Course.find(params[:id])
+    current_user.collected_courses << @course
     
     logger.info("add succeed #{current_user.collected_courses.count}")
-    redirect_to :action=>"index"
+    respond_with(@course)
   end
 end

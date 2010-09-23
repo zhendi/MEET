@@ -4,7 +4,7 @@
     <title>MEET</title>
     <%= stylesheet_link_tag :all,:cache=>true %>
     <%= stylesheet_link_tag 'smoothness/jquery-ui-1.8.5.custom' %>
-    <%= javascript_include_tag :all, :cache=>true %>
+    <%= javascript_include_tag "rails", "jquery-1.4.2.min", "jquery-ui-1.8.5.custom.min", "application", :cache=>true %>
     <%= csrf_meta_tag %>
     <%= yield :header %>
   </head>
@@ -71,10 +71,9 @@
       <a href="/help/sitemap" target="_blank">网站地图</a>|
       <a href="/help/rss" target="_blank">RSS订阅</a>|
       <a href="javascript:;" id="foot_feedback" style="color:#ffae00;">意见反馈</a>
-
       </p>
-      <p class="footer_copy">广告招商热线：010-85894686 &nbsp;&nbsp;咨询合作热线：59530300-8011/8057</p>
-      <p class="footer_copy">Umiwi 版权所有 视听许可证号：0110567 京ICP证：090644号</p> 	
+      <p class="footer_copy">MEET - 属于你的精英教育</p>
+      <p class="footer_copy">MEET 版权所有 视听许可证号：0110567 京ICP证：090644号</p> 	
     </div>
 
   </body>

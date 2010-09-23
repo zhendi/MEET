@@ -1,5 +1,5 @@
 <div id="user_info">
-  <% if current_user.profile == nil or current_user.profile.avatar_file_name == "" %>
+  <% if current_user.profile == nil or current_user.profile.avatar_file_name == nil %>
     <%= image_tag("male.gif") %>
   <% else %>
     <%= image_tag current_user.profile.avatar.url(:thumb) %>
