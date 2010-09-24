@@ -1,0 +1,6 @@
+<% if collected(course) %>
+	<%= link_to "取消收藏", uncollect_course_path(course), :remote=>true, :method=>:post %>
+<% else %>
+	<%= link_to "加入收藏", collect_course_path(course), :remote=>true, :method=>:post %>
+<% end %>
+

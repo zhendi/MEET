@@ -52,9 +52,14 @@ class CoursesController < ApplicationController
   def collect
     @course = Course.find(params[:id])
     current_user.collected_courses << @course
-    
-    logger.info("add succeed #{current_user.collected_courses.count}")
-    #respond_with(@course)
-    
+
+    respond_with(@course)
+  end
+
+  def uncollect
+    @course = Course.find(params[:id])
+    current_user.collected_courses.delete(@course)
+
+    respond_with(@course)
   end
 end

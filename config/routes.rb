@@ -1,9 +1,4 @@
 MEET::Application.routes.draw do
-
-  devise_for :admins
-
-  devise_for :teachers
-
   devise_for :users
   
   resources	:blogs	do
@@ -15,6 +10,7 @@ MEET::Application.routes.draw do
   resources	:courses  do
     member  do
       post "collect"
+      post "uncollect"
       get "study_course"
     end
   end
