@@ -14,6 +14,7 @@ Purpose of the stylesheet follows.
 #divHeader {
   height: auto;
   overflow:hidden; 
+  padding-top:5em;
   background:url(/images/bj_top_02.jpg) repeat-x top center #454545;
 }
 
@@ -23,8 +24,12 @@ Purpose of the stylesheet follows.
 }
 
 .login_header_umv{
-  margin:2px auto 0 auto; 
-  padding
+  margin-top: -4%;
+  margin-left: 68%;
+  color: #B9B9B9;
+}
+.login_header_umv a{
+  color: #B9B9B9;
 }
 
 #mainBody {

@@ -7,10 +7,7 @@ Purpose of the stylesheet follows.
  */
 
 #header_umv{
-  margin:2px auto 0 auto; 
-  padding:0; 
-  width:300px; 
-  height:auto; 
+  margin-left:40%;
   overflow:hidden; 
   text-align:right;
 }

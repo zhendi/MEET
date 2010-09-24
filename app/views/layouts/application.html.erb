@@ -16,18 +16,9 @@
       </span>
       <div class="login_header_umv">
         <% if user_signed_in?  %>
-          <%= link_to current_user.profile.name %>
+          <%= link_to current_user.profile.name, profile_path(current_user.profile) %>
           |
           <%= link_to "登出", destroy_user_session_path %>
-        <% elsif teacher_signed_in?%>
-          <%= current_teacher.display_name %>
-          <%= link_to current_teacher.display_name %>
-          |
-          <%= link_to "登出", destroy_teacher_session_path %>
-        <% elsif admin_signed_in? %>
-          <%= link_to current_admin.display_name %>
-          |
-          <%= link_to "登出", destroy_admin_session_path %>
         <% else %>
           <%= link_to	"登录", new_user_session_path %>
           |
