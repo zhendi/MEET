@@ -4,12 +4,14 @@
   </div>
   <div class="course_body">
     <div class="course_header">
-      <p>
       <span class="course_title" title="<%= course.name %>"><%= course.name %></span> 
       <span class="nonehui12 STYLE3" style="float:right;"> 
-        <%= link_to "加入收藏", collect_course_path(course), :remote=>true, :method=>:post %>
+        <% if collected(course) %>
+          已收藏
+        <% else %>
+          <%= link_to "加入收藏", collect_course_path(course), :remote=>true, :method=>:post %>
+        <% end %>
       </span>
-      </p>
     </div>
 
     <div class="col_riht_text">
@@ -18,10 +20,14 @@
         <%= course.description %>
         </li>
         <li class="course_info">
-        <span> 等级：</span><%= course.level.name %> 
-        | <span>类别：</span><%= course.category.name %> 
-        | 主题：学习 
-        | 说金： <a><%= course.gold %><%= image_tag "ico_money.gif" %>
+        <span> 等级：</span>
+        <%= course.level.name %> 
+        | <span>类别：</span>
+        <%= course.category.name %> 
+        | 主题：
+        学习 
+        | 说金： 
+        <%= course.gold %> <%= image_tag "ico_money.gif" %>
         </li>
         <li class="course_start">
         <%= link_to "开始课程", study_course_course_path(course), :class=>"f-button", :style=>"color:#FFFFFF" %>

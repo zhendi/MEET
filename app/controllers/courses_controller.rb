@@ -21,7 +21,7 @@ class CoursesController < ApplicationController
     @course = Course.new(params[:course])
     @course.level = Level.find(params[:level])
     @course.category = Category.find(params[:category])
-    @course.teacher = Teacher.first
+    @course.author = current_user
 
     if @course.save
       respond_with(@course)

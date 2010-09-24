@@ -1,37 +1,21 @@
 <div id="user_info">
-  <% if current_user.profile == nil or current_user.profile.avatar_file_name == nil %>
-    <%= image_tag("male.gif") %>
-  <% else %>
-    <%= image_tag current_user.profile.avatar.url(:thumb) %>
-  <% end %> 
   <% if user_signed_in? %>
+    <% if current_user.profile == nil or current_user.profile.avatar_file_name == nil %>
+      <%= image_tag("male.gif") %>
+    <% else %>
+      <%= image_tag current_user.profile.avatar.url(:thumb) %>
+    <% end %> 
+
     <ul>
       <li>
-      用户名:	<%= current_user.profile.name %>
+      用户名: <%= current_user.profile.name %>
       </li>
       <li>
       积分:	<%= current_user.score %>
       </li>
       <li>
-      金币:	0
+      金币:	<%= current_user.gold %> <%= image_tag "ico_money.gif" %>
       </li>
     </ul>
-  <% elsif teacher_signed_in? %>
-    <ul>
-      <li>
-      用户名:	<%= current_teacher.display_name %>
-      </li>
-      <li>
-      金币:	0
-      </li>
-    </ul>
-  <% elsif admin_signed_in? %>
-    <ul>
-      <li>
-      用户名:	<%= current_admin.display_name %>
-      </li>
-    </ul>
-    <% end　%>
-  <% else %>
   <% end %>
 </div>
