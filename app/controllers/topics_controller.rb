@@ -8,13 +8,25 @@ class TopicsController < ApplicationController
     respond_with(@topics)
   end
 
+  def new
+    @forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.build()
+  end
+
+  def show
+    @forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:id])
+
+    respond_with(@forum, @topic)
+  end
+
   def create
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.build(params[:topic])
     if @topic.save
-      respond_with(@topic)
+      respond_with([@forum,@topic])
     else
-      redirect_to topic_path(@topic, :notice=>"save failed")
+      redirect_to forum_topic_path(@forum, @topic, :notice=>"save failed")
     end
   end
 

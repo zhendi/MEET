@@ -39,3 +39,49 @@
 .forum-entry .last-info span{
 	display: block;
 }
+
+/****************************************************************************/
+/*                               Topic                                      */
+/****************************************************************************/
+.topic-entry{
+	overflow: hidden;
+	border: 1px solid #444444;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.topic-entry .image{
+	float:left;
+	width: 40px;
+}
+
+.topic-entry .info .name{
+}
+
+.topic-entry .info .description{
+	margin-top: 8px;
+}
+
+.topic-entry .info {
+	float:left;
+	width: 70%;
+}
+
+.topic-entry .info span{
+	display: block;
+}
+
+.topic-entry .count-info{
+	float:left;
+	width: 10%;
+}
+
+.topic-entry .last-info{
+	float:left;
+	width: 10%;
+}
+
+.topic-entry .last-info span{
+	display: block;
+}
+

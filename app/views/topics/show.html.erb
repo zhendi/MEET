@@ -1,0 +1,24 @@
+<%= button_to	"返回列表", forum_path(@forum), :method=>:get %>
+
+<div class="topic-show">
+	<div class="sidebar">
+
+	</div>
+	<div class="main">
+		<div class="header">
+			<span class="time">发表于 xxx</span>
+			<span class="author">1分钟前 作者</span>
+			<span class=""></span>
+		</div>
+
+		<div class="content">
+			<%= @topic.content %>
+		</div>
+
+		<div class="footer">
+			<span class="name">最后一篇帖子</span>
+			<span class="time">1分钟前 作者</span>
+		</div>
+
+	</div>
+</div>
