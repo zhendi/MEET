@@ -17,7 +17,7 @@ MEET::Application.routes.draw do
  
   resources :forums do
     resources :topics do
-      resources :replys
+      resources :forum_posts
     end
   end
 
