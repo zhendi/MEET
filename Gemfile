@@ -27,6 +27,8 @@ gem 'paperclip'
 gem 'capistrano'
 
 gem 'acts-as-taggable-on'
+# 在Model文件中添加数据库的注释信息，非常有用
+gem 'annotate'
 
 # Admin-Data
 gem 'admin_data'

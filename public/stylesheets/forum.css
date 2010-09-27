@@ -1,0 +1,41 @@
+.forum-entry{
+	overflow: hidden;
+	border: 1px solid #444444;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.forum-entry .image{
+	float:left;
+	width: 40px;
+}
+
+.forum-entry .info .name{
+}
+
+.forum-entry .info .description{
+	margin-top: 8px;
+}
+
+.forum-entry .info {
+	float:left;
+	width: 70%;
+}
+
+.forum-entry .info span{
+	display: block;
+}
+
+.forum-entry .count-info{
+	float:left;
+	width: 10%;
+}
+
+.forum-entry .last-info{
+	float:left;
+	width: 10%;
+}
+
+.forum-entry .last-info span{
+	display: block;
+}

@@ -6,14 +6,16 @@ require 'rake'
 
 MEET::Application.load_tasks
 
-desc  "recreate entire database"
-task  :recreate do |t|
-	Rake::Task["db:drop"].invoke
-	Rake::Task["db:create"].invoke
-	Rake::Task["db:migrate"].invoke
+desc"create some initial data"
+task :initialdata do |t|
+  desc "Rebuild system"
+  task :build => ["tmp:clear", "log:clear", "db:drop", "db:create", "db:migrate", :setup ]
 end
 
-desc	"create some initial data"
-task :initialdata do |t|
-		
+desc "Setup system data"
+task :setup => :environment do
+  puts "Create system user"
+  #u = User.new( :login => "root", :password => "password", :email => "root@example.com", :name => "管理員")
+  #u.is_admin = true
+  #u.save!
 end
