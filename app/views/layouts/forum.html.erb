@@ -44,7 +44,7 @@
         <p class="alert"><%= alert %></p>
         <div class="navigation">
 			<%= link_to	"论坛", forums_path %>
-			<% if @forum %>
+			<% if @forum != nil && !@forum.new_record? %>
 				=>
 			<%= link_to	@forum.name, forum_path(@forum) %>		
 			<% end %>
