@@ -42,6 +42,13 @@
       <div id="main">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
+        <div class="navigation">
+			<%= link_to	"论坛", forums_path %>
+			<% if @forum %>
+				=>
+			<%= link_to	@forum.name, forum_path(@forum) %>		
+			<% end %>
+        </div>
         <%= yield %>
       </div>
     </div>
