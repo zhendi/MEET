@@ -27,15 +27,7 @@
       </div> 
 
       <div id="headerMenu">
-        <%= link_to	'课程', courses_path %>
-        <a href="">教师</a>
-        <% if user_signed_in? %>
-          <%= link_to '个人中心', profile_path(current_user) %>
-        <% end %>
-        <a href="">问答</a>
-        <a href="">应用</a>
-
-        <%= link_to '博客', blogs_path %>
+        <%= render  "/shared/nav_menu" %>
       </div>
     </div>
     <div id="divall">
@@ -43,11 +35,11 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <div class="navigation">
-			<%= link_to	"论坛", forums_path %>
-			<% if @forum != nil && !@forum.new_record? %>
-				=>
-			<%= link_to	@forum.name, forum_path(@forum) %>		
-			<% end %>
+          <%= link_to	"论坛", forums_path %>
+          <% if @forum != nil && !@forum.new_record? %>
+            =>
+            <%= link_to	@forum.name, forum_path(@forum) %>		
+          <% end %>
         </div>
         <%= yield %>
       </div>

@@ -17,6 +17,8 @@ gem 'will_paginate', "~> 3.0.pre2"
 gem 'devise'
 # 
 
+gem 'declarative_authorization'
+
 gem 'newrelic_rpm'
 # calc the code metrics
 gem 'metric_fu'

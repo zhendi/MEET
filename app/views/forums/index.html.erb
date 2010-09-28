@@ -22,8 +22,14 @@
       </div>
 
       <div class="last-info">
-        <span class="name">最后一篇帖子</span>
-        <span class="time">1分钟前 作者</span>
+        <% if forum.topics.count > 0 %>
+          <% last_topic = forum.topics.last %>
+          <span class="name"><%= link_to last_topic.name, forum_topic_path(forum, last_topic) %></span>
+          <span class="time"><%= last_topic.created_at %></span>
+        <% else %>
+          <span class="name">尚未有帖子</span>
+          <span class="time">XXX 作者</span>
+        <% end %>
       </div>
 
     </div>
