@@ -1,20 +1,33 @@
-<% @forums.each do |forum| %>
-	<div class="forum-entry">
-		<p class="image">
-		<img src="/images/forum.gif" width="30"/>
-		</p>
-		<div class="info">
-			<span class="name"><%= link_to forum.name, forum_path(forum) %></span>
-			<span class="description"><%= forum.description %></span>
-		</div>
-		<div class="count-info">
-			1/10
-		</div>
+<div class="forums">
+  <% @forums.each do |forum| %>
 
-		<div class="last-info">
-			<span class="name">最后一篇帖子</span>
-			<span class="time">1分钟前 作者</span>
-		</div>
-	</div>
-<% end %>
+    <div class="forum-entry">
+      <hr/>
 
+      <p class="image">
+      <img src="/images/forum.gif" width="30"/>
+      </p>
+      <div class="info">
+        <span class="name">
+          <%= link_to forum.name, forum_path(forum) %>
+          <span class="admin">
+            <%= link_to "删除", forum_path(forum),:method=>:delete, :confirm=>"Are you sure to delete?" %>
+            <%= link_to "编辑", edit_forum_path(forum) %>
+          </span>
+        </span>
+        <span class="description"><%= forum.description %></span>
+      </div>
+      <div class="count-info">
+        1/10
+      </div>
+
+      <div class="last-info">
+        <span class="name">最后一篇帖子</span>
+        <span class="time">1分钟前 作者</span>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
+<%= button_to "新建板块", new_forum_path, :method=>:get %>

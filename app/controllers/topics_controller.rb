@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   respond_to :html, :js
+  layout "forum"
 
   def index
     @forum = Forum.find(params[:forum_id])
@@ -18,6 +19,13 @@ class TopicsController < ApplicationController
     @topic = @forum.topics.find(params[:id])
 
     respond_with(@forum, @topic)
+  end
+
+  def edit
+    @forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:id])
+
+    respond_with(@forum, @topic) 
   end
 
   def create
@@ -42,11 +50,15 @@ class TopicsController < ApplicationController
   end
 
   # 需要做动态的效果来实现
-  def delete
+  def destroy
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:id])
-    
-    respond_with(@topic)
+
+    if @forum.topics.destroy(@topic)
+      redirect_to forum_path(@forum, :notice=>"delete succeed")
+    else
+      redirect_to forum_path(@forum, :error=>"delete failed")
+    end
   end
-    
+
 end

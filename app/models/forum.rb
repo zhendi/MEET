@@ -1,5 +1,6 @@
 class Forum < ActiveRecord::Base
   has_many  :topics
+  PRIORITY = {"1"=>"1", "2"=>"2", "3"=>"3","4"=>"4","5"=>"5"}
 
 end
 

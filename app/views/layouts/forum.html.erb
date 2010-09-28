@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MEET</title>
+    <%= stylesheet_link_tag :all,:cache=>true %>
+    <%= stylesheet_link_tag 'smoothness/jquery-ui-1.8.5.custom' %>
+    <%= javascript_include_tag "jquery-1.4.2.min", "rails", "jquery-ui-1.8.5.custom.min", "application" %>
+    <%= csrf_meta_tag %>
+    <%= yield :header %>
+  </head>
+  <body id="mainBody">
+    <div id="divHeader">
+      <span class="login_header_logo">
+        <a href="/" title="MEET-属于你的精英教育" 
+          class="logo_umv_black_a">MEET-属于你的精英教育</a>
+      </span>
+      <div class="login_header_umv">
+        <% if user_signed_in?  %>
+          <%= link_to current_user.profile.name, profile_path(current_user.profile) %>
+          |
+          <%= link_to "登出", destroy_user_session_path %>
+        <% else %>
+          <%= link_to	"登录", new_user_session_path %>
+          |
+          <%= link_to	"注册", new_user_registration_path %>
+        <% end %>
+      </div> 
+
+      <div id="headerMenu">
+        <%= link_to	'课程', courses_path %>
+        <a href="">教师</a>
+        <% if user_signed_in? %>
+          <%= link_to '个人中心', profile_path(current_user) %>
+        <% end %>
+        <a href="">问答</a>
+        <a href="">应用</a>
+
+        <%= link_to '博客', blogs_path %>
+      </div>
+    </div>
+    <div id="divall">
+      <div id="main">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer_umv">
+      <p class="border_footer"></p>
+      <p class="footer_menu">
+
+      <a href="/help/aboutus" target="_blank">关于我们</a>|
+      <a href="/partner/jiyu.php" target="_blank">媒体寄语</a>|
+      <a href="/help/joinus" target="_blank">诚聘英才</a>|
+      <a href="/help/contactus" target="_blank">联系我们</a>|
+      <a href="/help/conditions">使用条款</a>|
+      <a href="/help/questionanswer" target="_blank">帮助中心</a>|
+      <a href="/help/sitemap" target="_blank">网站地图</a>|
+      <a href="/help/rss" target="_blank">RSS订阅</a>|
+      <a href="javascript:;" id="foot_feedback" style="color:#ffae00;">意见反馈</a>
+      </p>
+      <p class="footer_copy">MEET - 属于你的精英教育</p>
+      <p class="footer_copy">MEET 版权所有 视听许可证号：0110567 京ICP证：090644号</p> 	
+    </div>
+
+  </body>
+</html>
+

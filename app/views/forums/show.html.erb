@@ -1,20 +1,23 @@
 <%= button_to	'发帖子', new_forum_topic_path(@forum), :method=>:get %>
 
 <% @topics.each do |topic| %>
-	<div class="topic-entry">
-		<p class="image">
-		<img src="/images/forum.gif" width="30"/>
-		</p>
-		<div class="info">
-			<span class="name"><%= link_to topic.name, forum_topic_path(@forum, topic) %></span>
-		</div>
-		<div class="count-info">
-			1/10
-		</div>
+  <div class="topic-entry">
+    <p class="image">
+    <img src="/images/forum.gif" width="30"/>
+    </p>
+    <div class="info">
+      <span class="name"><%= link_to topic.name, forum_topic_path(@forum, topic) %></span>
+      <span class="edit">
+        <%= link_to "删除", forum_topic_path(@forum, topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
+      </span>
+    </div>
+    <div class="count-info">
+      1/10
+    </div>
 
-		<div class="last-info">
-			<span class="name">最后一篇帖子</span>
-			<span class="time">1分钟前 作者</span>
-		</div>
-	</div>
+    <div class="last-info">
+      <span class="name">最后一篇帖子</span>
+      <span class="time">1分钟前 作者</span>
+    </div>
+  </div>
 <% end %>

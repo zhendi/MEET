@@ -1,5 +1,7 @@
 class ForumsController < ApplicationController
   respond_to :html, :js
+  layout  "forum"
+
   def index
     @forums = Forum.find(:all)
 
@@ -38,10 +40,19 @@ class ForumsController < ApplicationController
     @forum = Forum.find(params[:id])
     respond_to do |wants|
       if @forum.update_attributes(params[:forum])
-        wants.html  {redirect_to  @forum, :notice=>"update succeed"}
+        wants.html  {redirect_to  forums_path, :notice=>"update succeed"}
       else
         wants.html  {render :action=>"edit"}
       end
+    end
+  end
+
+  def destroy
+    @forum = Forum.find(params[:id])
+    if @forum.destroy
+      redirect_to forums_path, :notice=>"delete succeed"
+    else
+      render  forums_path, :error=>"delete failed"
     end
   end
 end
