@@ -2,6 +2,8 @@ class Forum < ActiveRecord::Base
   has_many  :topics
   PRIORITY = {"1"=>"1", "2"=>"2", "3"=>"3","4"=>"4","5"=>"5"}
 
+  validates :name,  :presence=>true, :length=>{:minimum=>2}
+  validates :description, :presence=>true, :length=>{:minimum=>10}
 end
 
 # == Schema Information
