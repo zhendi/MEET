@@ -1,13 +1,12 @@
-<div class="topic-show">
+<div id="topic-question">
   <div class="sidebar">
-    <%= image_tag "male.gif" %>
-
-    <span class="edit">
+    <span class="count-post">已解决<br/>问题</span>
+  </div>
+  <div class="main">
+       <span class="edit">
       <%= link_to "编辑", edit_forum_topic_path(@forum, @topic) %>
       <%= link_to "删除", forum_topic_path(@forum, @topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
     </span>
-  </div>
-  <div class="main">
     <div class="header">
       <span class="time">发表于 xxx</span>
       <span class="author">1分钟前 作者</span>
@@ -24,4 +23,8 @@
     </div>
 
   </div>
+</div>
+
+<div id="topic-replys">
+  
 </div>

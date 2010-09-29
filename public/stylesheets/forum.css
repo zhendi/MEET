@@ -136,12 +136,25 @@
 /****************************************************************************/
 /*                             Topic Show                                   */
 /****************************************************************************/
-.topic-show .sidebar{
+#topic-question .sidebar{
+  vertical-align:top;
+  width:60px;
   float: left;
-  width: 120px;
+
 }
 
-.topic-show .main{
+#topic-question .sidebar .count-post {
+background:none repeat scroll 0 0 #97CF2B;
+color:#FFFFFF;
+display:block;
+line-height:16px;
+margin:0 auto;
+padding:5px 0;
+width:46px;
+text-align:center;
+}
+
+#topic-question .main{
   float: left;
-  overflow: hidden;
+  width: 700px;
 }

@@ -1,5 +1,5 @@
 <div class="right">
-<%= button_to	'发帖子', new_forum_topic_path(@forum), :method=>:get %>
+  <%= button_to	'发帖子', new_forum_topic_path(@forum), :method=>:get %>
 </div>
 <% @topics.each do |topic| %>
   <div class="topic-entry">
@@ -30,6 +30,5 @@
         </span>
       </div>
     </div>
-
   </div>
 <% end %>
