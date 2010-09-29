@@ -1,20 +1,20 @@
-.align-center {
-  
+.center {
+
 }
 
 .forums{
-	border: 1px solid #444444;
+  border: 1px solid #444444;
 }
 
 .forum-entry{
-	overflow: hidden;
-	padding-top:10px;
-	padding-bottom:10px;
+  overflow: hidden;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 .forum-entry:first-child hr {
   display:none;
-  } 
+} 
 
 .forums hr{
   clear: both;
@@ -25,55 +25,76 @@
   border: 1px solid #444444;
 }
 
-.forum-entry .image{
-	float:left;
-	width: 40px;
-}
-
 .forum-entry .info .name{
 }
 
 .forum-entry .info .description{
-	margin-top: 8px;
+  margin-top: 8px;
 }
 
 .forum-entry .info {
-	float:left;
-	width: 60%;
+  float:left;
+  width: 60%;
 }
 
 .forum-entry .info span{
-	display: block;
+  display: block;
 }
 
 .forum-entry .count-info{
-	float:left;
-	width: 10%;
+  float:left;
+  width: 10%;
 }
 
 .forum-entry .last-info{
-	float:left;
-	width: 20%;
+  float:left;
+  width: 20%;
 }
 
 .forum-entry .last-info span{
-	display: block;
+  display: block;
 }
 
 /****************************************************************************/
 /*                               Topic                                      */
 /****************************************************************************/
 .topic-entry{
-	border-bottom: 1px solid #444444;
-	padding-top:10px;
-	padding-bottom:10px;
-	height: 58px;
-	clear: both;
+  border-bottom: 1px solid #C3C3C3;
+  padding-top:10px;
+  padding-bottom:10px;
+  height: 58px;
+  clear: both;
 }
 
-.topic-entry .image{
-	float:left;
-	width: 40px;
+.topic-entry .answers{
+  color:#FFFFFF;
+  height:42px;
+  margin-left:5px;
+  padding:5px 2px 0;
+  text-align:center;
+  display: inline;
+  float: left;
+  background: none repeat scroll 0 0 #82C3E3;
+}
+
+.topic-entry .views {
+  color:#FFFFFF;
+  height:42px;
+  margin-left:5px;
+  padding:5px 2px 0;
+  text-align:center;
+  display: inline;
+  float: left;
+  background: none repeat scroll 0 0 #C3C3C3;
+}
+
+.topic-entry .answers span, .topic-entry .views span {
+  display: block;
+  font-size: 30px;
+}
+
+.topic-entry .answers .em, .topic-entry .views .em {
+  font-size: 11px;
 }
 
 .topic-entry:hover {
@@ -85,28 +106,28 @@
 }
 
 .topic-entry .info .description{
-	margin-top: 8px;
+  margin-top: 8px;
 }
 
 .topic-entry .info {
-	height: 22px;
-	line-height:22px;
-	margin-top:4px;
-	color: #818185;
-	font-size: 13px;
-	width: 95%;
+  height: 22px;
+  line-height:22px;
+  margin-left: 18px;
+  display: inline;
+  margin-top:4px;
+  float: left;
+  margin-right: auto;
+  color: #818185;
+  font-size: 13px;
+  width: 700px;
 }
 
-.topic-entry .count-info{
-	float:left;
-}
-
-.topic-entry .last-info{
-	clear: both;
-	width: 95%;
-}
-.topic-entry .last-info > .right {
+.right {
   float: right;
+}
+
+.left {
+  float: left;
 }
 
 .topic-entry .info .name {

@@ -1,10 +1,16 @@
+<div class="right">
 <%= button_to	'发帖子', new_forum_topic_path(@forum), :method=>:get %>
-
+</div>
 <% @topics.each do |topic| %>
   <div class="topic-entry">
-    <p class="image">
-    <img src="/images/forum.gif" width="30"/>
-    </p>
+    <div class="answers">
+      <span>1</span>
+      <em>Answers</em>
+    </div>
+    <div class="views">
+      <span>2</span>
+      <em>&nbsp;&nbsp;Views&nbsp;&nbsp;</em>
+    </div>
     <div class="info">
       <div class="name">
         <%= link_to topic.name, forum_topic_path(@forum, topic) %>
@@ -13,14 +19,15 @@
         </span>
       </div>
       <div class="last-info">
+        <span class="left">
+          Tags: 大家一起读原版 Justice
+        </span>
         <span class="right">
           <%= date_diffs(topic.created_at) %>
           发帖人: <%= topic.id %>
-          金币: <%= topic.gold %> <span class="align-center"><%= image_tag "ico_money.gif" %></span>
+          金币: <%= topic.gold %> <span class="center"><%= image_tag "ico_money.gif" %></span>
           回答: <%= topic.forum_posts.count %>
         </span>
-
-        <span class="name"></span>
       </div>
     </div>
 
