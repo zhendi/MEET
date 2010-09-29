@@ -1,5 +1,5 @@
 class Forum < ActiveRecord::Base
-  has_many  :topics
+  has_many  :topics, :order=>"updated_at DESC"
   PRIORITY = {"1"=>"1", "2"=>"2", "3"=>"3","4"=>"4","5"=>"5"}
 
   validates :name,  :presence=>true, :length=>{:minimum=>2}

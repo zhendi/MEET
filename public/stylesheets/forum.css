@@ -1,3 +1,7 @@
+.align-center {
+  
+}
+
 .forums{
 	border: 1px solid #444444;
 }
@@ -60,10 +64,11 @@
 /*                               Topic                                      */
 /****************************************************************************/
 .topic-entry{
-	overflow: hidden;
-	border: 1px solid #444444;
+	border-bottom: 1px solid #444444;
 	padding-top:10px;
 	padding-bottom:10px;
+	height: 58px;
+	clear: both;
 }
 
 .topic-entry .image{
@@ -71,7 +76,12 @@
 	width: 40px;
 }
 
-.topic-entry .info .name{
+.topic-entry:hover {
+  background: rgb(224,234,241);
+}
+
+.topic-entry .info .edit{
+  float: right;
 }
 
 .topic-entry .info .description{
@@ -79,25 +89,38 @@
 }
 
 .topic-entry .info {
-	float:left;
-	width: 70%;
-}
-
-.topic-entry .info span{
-	display: block;
+	height: 22px;
+	line-height:22px;
+	margin-top:4px;
+	color: #818185;
+	font-size: 13px;
+	width: 95%;
 }
 
 .topic-entry .count-info{
 	float:left;
-	width: 10%;
 }
 
 .topic-entry .last-info{
-	float:left;
-	width: 10%;
+	clear: both;
+	width: 95%;
+}
+.topic-entry .last-info > .right {
+  float: right;
 }
 
-.topic-entry .last-info span{
-	display: block;
+.topic-entry .info .name {
+  font-size: 14px;
+}
+/****************************************************************************/
+/*                             Topic Show                                   */
+/****************************************************************************/
+.topic-show .sidebar{
+  float: left;
+  width: 120px;
 }
 
+.topic-show .main{
+  float: left;
+  overflow: hidden;
+}

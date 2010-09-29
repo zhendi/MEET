@@ -2,6 +2,8 @@
 
 <div class="topic-show">
   <div class="sidebar">
+    <%= image_tag "male.gif" %>
+
     <span class="edit">
       <%= link_to "编辑", edit_forum_topic_path(@forum, @topic) %>
       <%= link_to "删除", forum_topic_path(@forum, @topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
@@ -20,7 +22,7 @@
 
     <div class="footer">
       <span class="name">最后一篇帖子</span>
-      <span class="time">1分钟前 作者</span>
+      <span class="time"><%= date_diffs(@topic.created_at) %>作者</span>
     </div>
 
   </div>

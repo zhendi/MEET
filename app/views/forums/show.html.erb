@@ -6,18 +6,23 @@
     <img src="/images/forum.gif" width="30"/>
     </p>
     <div class="info">
-      <span class="name"><%= link_to topic.name, forum_topic_path(@forum, topic) %></span>
-      <span class="edit">
-        <%= link_to "删除", forum_topic_path(@forum, topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
-      </span>
-    </div>
-    <div class="count-info">
-      1/10
+      <div class="name">
+        <%= link_to topic.name, forum_topic_path(@forum, topic) %>
+        <span class="edit">
+          <%= link_to "删除", forum_topic_path(@forum, topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
+        </span>
+      </div>
+      <div class="last-info">
+        <span class="right">
+          <%= date_diffs(topic.created_at) %>
+          发帖人: <%= topic.id %>
+          金币: <%= topic.gold %> <span class="align-center"><%= image_tag "ico_money.gif" %></span>
+          回答: <%= topic.forum_posts.count %>
+        </span>
+
+        <span class="name"></span>
+      </div>
     </div>
 
-    <div class="last-info">
-      <span class="name">最后一篇帖子</span>
-      <span class="time">1分钟前 作者</span>
-    </div>
   </div>
 <% end %>
