@@ -4,6 +4,7 @@ form  input,form  textarea
   outline:  none;
   padding:  2px 3px;
   margin: 2px;
+  height: 22px;
   background-color:#fff;
 }
 
@@ -26,14 +27,9 @@ form input, form select, form textarea {
 }
 
 form label {
-  background:url("/images/label.png") no-repeat scroll left top transparent;
-  color:#999999;
   display:block;
-  float:left;
   height:24px;
   line-height:22px;
-  padding-left:18px;
-  width:55px;
 }
 
 form div.input:hover label, form div.input:active label, form div.input:focus label {

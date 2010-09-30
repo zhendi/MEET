@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>MEET-属于你的精英教育</title>
-    <%= stylesheet_link_tag 'reset', 'main' %>
+    <%= stylesheet_link_tag 'reset', 'main', 'form' %>
     <%= stylesheet_link_tag 'smoothness/jquery-ui-1.8.5.custom' %>
     <%= javascript_include_tag "jquery-1.4.2.min", "rails", "jquery-ui-1.8.5.custom.min", "application" %>
     <%= csrf_meta_tag %>
@@ -39,32 +39,26 @@
           <%= render	:partial=>"/shared/user_info" %>
           <%= render	:partial=>"/shared/teacher_info" %>
         <% else %>
-          <%= render  :partial=>"/shared/login" %>
+          <%= render  :partial=>"/shared/login" %> 
         <% end %>
       </div>
-      <div id="main">
+      <div id="main" style="width:773px;margin-left:-3px;">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>
     </div>
-    <div id="footer_umv">
-      <p class="border_footer"></p>
-      <p class="footer_menu">
 
-      <a href="/help/aboutus" target="_blank">关于我们</a>|
-      <a href="/partner/jiyu.php" target="_blank">媒体寄语</a>|
-      <a href="/help/joinus" target="_blank">诚聘英才</a>|
-      <a href="/help/contactus" target="_blank">联系我们</a>|
-      <a href="/help/conditions">使用条款</a>|
-      <a href="/help/questionanswer" target="_blank">帮助中心</a>|
-      <a href="/help/sitemap" target="_blank">网站地图</a>|
-      <a href="/help/rss" target="_blank">RSS订阅</a>|
-      <a href="javascript:;" id="foot_feedback" style="color:#ffae00;">意见反馈</a>
-      </p>
-      <p class="footer_copy">MEET - 属于你的精英教育</p>
-      <p class="footer_copy">MEET 版权所有 视听许可证号：0110567 京ICP证：090644号</p> 	
+    <div id="footer" style="border:none;">
+      <div class="left">
+        <a href="/s/about.html" target="_blank" title="关于我们">关于我们</a>
+        <a href="/s/job.html" target="_blank" title="招聘">招聘</a>
+        <a href="/t/cronline.html" target="_blank" title="客服">客服</a>
+        <a href="/t/help.html" target="_blank" title="帮助">帮助</a>
+      </div>
+      <div class="right">
+        2010 MEET&nbsp;<a href="http://www.m-e-e-t.com" target="_blank">京ICP证080285号</a>
+      </div>
     </div>
-
   </body>
 </html>

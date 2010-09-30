@@ -1,22 +1,24 @@
 <% content_for :login_user do %>
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <div id="name">
-      <%= f.label "电邮" %>
-      <%= f.text_field :email, :size=>18 %>
-
+    <div>
+      <%= f.label "email", :class=>"tar left", :style=>"width:55px;margin-top:35px;" %>
+      <%= f.text_field :email, :class=>"left mt30 mb10", :size=>22 %>
     </div>
-    <div id="name">
-      <%= f.label "密码" %>
-      <%= f.password_field :password, :size=>18 %>
 
+    <div>
+      <%= f.label "password", :class=>"tar left", :style=>"width:55px;margin-top:5px;" %>
+      <%= f.password_field :password, :style=>"margin-top:5px", :size=>22 %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
-      <div id="name">
-        <%= f.check_box :remember_me %> <%= f.label "记住我" %>
+      <div style="clear:both;margin-left:55px;">
+        <%= f.check_box :remember_me, :class=>"left" %>  
+        <%= f.label :remember_me %>
       </div>
     <% end -%>
 
-    <p><%= f.submit "登录" %></p>
+    <div class="field" style="clear:both;margin-left:55px;">
+        <%= f.submit "登录" %> 
+    </div>
   <% end %>
 <% end %>

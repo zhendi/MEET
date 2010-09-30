@@ -21,6 +21,13 @@ div {
   overflow:auto;
 }
 
+.tar {
+  text-align: right;
+}
+
+.tal {
+  text-align: left;
+}
 
 .right {
   float: right;
@@ -28,6 +35,14 @@ div {
 
 .left {
   float: left;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
 }
 
 /* 头部定义 */
@@ -42,15 +57,15 @@ div {
 }
 
 #divHeader .login_panel{
-clear: right;
-color: #CCC;
-float: right;
-margin: 1px 12px;
+  clear: right;
+  color: #CCC;
+  float: right;
+  margin: 1px 12px;
 }
 
 #divHeader .login_panel a {
-color: #EEE;
-font-family: Arial;
+  color: #EEE;
+  font-family: Arial;
 }
 
 #divHeader .login_panel a:hover {
@@ -61,12 +76,11 @@ font-family: Arial;
 /* 主内容 */
 
 #divall {
-background: #EFEFEF;
-border-right: 1px solid #BBB;
-margin: 0px auto;
-overflow: hidden;
-width: 1004px;
-
+  background: #EFEFEF;
+  border-right: 1px solid #BBB;
+  margin: 0px auto;
+  overflow: hidden;
+  width: 1004px;
 }
 
 #divall #sidebar
@@ -76,39 +90,33 @@ width: 1004px;
 }
 
 #divall #sidebar .m1t {
-background: #D01E3B;
-border-bottom: 5px solid #E88F9D;
-height: 10px;
-overflow: hidden;
-
-}
-
-
-#main{
-  float: left;
-  margin-left: 15px;
-  width: 850px;
+  background: #D01E3B;
+  border-bottom: 5px solid #E88F9D;
+  height: 10px;
   overflow: hidden;
 }
 
-.field{
-  clear:both;
+#divall .logindiv {
+  padding:15px 0 0 15px;
+}
+
+#main{
+  background: white;
+  border-bottom: 1px solid #EEE;
+  border-left: 1px solid #DDD;
+  border-top: 1px solid #DDD;
+  clear: right;
+  float: right;
+  min-height: 320px;
 }
 /*页脚开始*/
 
-#footer_umv{ 
-  width:100%; 
-  margin-top:5px; 
-  text-align:center; 
-  height:auto; 
-  padding:0 0 20px 0; 
-  background:#1B1B1B; 
-  font-size:12px;
-  float: left;
+#footer{ 
+  border-top: 1px solid #BBB;
+  height: auto;
+  margin: 0px auto;
+  overflow: hidden;
+  padding: 7px 0px 50px;
+  width: 1005px;
 }
-
-.footer_menu{ margin:0 auto; width:100%; padding:0; height:auto; line-height:30px; color:#292929;}
-.footer_copy{margin:0 auto; width:100%; padding:0; height:auto; line-height:30px; color:#666666;}
-.footer_menu a{ text-decoration:none; color:#666; padding:0 7px}
-.footer_menu a:hover{ text-decoration:none; color:#ffae00;}
 
