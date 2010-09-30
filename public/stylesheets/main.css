@@ -109,6 +109,12 @@ div {
   float: right;
   min-height: 320px;
 }
+
+#introduce {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
 /*页脚开始*/
 
 #footer{ 
