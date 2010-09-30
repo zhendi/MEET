@@ -33,20 +33,7 @@
       <% end %>
     </div>
     <div id="divall">
-      <div id="sidebar">
-        <div class="m1t"></div>
-        <% if user_signed_in? %>
-          <%= render	:partial=>"/shared/user_info" %>
-          <%= render	:partial=>"/shared/teacher_info" %>
-        <% else %>
-          <%= render  :partial=>"/shared/login" %> 
-        <% end %>
-      </div>
-      <div id="main" style="width:773px;margin-left:-3px;">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
+    <%= yield %>
     </div>
 
     <div id="footer" style="border:none;">
