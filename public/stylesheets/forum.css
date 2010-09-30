@@ -122,14 +122,6 @@
   width: 700px;
 }
 
-.right {
-  float: right;
-}
-
-.left {
-  float: left;
-}
-
 .topic-entry .info .name {
   font-size: 14px;
 }
@@ -154,7 +146,32 @@ width:46px;
 text-align:center;
 }
 
+
 #topic-question .main{
   float: left;
   width: 700px;
+}
+
+#topic-question .main .title {
+background:none repeat scroll 0 0 #E0EAF1;
+font-size:18px;
+line-height:30px;
+padding:0 10px;
+}
+
+#topic-question .main .content {
+font-size:13px;
+line-height:18px;
+padding:0 10px;
+margin-top: 10px;
+}
+
+#topic-question .main .footer .owner {
+height:45px;
+padding-left:5px;
+padding-top:5px;
+text-align:left;
+vertical-align:top;
+width:200px;
+background:#E0EAF1;
 }

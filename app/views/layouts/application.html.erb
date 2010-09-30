@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MEET</title>
-    <%= stylesheet_link_tag :all,:cache=>true %>
+    <title>MEET-属于你的精英教育</title>
+    <%= stylesheet_link_tag 'reset', 'main' %>
     <%= stylesheet_link_tag 'smoothness/jquery-ui-1.8.5.custom' %>
     <%= javascript_include_tag "jquery-1.4.2.min", "rails", "jquery-ui-1.8.5.custom.min", "application" %>
     <%= csrf_meta_tag %>
     <%= yield :header %>
   </head>
-  <body id="mainBody">
+  <body>
     <div id="divHeader">
-      <span class="login_header_logo">
-        <a href="/" title="MEET-属于你的精英教育" 
-          class="logo_umv_black_a">MEET-属于你的精英教育</a>
-      </span>
-      <div class="login_header_umv">
+      <div style="width:230px;padding:3px;" class="left">
+        <div class="logo">
+          <%= link_to image_tag("logo.gif"), root_path %> 
+        </div>
+      </div>
+      <div class="login_panel">
         <% if user_signed_in?  %>
           <%= link_to current_user.profile.name, profile_path(current_user.profile) %>
           |
@@ -25,15 +26,21 @@
           <%= link_to	"注册", new_user_registration_path %>
         <% end %>
       </div> 
-
-      <div id="headerMenu">
-        <%= render  "/shared/nav_menu" %>
-      </div>
+      <% if user_signed_in?  %>
+        <div id="headerMenu">
+          <%= render  "/shared/nav_menu" %>
+        </div>
+      <% end %>
     </div>
     <div id="divall">
-      <div id="sider_a">
-        <%= render	:partial=>"/shared/user_info" %>
-        <%= render	:partial=>"/shared/teacher_info" %>
+      <div id="sidebar">
+        <div class="m1t"></div>
+        <% if user_signed_in? %>
+          <%= render	:partial=>"/shared/user_info" %>
+          <%= render	:partial=>"/shared/teacher_info" %>
+        <% else %>
+          <%= render  :partial=>"/shared/login" %>
+        <% end %>
       </div>
       <div id="main">
         <p class="notice"><%= notice %></p>

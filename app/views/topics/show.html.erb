@@ -3,23 +3,21 @@
     <span class="count-post">已解决<br/>问题</span>
   </div>
   <div class="main">
-       <span class="edit">
+       <span class="right">
       <%= link_to "编辑", edit_forum_topic_path(@forum, @topic) %>
       <%= link_to "删除", forum_topic_path(@forum, @topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
     </span>
-    <div class="header">
-      <span class="time">发表于 xxx</span>
-      <span class="author">1分钟前 作者</span>
-      <span class=""></span>
-    </div>
 
+    <div class="title">
+      <%= @topic.name %>
+    </div>
     <div class="content">
-      <%= @topic.content %>
+        <%= @topic.content %> 
     </div>
 
     <div class="footer">
       <span class="name">最后一篇帖子</span>
-      <span class="time"><%= date_diffs(@topic.created_at) %>作者</span>
+      <div class="owner"><%= date_diffs(@topic.created_at) %><br/>作者</div>
     </div>
 
   </div>
