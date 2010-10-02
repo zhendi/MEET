@@ -10,8 +10,12 @@
 	</ul>
 </div>
 
-<div id="login_panel">
-	<%= link_to	"登录", new_user_session_path %>
-	|
-	<%= link_to	"注册", new_user_registration_path %>
+<div id="info-panel">
+	<ul>
+		<li><%= link_to	"邀请", new_user_session_path %></li>
+		<li class="t_bar"></li>
+		<li><%= link_to	"设置", profile_path(current_user) %></li>
+		<li class="t_bar"></li>
+		<li><%= link_to	"退出", destroy_user_session_path %></li>
+	</ul>
 </div> 

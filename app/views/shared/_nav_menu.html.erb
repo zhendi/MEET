@@ -1,4 +1,11 @@
-<%= link_to	'课程', courses_path %>
-<a href="">教师</a>
-<%= link_to	"论坛", forums_path %>
-<%= link_to '博客', blogs_path %>
+<li class="t_title"><%= link_to	'课程', courses_path, :class=>"t_link" %></li>
+<li class="t_bar"></li>
+
+<li class="t_title"><a href="", class="t_link">教师</a></li>
+<li class="t_bar"></li>
+
+<li class="t_title"><%= link_to	"论坛", forums_path, :class=>"t_link" %></li>
+<li class="t_bar"></li>
+
+<li class="t_title"><%= link_to '博客', blogs_path, :class=>"t_link" %></li>
+<li class="t_bar"></li>

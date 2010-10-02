@@ -36,7 +36,87 @@ Purpose of the stylesheet follows.
 
 #app-menu{
   margin-top:16px;
-  width:200px;
+  width:400px;
   float:left;
+}
+
+#app-menu ul, #app-menu ul li, #info-panel ul, #info-panel ul li {
+  list-style:none outside none;
+}
+
+#app-menu li a{
+  color:#FFFFFF;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:bold;
+  height:20px;
+  line-height:20px;
+  text-align:center;
+  text-decoration:none;
+  width:61px;
+}
+
+#app-menu ul li.t_title {
+  float:left;
+  height:20px;
+  line-height:20px;
+  position:relative;
+  width:61px;
+  z-index:100100;
+}
+
+#app-menu a.t_link {
+  color:#FFFFFF;
+  cursor:pointer;
+  display:block;
+  font-size:14px;
+  font-weight:bold;
+  height:20px;
+  line-height:20px;
+  text-align:center;
+  text-decoration:none;
+  width:61px;
+}
+
+#app-menu ul li.t_bar {
+  background:url("/images/home_sprite_06.gif") no-repeat scroll 0 -830px transparent;
+  float:left;
+  height:20px;
+  width:1px;
+}
+
+#info-panel {
+  float: right;
+  margin-right: 20px;
+}
+
+#info-panel ul li{
+  float:left;
+  height:20px;
+  line-height:20px;
+  position:relative;
+  z-index:100100;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+#info-panel li a{
+  color:#EEEEEE;
+  cursor:pointer;
+  font-size:12px;
+  height:20px;
+  line-height:20px;
+  text-align:center;
+  text-decoration:none;
+}
+
+#info-panel li a:hover {
+  color: #FFFFFF;
+}
+
+#info-panel ul li.t_bar {
+background:url("/images/home_sprite_06.gif") no-repeat scroll 0 -855px transparent;
+height:29px;
+width:1px;
 }
 
