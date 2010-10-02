@@ -61,7 +61,13 @@ div {
   float: left;
 }
 
-#divall #sidebar .m1t {
+#divall #sidebar_1
+{
+  width: 160px;
+  float: left;
+}
+
+.m1t {
   background: #D01E3B;
   border-bottom: 5px solid #E88F9D;
   height: 10px;

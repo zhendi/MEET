@@ -38,6 +38,7 @@ Purpose of the stylesheet follows.
   margin-top:16px;
   width:400px;
   float:left;
+  margin-left: 10px;
 }
 
 #app-menu ul, #app-menu ul li, #info-panel ul, #info-panel ul li {
@@ -115,8 +116,8 @@ Purpose of the stylesheet follows.
 }
 
 #info-panel ul li.t_bar {
-background:url("/images/home_sprite_06.gif") no-repeat scroll 0 -855px transparent;
-height:29px;
-width:1px;
+  background:url("/images/home_sprite_06.gif") no-repeat scroll 0 -855px transparent;
+  height:29px;
+  width:1px;
 }
 
