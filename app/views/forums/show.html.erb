@@ -23,7 +23,7 @@
           Tags: 大家一起读原版 Justice
         </span>
         <span class="right">
-          <%= date_diffs(topic.created_at) %>
+          <%= time_ago_in_words(topic.created_at) %>以前
           发帖人: <%= topic.id %>
           金币: <%= topic.gold %> <span class="center"><%= image_tag "ico_money.gif" %></span>
           回答: <%= topic.forum_posts.count %>

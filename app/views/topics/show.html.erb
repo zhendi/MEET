@@ -17,7 +17,7 @@
 
     <div class="footer">
       <span class="name">最后一篇帖子</span>
-      <div class="owner"><%= date_diffs(@topic.created_at) %><br/>作者</div>
+      <div class="owner"><%= time_ago_in_words(@topic.created_at) %>以前<br/>作者</div>
     </div>
 
   </div>

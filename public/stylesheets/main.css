@@ -45,34 +45,6 @@ div {
   margin-bottom: 10px;
 }
 
-/* 头部定义 */
-#divHeader {
-  background: #D01E3B url(http://img1.kaixin001.com.cn/i/n_bg_r.gif) repeat-x 50% 0%;
-  margin: 0px auto;
-  width: 1005px;
-}
-
-#divHeader .logo{
-  padding-left:55px;
-}
-
-#divHeader .login_panel{
-  clear: right;
-  color: #CCC;
-  float: right;
-  margin: 1px 12px;
-}
-
-#divHeader .login_panel a {
-  color: #EEE;
-  font-family: Arial;
-}
-
-#divHeader .login_panel a:hover {
-  color: #fff;
-  font-family: Arial;
-}
-
 /* 主内容 */
 
 #divall {

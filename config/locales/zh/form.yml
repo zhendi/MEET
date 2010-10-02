@@ -1,0 +1,11 @@
+"zh":
+    helpers:
+        submit:
+            create: "新建{{model}}"
+            update: "更新{{model}}"
+
+    activerecord:
+        attributes:
+                user:
+                    email: "电邮"
+                    password: "密码"

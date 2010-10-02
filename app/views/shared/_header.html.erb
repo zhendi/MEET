@@ -1,0 +1,17 @@
+<div style="padding:3px;" class="left">
+	<div style="padding-left:18px">
+		<%= link_to image_tag("logo.gif"), root_path %> 
+	</div>
+</div>
+
+<div id="app-menu">
+	<ul>
+		<%= render  "/shared/nav_menu" %>
+	</ul>
+</div>
+
+<div id="login_panel">
+	<%= link_to	"登录", new_user_session_path %>
+	|
+	<%= link_to	"注册", new_user_registration_path %>
+</div> 
