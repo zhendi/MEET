@@ -29,6 +29,10 @@ div {
   text-align: left;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .right {
   float: right;
 }

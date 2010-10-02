@@ -1,15 +1,19 @@
+<% content_for  :sidebar do %>
+  <%= render  "category" %>
+<% end %>
+
 <div class="forums">
   <% @forums.each do |forum| %>
 
     <div class="forum-entry">
-      <hr/>
 
       <p class="image">
       <img src="/images/forum.gif" width="30"/>
       </p>
+
       <div class="info">
         <span class="name">
-          <%= link_to forum.name, forum_path(forum) %>
+          <%= link_to forum.name, forum_path(forum), :class=>"bold" %>
           <span class="admin">
             <%= link_to "删除", forum_path(forum),:method=>:delete, :confirm=>"Are you sure to delete?" %>
             <%= link_to "编辑", edit_forum_path(forum) %>
@@ -17,7 +21,7 @@
         </span>
         <span class="description"><%= forum.description %></span>
       </div>
-     
+
       <div class="count-info">
         1/10
       </div>
@@ -37,4 +41,3 @@
   <% end %>
 </div>
 
-<%= button_to "新建板块", new_forum_path, :method=>:get %>

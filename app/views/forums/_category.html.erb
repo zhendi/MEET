@@ -1,0 +1,7 @@
+<ul>
+	<% @forums.each do |forum| %>
+		<li><%= link_to forum.name, forum_path(forum) %></li>
+	<% end %>
+</ul>
+
+<%= button_to "新建板块", new_forum_path, :method=>:get %>

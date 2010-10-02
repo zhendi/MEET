@@ -1,6 +1,5 @@
 class ForumsController < ApplicationController
   respond_to :html, :js
-  layout  "forum"
 
   def index
     @forums = Forum.find(:all)
@@ -9,9 +8,10 @@ class ForumsController < ApplicationController
   end
 
   def show
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:id])
     @topics = @forum.topics.paginate :page => params[:page], :order=>"created_at DESC"
-    
+
     respond_with(@forum)
   end
 

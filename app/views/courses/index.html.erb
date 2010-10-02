@@ -1,30 +1,28 @@
 <% content_for	:sidebar do %>
-	<%= render	:partial=>"/shared/user_info" %>
-	<%= render	:partial=>"/shared/teacher_info" %>
+  <%= render	"courses_category" %>
 <% end %>
 
 <script type="text/javascript">
-	$(function() {
-		$("#tabs").tabs();
-	});
-	</script>
-
+  $(function() {
+      $("#tabs").tabs();
+      });
+</script>
 
 <h1 id="课程列表">课程列表</h1>
 
 <div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">全部课程</a></li>
-		<li><a href="#tabs-2">热门课程</a></li>
-	</ul>
-	<div id="tabs-1">
-		<% @all_courses.each do |c| %>
-          <%= render	:partial=>"course", :locals=>{:course=>c} %>
-		<% end %>
-	  </div>
-	  <div id="tabs-2">
-		<% @rated_courses.each do |c| %>
-          <%= render	:partial=>"course", :locals=>{:course=>c} %>
-		<% end %>
-	  </div>
+  <ul>
+    <li><a href="#tabs-1">全部课程</a></li>
+    <li><a href="#tabs-2">热门课程</a></li>
+  </ul>
+  <div id="tabs-1">
+    <% @all_courses.each do |c| %>
+      <%= render	:partial=>"course", :locals=>{:course=>c} %>
+    <% end %>
+  </div>
+  <div id="tabs-2">
+    <% @rated_courses.each do |c| %>
+      <%= render	:partial=>"course", :locals=>{:course=>c} %>
+    <% end %>
+  </div>
 </div>

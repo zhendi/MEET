@@ -1,6 +1,11 @@
+<% content_for  :sidebar do %>
+  <%= render  "category" %>
+<% end %>
+
 <div class="right">
   <%= button_to	'发帖子', new_forum_topic_path(@forum), :method=>:get %>
 </div>
+
 <% @topics.each do |topic| %>
   <div class="topic-entry">
     <div class="answers">

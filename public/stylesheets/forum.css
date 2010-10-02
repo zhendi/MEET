@@ -1,28 +1,18 @@
-.center {
-
-}
-
-.forums{
-  border: 1px solid #444444;
-}
-
 .forum-entry{
-  overflow: hidden;
+  border-bottom: 1px solid #C3C3C3;
   padding-top:10px;
   padding-bottom:10px;
+  height: 68px;
+  clear: both;
 }
 
-.forum-entry:first-child hr {
-  display:none;
-} 
+.forum-entry:hover {
+  background: rgb(224,234,241);
+}
 
-.forums hr{
-  clear: both;
-  margin-left: auto; 
-  margin-bottom: 10px;
-  margin-right: auto;
-  width: 90%;
-  border: 1px solid #444444;
+.forum-entry .image {
+  float: left;
+  margin-right: 15px;
 }
 
 .forum-entry .info .name{

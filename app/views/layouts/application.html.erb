@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>MEET-属于你的精英教育</title>
-    <%= stylesheet_link_tag 'reset', 'main', 'form','header', 'smoothness/jquery-ui-1.8.5.custom' %>
+    <%= stylesheet_link_tag 'reset', 'main', 'form','header','courses','forum', 'smoothness/jquery-ui-1.8.5.custom' %>
     <%= javascript_include_tag "jquery-1.4.2.min","rails","jquery-ui-1.8.5.custom.min","application","jquery.jwplayer" %>
     <%= csrf_meta_tag %>
     <%= yield :header %>
@@ -15,6 +15,7 @@
     <div id="divall">
       <div id="sidebar_application">
         <div class="m1t"></div>
+        <%= yield :sidebar %>
       </div>
 
       <div id="main" style="width:844px;margin-left:-3px;">
