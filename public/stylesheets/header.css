@@ -45,16 +45,8 @@ Purpose of the stylesheet follows.
   list-style:none outside none;
 }
 
-#app-menu li a{
-  color:#FFFFFF;
-  cursor:pointer;
-  font-size:14px;
-  font-weight:bold;
-  height:20px;
-  line-height:20px;
-  text-align:center;
-  text-decoration:none;
-  width:61px;
+#app-menu li a:hover {
+  color: #FFFFFF;
 }
 
 #app-menu ul li.t_title {
@@ -67,7 +59,7 @@ Purpose of the stylesheet follows.
 }
 
 #app-menu a.t_link {
-  color:#FFFFFF;
+  color:#EEEEEE;
   cursor:pointer;
   display:block;
   font-size:14px;
