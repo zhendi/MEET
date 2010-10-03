@@ -59,21 +59,3 @@ Description:
   text-align:center;
 }
 
-#course-category li {
-  height: 22px;
-  padding: 6px 10px 6px 6px;
-  border-bottom: 1px solid gray;
-  width: 60%;
-  margin-left: 10%;
-}
-
-#course-category li img {
-  margin-top: 3px;
-  margin-right: 5px;
-  float: left;
-}
-
-#course-category li span {
-  float: left;
-  margin-top: 3px;
-}

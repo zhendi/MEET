@@ -1,7 +1,12 @@
-<ul id="course-category">
-	<% @category.each do |t| %>
-      <li><span><%= link_to	t.name, "" %></span></li>
-	<% end %>
+<ul class=" sidebar-list">
+  <% @category.each do |t| %>
+    <li class="cursorHand sidebar-list">
+    <span class="left">
+      <%= image_tag "college.png" %>
+      <%= link_to	t.name, "" %>
+    </span>
+    </li>
+  <% end %>
 </ul>
 
 <%= button_to "新建板块", new_forum_path, :method=>:get %>

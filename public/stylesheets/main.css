@@ -21,6 +21,10 @@ div {
   overflow:auto;
 }
 
+.cursorHand {
+  cursor:pointer;
+}
+
 .tar {
   text-align: right;
 }
@@ -67,7 +71,7 @@ div {
 
 #divall #sidebar_application
 {
-  width: 160px;
+  width: 164px;
   float: left;
 }
 
@@ -95,6 +99,19 @@ div {
 #introduce {
   margin-top: 30px;
   margin-left: 100px;
+}
+
+.sidebar-list li {
+  background:url("/images/knowledgeClassBack.png") repeat-x scroll 0 50% transparent;
+  height:22px;
+  padding:6px 10px 0;
+  width:144px;
+}
+
+.sidebar-list img {
+  margin-top: 3px;
+  margin-right: 5px;
+  float: left;
 }
 
 /*页脚开始*/

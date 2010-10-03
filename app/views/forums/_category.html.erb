@@ -1,6 +1,9 @@
-<ul>
+<ul class="sidebar-list">
 	<% @forums.each do |forum| %>
-		<li><%= link_to forum.name, forum_path(forum) %></li>
+      <li class="cursorHand">
+        <%= image_tag "college.png" %>
+        <%= link_to forum.name, forum_path(forum) %>
+      </li>
 	<% end %>
 </ul>
 
