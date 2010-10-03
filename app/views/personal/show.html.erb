@@ -3,7 +3,14 @@
 <% end %>
 
 <% content_for :sidebar do %>
-	<%= render	"/shared/user_info" %>
+	<%= render	"/shared/application" %>
 <% end %>
 
-<%= render	"personal_info" %>
+<div id="p-info-all">
+	<div id="p-info-left">
+		<%= render	"personal_info" %>
+	</div>
+	<div id="p-info-right">
+		
+	</div>
+</div>

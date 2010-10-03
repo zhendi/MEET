@@ -10,6 +10,10 @@
   padding-left: 14px;
 }
 
+#p-detail {
+  margin: 10px 5px;
+}
+
 .limg {
   background:url("/images/l120_s.gif") no-repeat scroll 0 0 transparent;
   height:140px;
@@ -17,6 +21,14 @@
   padding-top:6px;
   text-align:center;
   width:146px;
+}
+
+#p-info-left {
+  float: left;
+}
+
+#p-info-right {
+  float: left;
 }
 
 #p-detail span {

@@ -1,8 +1,8 @@
 MEET::Application.routes.draw do
   devise_for :users
 
-  resources :personal
-  
+  match "/personal" => "personal#show"
+
   resources	:blogs	do
     resources	:comments
     resources	:tags

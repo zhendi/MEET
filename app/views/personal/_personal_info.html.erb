@@ -1,7 +1,8 @@
 <div id="p-detail">
 	<div class="left">
 		<div class="limg" title="<%= current_user.profile.name %>">
-			<%= link_to	image_tag("male.gif",:width=>120, :height=>120), profile_path(current_user) %>
+			<%= link_to	image_tag("male.gif",:width=>120, :height=>120),
+				profile_path(current_user) %>
 		</div>
 	</div>
 	<ul class="left">
@@ -15,7 +16,8 @@
 		<span>性别: </span><%= current_user.profile.sex %>
 		</li>
 		<li>
-		<span>家乡: </span><%= current_user.profile.home_province %> <%= current_user.profile.home_city %>
+		<span>家乡: </span>
+		<%= current_user.profile.home_province %> <%= current_user.profile.home_city %>
 		</li>
 		<li>
 		<span>现居地: </span><%= current_user.profile.address %>

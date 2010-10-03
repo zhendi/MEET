@@ -1,3 +1,11 @@
+<% content_for :header do %>
+	<%= stylesheet_link_tag	"sns" %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render	"/shared/application" %>
+<% end %>
+
 <div class="blog-entry na">
   <div class="info">
     <h4><%= @blog.title %>
