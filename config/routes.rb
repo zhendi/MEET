@@ -1,5 +1,7 @@
 MEET::Application.routes.draw do
   devise_for :users
+
+  resources :personal
   
   resources	:blogs	do
     resources	:comments

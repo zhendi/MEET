@@ -1,0 +1,9 @@
+<% content_for :header do %>
+	<%= stylesheet_link_tag	"userInfo" %>
+<% end %>
+
+<% content_for :sidebar do %>
+	<%= render	"/shared/user_info" %>
+<% end %>
+
+<%= render	"personal_info" %>
