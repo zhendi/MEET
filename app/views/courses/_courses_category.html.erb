@@ -1,6 +1,6 @@
-<ul class=" sidebar-list">
+<ul class="sidebar-list">
   <% @category.each do |t| %>
-    <li class="cursorHand sidebar-list">
+    <li class="cursorHand">
     <span class="left">
       <%= image_tag "college.png" %>
       <%= link_to	t.name, "" %>
@@ -9,4 +9,3 @@
   <% end %>
 </ul>
 
-<%= button_to "新建板块", new_forum_path, :method=>:get %>
