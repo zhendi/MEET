@@ -54,8 +54,9 @@ Purpose of the stylesheet follows.
   height:20px;
   line-height:20px;
   position:relative;
-  width:61px;
   z-index:100100;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #app-menu a.t_link {
@@ -68,7 +69,6 @@ Purpose of the stylesheet follows.
   line-height:20px;
   text-align:center;
   text-decoration:none;
-  width:61px;
 }
 
 #app-menu ul li.t_bar {

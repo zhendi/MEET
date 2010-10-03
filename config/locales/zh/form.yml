@@ -9,3 +9,4 @@
                 user:
                     email: "电邮"
                     password: "密码"
+                    remember_me: "记住登录状态"

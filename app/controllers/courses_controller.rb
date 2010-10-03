@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   def index
     @all_courses = Course.all #.paginate :page=>5, :order=>"created_at desc"
     @rated_courses = Course.paginate  :page => params[:page]
+    @category = Category.all
   end
 
   def new

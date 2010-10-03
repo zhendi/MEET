@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100923031547) do
+ActiveRecord::Schema.define(:version => 20101003024800) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20100923031547) do
     t.string   "title"
     t.text     "memo"
     t.integer  "blog_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "course_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "courses_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

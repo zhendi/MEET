@@ -32,6 +32,8 @@ gem 'acts-as-taggable-on'
 # 在Model文件中添加数据库的注释信息，非常有用
 gem 'annotate'
 
+gem 'webrat'
+
 # Admin-Data
 gem 'admin_data'
 

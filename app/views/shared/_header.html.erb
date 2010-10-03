@@ -1,21 +1,25 @@
 <div style="padding:3px;" class="left">
-	<div style="padding-left:18px">
-		<%= link_to image_tag("logo.gif"), root_path %> 
-	</div>
+  <div style="padding-left:18px">
+    <%= link_to image_tag("logo.gif"), root_path %> 
+  </div>
 </div>
 
 <div id="app-menu">
-	<ul>
-		<%= render  "/shared/nav_menu" %>
-	</ul>
+  <ul>
+    <%= render  "/shared/nav_menu" %>
+  </ul>
 </div>
 
 <div id="info-panel">
-	<ul>
-		<li><%= link_to	"邀请", new_user_session_path %></li>
-		<li class="t_bar"></li>
-		<li><%= link_to	"设置", profile_path(current_user) %></li>
-		<li class="t_bar"></li>
-		<li><%= link_to	"退出", destroy_user_session_path %></li>
-	</ul>
+  <ul>
+    <li><%= link_to	"邀请", new_user_session_path %></li>
+    <li class="t_bar"></li>
+    <li><%= link_to	"我的首页", profile_path(current_user) %></li>
+    <li class="t_bar"></li>
+    <li><%= link_to	"客服", new_user_session_path %></li>
+    <li class="t_bar"></li>
+    <li><%= link_to	"常见问题", profile_path(current_user) %></li>
+    <li class="t_bar"></li>
+    <li><%= link_to	"退出", destroy_user_session_path %></li>
+  </ul>
 </div> 

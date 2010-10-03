@@ -1,6 +1,6 @@
 <ul id="course-category">
-	<% %w(大学英语四级 大学英语六级 研究生英语 博士生英语).each do |t| %>
-		<li><%= image_tag	"cai.gif" %><span><%= link_to	t, "" %></span></li>
+	<% @category.each do |t| %>
+      <li><span><%= link_to	t.name, "" %></span></li>
 	<% end %>
 </ul>
 

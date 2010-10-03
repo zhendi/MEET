@@ -1,22 +1,22 @@
 <div style="width:230px;padding:3px;" class="left">
-	<div class="logo">
-		<%= link_to image_tag("logo.gif"), root_path %> 
-	</div>
+  <div class="logo">
+    <%= link_to image_tag("logo.gif"), root_path %> 
+  </div>
 </div>
 <div class="login_panel">
-	<% if user_signed_in?  %>
-		<%= link_to current_user.profile.name, profile_path(current_user.profile) %>
-		|
-		<%= link_to "登出", destroy_user_session_path %>
-	<% else %>
-		<%= link_to	"登录", new_user_session_path %>
-		|
-		<%= link_to	"注册", new_user_registration_path %>
-	<% end %>
+  <%= link_to	"注册", new_user_registration_path %>
+  |
+  <%= link_to	"登录", new_user_session_path %>
+  |
+  <%= link_to	"客服", new_user_registration_path %>
+  |	
+  <%= link_to	"建议", new_user_registration_path %>
+  |
+  <%= link_to	"帮助", new_user_registration_path %>
 </div> 
 <% if user_signed_in?  %>
-	<div id="headerMenu">
-		<%= render  "/shared/nav_menu" %>
-	</div>
+  <div id="headerMenu">
+    <%= render  "/shared/nav_menu" %>
+  </div>
 <% end %>
 
