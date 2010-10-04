@@ -1,16 +1,19 @@
-<h2>Your Friends</h2>      
-<ul>      
-	<% for friendship in current_user.friendships %>      
-		<li>
-		<%= friendship.friend.email %> (<%= link_to "remove", friendship, :method => :delete %>)
-		</li>      
-	<% end %> 
-</ul> 
+<div id="你的好友" style="height:160px">
+  <h2 class="blue-title">Your Friends</h2>  
+  <ul>      
+    <% for friendship in current_user.friendships %>      
+      <li>
+      <%= friendship.friend.email %> (<%= link_to "remove", friendship, :method => :delete %>)
+      </li>      
+    <% end %> 
+  </ul> 
 
-<h2>Users Who Have Befriended You</h2> 
-<ul> 
-	<% for user in current_user.inverse_friends %> 
-		<li><%= user.username %></li> 
-	<% end %> 
-</ul> 
-
+  <!--
+  <h2>Users Who Have Befriended You</h2> 
+  <ul> 
+    <% for user in current_user.inverse_friends %> 
+      <li><%= user.username %></li> 
+    <% end %> 
+  </ul> 
+  -->
+</div>

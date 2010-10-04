@@ -1,32 +1,32 @@
 <div id="p-detail">
-	<div class="left">
-		<div class="limg" title="<%= current_user.profile.name %>">
-			<%= link_to	image_tag("male.gif",:width=>120, :height=>120),
-				profile_path(current_user) %>
-		</div>
-	</div>
-	<ul class="left">
-		<li>
-		<span>英文姓名: </span><%= current_user.profile.english_name %>
-		</li>
-		<li>
-		<span>中文姓名: </span><%= current_user.profile.name %>
-		</li>
-		<li>
-		<span>性别: </span><%= current_user.profile.sex %>
-		</li>
-		<li>
-		<span>家乡: </span>
-		<%= current_user.profile.home_province %> <%= current_user.profile.home_city %>
-		</li>
-		<li>
-		<span>现居地: </span><%= current_user.profile.address %>
-		</li>
-		<li>
-		<span>金币: </span><%= current_user.gold %> <%= image_tag	"ico_money.gif" %>
-		</li>
-		<li>
-		<span>积分: </span><%= current_user.score %>
-		</li>
-	</div>
+  <div class="left">
+    <div class="limg" title="<%= current_user.profile.name %>">
+      <%= link_to	image_tag("male.gif",:width=>120, :height=>120),
+        profile_path(current_user) %>
+      </div>
+    </div>
+    <ul class="left">
+      <li>
+      <span>英文姓名: </span><%= current_user.profile.english_name %>
+      </li>
+      <li>
+      <span>中文姓名: </span><%= current_user.profile.name %>
+      </li>
+      <li>
+      <span>性别: </span><%= current_user.profile.sex %>
+      </li>
+      <li>
+      <span>家乡: </span>
+      <%= current_user.profile.home_province %> <%= current_user.profile.home_city %>
+      </li>
+      <li>
+      <span>现居地: </span><%= current_user.profile.address %>
+      </li>
+      <li>
+      <span>金币: </span><%= current_user.gold %> <%= image_tag	"ico_money.gif" %>
+      </li>
+      <li>
+      <span>积分: </span><%= current_user.score %>
+      </li>
+    </ul>
 </div>

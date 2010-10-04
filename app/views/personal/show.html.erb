@@ -1,16 +1,24 @@
 <% content_for :header do %>
-	<%= stylesheet_link_tag	"userInfo" %>
+  <%= stylesheet_link_tag	"userInfo" %>
 <% end %>
 
 <% content_for :sidebar do %>
-	<%= render	"/shared/application" %>
+  <%= render	"/shared/application" %>
 <% end %>
 
 <div id="p-info-all">
-	<div id="p-info-left" class="left">
-		<%= render	"personal_info" %>
-	</div>
-	<div id="p-info-right" class="left">
-		<%= render  "friends" %>
-	</div>
+  <div id="p-info-left" class="left" style="width:600px;margin-left:5px;margin-right:5px;border-right:1px solid #DDDDDD;">
+    <%= render	"personal_info" %>
+    <%= render  "promotional" %>
+    <%= render  "message_center" %>
+    <%= render  "network_activity" %>
+    <%= render  "message_board" %>
+  </div>
+
+  <div id="p-info-right" class="left" style="width:229px;">
+    <%= render  "recent_visits" %>
+    <%= render  "friends" %>
+    <%= render  "friends_birthday" %>
+    <%= render  "added_groups" %>
+  </div>
 </div>
