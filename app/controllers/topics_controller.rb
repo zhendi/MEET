@@ -1,8 +1,8 @@
 class TopicsController < ApplicationController
   respond_to :html, :js
-  layout "forum"
 
   def index
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:forum_id])
     @topics = @forum.topics
 
@@ -10,11 +10,13 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.build()
   end
 
   def show
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:id])
 
@@ -22,6 +24,7 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:id])
 

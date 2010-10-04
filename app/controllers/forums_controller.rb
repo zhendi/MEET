@@ -16,6 +16,7 @@ class ForumsController < ApplicationController
   end
 
   def new
+    @forums = Forum.find(:all)
     @forum = Forum.new()
     respond_with(@forum)
   end

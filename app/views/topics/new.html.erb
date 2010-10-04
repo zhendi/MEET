@@ -1,3 +1,7 @@
+<% content_for  :sidebar do %>
+  <%= render  "/forums/category" %>
+<% end %>
+
 <div id="new-topic">
 	<%= render	"form", :locals=>{:forum=>@forum, :topic=>@topic} %>
 </div>
