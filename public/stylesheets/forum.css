@@ -127,42 +127,51 @@
 }
 
 #topic-question .sidebar .count-post {
-background:none repeat scroll 0 0 #97CF2B;
-color:#FFFFFF;
-display:block;
-line-height:16px;
-margin:0 auto;
-padding:5px 0;
-width:46px;
-text-align:center;
+  background:none repeat scroll 0 0 #97CF2B;
+  color:#FFFFFF;
+  display:block;
+  line-height:16px;
+  margin:0 auto;
+  padding:5px 0;
+  width:46px;
+  text-align:center;
 }
 
 
 #topic-question .main{
   float: left;
-  width: 700px;
+  width: 780px;
 }
 
 #topic-question .main .title {
-background:none repeat scroll 0 0 #E0EAF1;
-font-size:18px;
-line-height:30px;
-padding:0 10px;
+  background:none repeat scroll 0 0 #E0EAF1;
+  font-size:18px;
+  line-height:30px;
+  padding:0 10px;
 }
 
 #topic-question .main .content {
-font-size:13px;
-line-height:18px;
-padding:0 10px;
-margin-top: 10px;
+  font-size:13px;
+  line-height:18px;
+  padding:0 10px;
+  margin-top: 10px;
 }
 
-#topic-question .main .footer .owner {
-height:45px;
-padding-left:5px;
-padding-top:5px;
-text-align:left;
-vertical-align:top;
-width:200px;
-background:#E0EAF1;
+.post-signature {
+  height:45px;
+  padding-left:5px;
+  padding-top:5px;
+  text-align:left;
+  vertical-align:top;
+  width:200px;
+}
+
+.owner {
+  background-color:#E0EAF1;
+}
+
+.user-gravatar32 {
+float:left;
+height:32px;
+width:32px;
 }

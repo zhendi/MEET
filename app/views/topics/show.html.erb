@@ -3,26 +3,34 @@
     <span class="count-post">已解决<br/>问题</span>
   </div>
   <div class="main">
-       <span class="right">
-      <%= link_to "编辑", edit_forum_topic_path(@forum, @topic) %>
-      <%= link_to "删除", forum_topic_path(@forum, @topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
-    </span>
 
     <div class="title">
       <%= @topic.name %>
+
+      <span class="right" style="font-size:12px">
+        <%= link_to "编辑", edit_forum_topic_path(@forum, @topic) %>
+        <%= link_to "删除", forum_topic_path(@forum, @topic), :method=>:delete, :confirm=>"are you sure to delete?" %>
+      </span>
     </div>
+
     <div class="content">
-        <%= @topic.content %> 
+      <%= @topic.content %> 
     </div>
 
     <div class="footer">
-      <span class="name">最后一篇帖子</span>
-      <div class="owner"><%= time_ago_in_words(@topic.created_at) %>以前<br/>作者</div>
+      <div class="post-signature owner right">
+        <span class="user-gravatar32"><%= image_tag "947.jpg",:width=>32, :height=>32 %></span>
+
+        <div class="left" style="margin-left:5px;">
+          <%= time_ago_in_words(@topic.created_at) %>ago <br/>
+          顶: <%= @topic.ding %> 踩: <%= @topic.cai %>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
 
 <div id="topic-replys">
-  
+
 </div>
