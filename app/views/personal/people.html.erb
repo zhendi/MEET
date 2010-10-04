@@ -1,0 +1,19 @@
+<% content_for :header do %>
+	<%= stylesheet_link_tag	"userInfo" %>
+<% end %>
+
+<% content_for :sidebar do %>
+	<%= render	"/shared/application" %>
+<% end %>
+
+这个是将来显示给其他用户看的，和给自己看的应该是两种不同的样式
+
+<div id="p-info-all">
+	<div id="p-info-left">
+		<%= render	"personal_info" %>
+	</div>
+	<div id="p-info-right">
+		
+	</div>
+</div>
+

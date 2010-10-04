@@ -2,6 +2,8 @@ MEET::Application.routes.draw do
   devise_for :users
 
   match "/personal" => "personal#show"
+  match "/people/:id" => "personal#people"
+  match "/people" => "personal#allusers"
 
   resources	:blogs	do
     resources	:comments
@@ -23,6 +25,7 @@ MEET::Application.routes.draw do
     end
   end
 
+  resources :friendships
   resources	:profile
   
   # You can have the root of your site routed with "root"
