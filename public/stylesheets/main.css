@@ -21,6 +21,10 @@ div {
   overflow:auto;
 }
 
+.notready {
+  text-decoration : line-through;
+}
+
 .cursorHand {
   cursor:pointer;
 }

@@ -12,13 +12,13 @@
 
 <div id="info-panel">
   <ul>
-    <li><%= link_to	"邀请", new_user_session_path %></li>
+    <li class="notready"><%= link_to	"邀请", new_user_session_path %></li>
     <li class="t_bar"></li>
     <li><%= link_to	"我的首页", personal_path() %></li>
     <li class="t_bar"></li>
-    <li><%= link_to	"客服", new_user_session_path %></li>
+    <li class="notready"><%= link_to	"客服", new_user_session_path %></li>
     <li class="t_bar"></li>
-    <li><%= link_to	"常见问题", profile_path(current_user) %></li>
+    <li class="notready"><%= link_to	"常见问题", profile_path(current_user) %></li>
     <li class="t_bar"></li>
     <li><%= link_to	"退出", destroy_user_session_path %></li>
   </ul>
