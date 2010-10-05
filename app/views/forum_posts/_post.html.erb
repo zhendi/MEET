@@ -14,7 +14,7 @@
       <%= post.content %> 
 
       <span class="right" style="font-size:12px">
-        <%= link_to "编辑", "" %>
+        <%= link_to "编辑", edit_topic_forum_post_path(post.topic, post), :remote=>true %>
         <%= link_to "删除", topic_forum_post_path(post.topic, post), :method=>:delete, :remote=>true, :confirm=>"are you sure to delete?" %>
       </span>
     </div>

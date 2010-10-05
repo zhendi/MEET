@@ -13,12 +13,19 @@ class ForumPostsController < ApplicationController
     end
   end
 
-   def destroy
-     @topic = Topic.find(params[:topic_id])
-     @forum_post = @topic.forum_posts.find(params[:id])
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @forum_post = @topic.forum_posts.find(params[:id])
 
-     @forum_post.destroy
+    @forum_post.destroy
 
-     respond_with(@forum_post)
-   end
+    respond_with(@forum_post)
+  end
+
+  def edit
+    @topic = Topic.find(params[:topic_id])
+    @forum_post = @topic.forum_posts.find(params[:id])
+
+    respond_with(@forum_post) 
+  end
 end
