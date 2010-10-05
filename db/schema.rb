@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101005025505) do
+ActiveRecord::Schema.define(:version => 20101005041445) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(:version => 20101005025505) do
     t.integer  "gold",                               :default => 0
     t.integer  "score",                              :default => 0
     t.integer  "role_id"
+    t.integer  "answers",                            :default => 0
   end
 
 end
