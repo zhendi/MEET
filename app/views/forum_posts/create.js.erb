@@ -1,0 +1,3 @@
+$("#topic-replys").append("<%= escape_javascript(render :partial=>"/forum_posts/post", :locals=>{:post=>@forum_post}) %>");
+$("#answers_count").html(<%= @forum_post.topic.forum_posts.count %>)
+$("#forum_post_content").val("");

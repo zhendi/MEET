@@ -24,7 +24,6 @@
     <div class="footer">
       <div class="post-signature owner right">
         <span class="user-gravatar32"><%= image_tag "947.jpg",:width=>32, :height=>32 %></span>
-
         <div class="left" style="margin-left:5px;">
           <%= time_ago_in_words(@topic.created_at) %>ago <br/>
           金币: <%= @topic.user.gold %> 回答: <%= @topic.user.answers %>
@@ -35,6 +34,26 @@
   </div>
 </div>
 
-<div id="topic-replys">
+<div id="answers-header">
+  <div id="subheader">
+    <h2><span id="answers_count"><%= @topic.forum_posts.count %></span> Answers</h2>
+  </div>
+</div>
 
+<div id="topic-replys">
+  <% @topic.forum_posts.each do |post|%>
+    <%= render  :partial=>"/forum_posts/post", :locals=>{:post=>post} %>
+  <% end %>
+</div>
+
+<div id="add-reply">
+  <%= form_for  [@topic, @topic.forum_posts.build], :remote=>true do |f| %>
+    <div class="field">
+      <%= f.text_area :content, {:rows=>5, :cols=>80} %> 
+    </div>
+
+    <div class="field">
+      <%= f.submit %>
+    </div>
+  <% end %>
 </div>

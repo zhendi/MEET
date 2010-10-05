@@ -1,0 +1,33 @@
+<div class="forum-post" id="forum_post_<%= post.id %>">
+  <div class="sidebar">
+    <div class="vote">
+      <%= image_tag "vote-up.png", :width=>40, :height=>25, :class=>"vote-up" %>
+      <span id="ans_1729" class="vote-count-post">
+        0
+      </span>
+      <%= image_tag "vote-down.png", :width=>40, :height=>25, :class=>"vote-down" %>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="content">
+      <%= post.content %> 
+
+      <span class="right" style="font-size:12px">
+        <%= link_to "编辑", "" %>
+        <%= link_to "删除", topic_forum_post_path(post.topic, post), :method=>:delete, :remote=>true, :confirm=>"are you sure to delete?" %>
+      </span>
+    </div>
+
+    <div class="footer">
+      <div class="post-signature right">
+        <span class="user-gravatar32"><%= image_tag "947.jpg",:width=>32, :height=>32 %></span>
+        <div class="left" style="margin-left:5px;">
+          <%= time_ago_in_words(@topic.created_at) %>ago <br/>
+          金币: <%= @topic.user.gold %> 回答: <%= @topic.user.answers %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

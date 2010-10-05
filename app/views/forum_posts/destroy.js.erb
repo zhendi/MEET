@@ -1,0 +1,2 @@
+$("#forum_post_<%= @forum_post.id %>").fadeOut("slow");
+$("#answers_count").html(<%= @forum_post.topic.forum_posts.count %>)

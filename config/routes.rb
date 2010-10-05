@@ -18,16 +18,18 @@ MEET::Application.routes.draw do
       get "study_course"
     end
   end
- 
+
   resources :forums do
-    resources :topics do
-      resources :forum_posts
-    end
+    resources :topics
+  end
+
+  resources :topics do
+    resources :forum_posts
   end
 
   resources :friendships
   resources	:profile
-  
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "courses#index"

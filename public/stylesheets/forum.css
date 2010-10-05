@@ -123,7 +123,6 @@
   vertical-align:top;
   width:60px;
   float: left;
-
 }
 
 #topic-question .sidebar .count-post {
@@ -171,7 +170,51 @@
 }
 
 .user-gravatar32 {
-float:left;
-height:32px;
-width:32px;
+  float:left;
+  height:32px;
+  width:32px;
 }
+
+.vote {
+  text-align:center;
+  vertical-align:middle;
+  width:50px;
+}
+
+.vote img {
+  cursor:pointer;
+}
+
+.vote-up, .vote-down {
+  display:block;
+  margin:0 auto;
+}
+
+.forum-post {
+  border-bottom:1px solid #AAAAAA;
+  margin: 10px 5px;
+}
+
+.forum-post .sidebar{
+  vertical-align:top;
+  width:60px;
+  float: left;
+}
+
+.forum-post .main .content {
+  font-size:13px;
+  line-height:18px;
+  padding:0 10px;
+}
+
+#answers-header {
+  margin-bottom:5px;
+  margin-top:10px;
+}
+
+#subheader {
+  border-bottom:1px solid #666666;
+  clear:both;
+  height:34px;
+}
+
