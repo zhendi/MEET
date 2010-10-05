@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101005041445) do
+ActiveRecord::Schema.define(:version => 20101005053418) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(:version => 20101005041445) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "answers_count",     :default => 0
+    t.integer  "views",             :default => 0
   end
 
   create_table "users", :force => true do |t|

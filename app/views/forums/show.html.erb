@@ -9,11 +9,11 @@
 <% @topics.each do |topic| %>
   <div class="topic-entry">
     <div class="answers">
-      <span>1</span>
+      <span><%= topic.forum_posts.size %></span>
       <em>Answers</em>
     </div>
     <div class="views">
-      <span>2</span>
+      <span><%= topic.views %></span>
       <em>&nbsp;&nbsp;Views&nbsp;&nbsp;</em>
     </div>
     <div class="info">

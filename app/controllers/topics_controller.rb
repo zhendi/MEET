@@ -19,6 +19,8 @@ class TopicsController < ApplicationController
     @forums = Forum.find(:all)
     @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:id])
+    @topic.views = @topic.views + 1
+    @topic.save
 
     respond_with(@forum, @topic)
   end
