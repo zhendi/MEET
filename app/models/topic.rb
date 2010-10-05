@@ -1,9 +1,12 @@
 class Topic < ActiveRecord::Base
-  has_many  :forum_posts
+  has_many  :forum_posts, :dependent => :destroy
   belongs_to  :forum
+  belongs_to  :user
+
   acts_as_taggable
 
 end
+
 
 # == Schema Information
 #
@@ -20,5 +23,7 @@ end
 #  gold              :integer
 #  created_at        :datetime
 #  updated_at        :datetime
+#  user_id           :integer
+#  answers_count     :integer         default(0)
 #
 

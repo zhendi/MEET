@@ -7,6 +7,7 @@ class TopicTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: topics
@@ -22,5 +23,7 @@ end
 #  gold              :integer
 #  created_at        :datetime
 #  updated_at        :datetime
+#  user_id           :integer
+#  answers_count     :integer         default(0)
 #
 

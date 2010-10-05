@@ -23,7 +23,7 @@
 
         <div class="left" style="margin-left:5px;">
           <%= time_ago_in_words(@topic.created_at) %>ago <br/>
-          金币: <%= @topic.ding %> 踩: <%= @topic.cai %>
+          金币: <%= @topic.user.gold %> 回答: <%= @topic.user.answers_count %>
         </div>
       </div>
     </div>
