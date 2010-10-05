@@ -29,8 +29,8 @@
         </span>
         <span class="right">
           <%= time_ago_in_words(topic.created_at) %>以前
-          发帖人: <%= topic.id %>
-          金币: <%= topic.gold %> <span class="center"><%= image_tag "ico_money.gif" %></span>
+          发帖人: <%= link_to topic.user.profile.name, profile_path(topic.user)%>
+          金币: <%= topic.gold %> <%= image_tag "ico_money.gif" %>
           回答: <%= topic.forum_posts.count %>
         </span>
       </div>
