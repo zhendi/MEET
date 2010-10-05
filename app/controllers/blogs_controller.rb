@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(params[:blog])
+    @blog.user = current_user
     respond_to	do |f|
       if @blog.save
         f.html	{redirect_to  :action=>:index, :notice=>"create succssed"}
@@ -26,6 +27,9 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @blog.readcount = @blog.readcount + 1
+    @blog.save()
+
     respond_with(@blog)
   end
 

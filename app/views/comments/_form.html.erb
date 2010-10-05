@@ -1,11 +1,11 @@
 <%= form_for([@blog, Comment.new], :remote=>true) do |f| %>
+  <!--
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title,:size=>50 %>
   </div>
-
+  -->
   <div class="field">
-    <%= f.label :memo %>
     <%= f.text_area :memo, :cols=>80, :rows=>3 %>
   </div>
 

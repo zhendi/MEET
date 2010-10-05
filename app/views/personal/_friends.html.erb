@@ -3,7 +3,8 @@
   <ul>      
     <% for friendship in current_user.friendships %>      
       <li>
-      <%= friendship.friend.email %> (<%= link_to "remove", friendship, :method => :delete %>)
+      <%= link_to friendship.friend.profile.name, profile_path(friendship.friend) %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
       </li>      
     <% end %> 
   </ul> 
@@ -12,7 +13,7 @@
   <h2>Users Who Have Befriended You</h2> 
   <ul> 
     <% for user in current_user.inverse_friends %> 
-      <li><%= user.username %></li> 
+      <li><%= link_to user.profile.name, profile_path(user) %></li> 
     <% end %> 
   </ul> 
   -->
