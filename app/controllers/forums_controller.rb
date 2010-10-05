@@ -18,10 +18,12 @@ class ForumsController < ApplicationController
   def new
     @forums = Forum.find(:all)
     @forum = Forum.new()
+    
     respond_with(@forum)
   end
 
   def create
+    @forums = Forum.find(:all)
     @forum = Forum.new(params[:forum])
     respond_to do |wants|
       if @forum.save
@@ -33,11 +35,13 @@ class ForumsController < ApplicationController
   end
 
   def edit
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:id])
     respond_with(@forum)
   end
 
   def update
+    @forums = Forum.find(:all)
     @forum = Forum.find(params[:id])
     respond_to do |wants|
       if @forum.update_attributes(params[:forum])
