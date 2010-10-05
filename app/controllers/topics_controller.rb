@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   def index
     @forums = Forum.find(:all)
     @forum = Forum.find(params[:forum_id])
-    @topics = @forum.topics
+    @topics = @forum.topics.paginate(:page => params[:page], :per_page=>8, :order => 'updated_at DESC')
 
     respond_with(@topics)
   end

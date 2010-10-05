@@ -10,7 +10,7 @@ class ForumsController < ApplicationController
   def show
     @forums = Forum.find(:all)
     @forum = Forum.find(params[:id])
-    @topics = @forum.topics.paginate :page => params[:page], :order=>"created_at DESC"
+    @topics = @forum.topics.paginate(:page => params[:page], :per_page=>8, :order=>"updated_at DESC")
 
     respond_with(@forum)
   end
@@ -18,7 +18,7 @@ class ForumsController < ApplicationController
   def new
     @forums = Forum.find(:all)
     @forum = Forum.new()
-    
+
     respond_with(@forum)
   end
 
