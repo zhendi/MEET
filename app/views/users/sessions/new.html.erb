@@ -3,19 +3,19 @@
   <div class="logindiv">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div>
-        <%= f.label "email", :class=>"tar left", :style=>"width:55px;margin-top:35px;" %>
+        <label class="tar left mt30" style="width:55px;"><%= t(:label_email) %></label>
         <%= f.text_field :email, :class=>"left mt30 mb10", :size=>22 %>
       </div>
 
       <div>
-        <%= f.label "password", :class=>"tar left", :style=>"width:55px;margin-top:5px;" %>
+        <label class="tar left" style="width:55px;margin-top:5px;"><%= t(:label_password) %></label>
         <%= f.password_field :password, :style=>"margin-top:5px", :size=>22 %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
         <div style="clear:both;margin-left:55px;">
           <%= f.check_box :remember_me, :class=>"left" %>  
-          <%= f.label :remember_me %>
+          <label><%= t(:label_remember_me) %></label>
         </div>
       <% end -%>
 
@@ -28,7 +28,7 @@
       repeat-x;width:190px;margin:20px auto 15px 7px;height:2px;"></div>
 
     <div class="field" style="margin-left:30px">
-      尚未开通MEET账户?	
+      <%= t(:message_not_registered) %>
     </div>
     <div class="field" style="margin-left:30px">
       <%= link_to	"立即注册", new_user_registration_path %>
@@ -44,12 +44,10 @@
 
   <div class="video-introduce mt30">
     <div class="left" style="margin:20px">
-      <video height="240" width="320" controls="controls" preload="none">
-      <source src='/videos/first.mp4'  />
-      </video>      
+      <video height="270" class="player" src="http://www.tudou.com/v/AJKUTg6tcZ0/v.swf" width="320">
     </div>
     <div class="left" style="margin:20px">
-      <video height="270" class="player" poster="/images/male.gif" src="/videos/first.mp4" width="320">
+      <video height="270" class="player" src="http://www.tudou.com/v/AJKUTg6tcZ0/v.swf" width="320">
     </div>
   </div>
 </div>

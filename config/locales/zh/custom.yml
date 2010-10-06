@@ -1,0 +1,6 @@
+"zh":
+  message_not_registered: "尚未开通MEET账户？"
+
+  label_email: "电邮 :"
+  label_password: "密码 :"
+  label_remember_me: "记住登录状态"
