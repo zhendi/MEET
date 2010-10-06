@@ -3,19 +3,19 @@
   <div class="logindiv">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div>
-        <label class="tar left mt30" style="width:55px;"><%= t(:label_email) %></label>
+        <%= f.label :email, :class=>"tar left mt30", :style=>"width:55px;" %>
         <%= f.text_field :email, :class=>"left mt30 mb10", :size=>22 %>
       </div>
 
       <div>
-        <label class="tar left" style="width:55px;margin-top:5px;"><%= t(:label_password) %></label>
+        <%= f.label :password, :class=>"tar left", :style=>"width:55px;margin-top:5px;" %>
         <%= f.password_field :password, :style=>"margin-top:5px", :size=>22 %>
       </div>
 
       <% if devise_mapping.rememberable? -%>
         <div style="clear:both;margin-left:55px;">
           <%= f.check_box :remember_me, :class=>"left" %>  
-          <label><%= t(:label_remember_me) %></label>
+          <%= f.label :remember_me, :class=>"left" %>
         </div>
       <% end -%>
 
@@ -28,7 +28,7 @@
       repeat-x;width:190px;margin:20px auto 15px 7px;height:2px;"></div>
 
     <div class="field" style="margin-left:30px">
-      <%= t(:message_not_registered) %>
+      <%= t(:message_not_registered, :scope=>[:view, :users, :sessions, :new]) %>
     </div>
     <div class="field" style="margin-left:30px">
       <%= link_to	"立即注册", new_user_registration_path %>
@@ -38,11 +38,15 @@
 
 <div id="main" style="width:773px;margin-left:-3px;">
   <div id="introduce">
-    <span style="font:bold 20px '黑体'; color:#D01E3B;">我的精英教育，我喜欢！</span>
-    <div style="width:480px">使用会话(session)和viminfo，可以把你编辑环境保存下来，然后你在下次启动vim后，可以再恢复回这个环境。我们在开发项目或书写文档时，其周期不是一两天。如果你在中途退出了vim而不能恢复原先的编辑环境的话，你又要重新打开你所打开的文件，重新定义你的映射(map)、缩写 (abbreviate)，</div> 
+    <span style="font:bold 20px '黑体'; color:#D01E3B;">
+      <%= t(:title, :scope=>[:view,:users,:sessions,:new]) %>
+    </span>
+    <div style="width:480px">
+      <%= t(:description, :scope=>[:view,:users,:sessions,:new]) %>
+    </div>
   </div>
 
-  <div class="video-introduce mt30">
+  <div class="video-introduce mt30 left">
     <div class="left" style="margin:20px">
       <video height="270" class="player" src="http://www.tudou.com/v/AJKUTg6tcZ0/v.swf" width="320">
     </div>

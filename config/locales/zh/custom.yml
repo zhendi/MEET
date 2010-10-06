@@ -1,6 +1,22 @@
 "zh":
-  message_not_registered: "尚未开通MEET账户？"
+  activerecord:
+    attributes:
+      user:
+        email: "电邮 :"
+        password: "密码 :" 
+        remember_me: "请记住我！"
+        sign_in_count:  "登录次数 :"
+        current_sign_in_at: "登陆时间 :"
+        blogs_count:  "日志数量 :"
+        created_at: "创建时间 :"
+        updated_at: "更新时间 :"
+        gold: "金币 :"
+        score:  "积分 :"
+  view:
+    users:
+      sessions:
+        new:
+          message_not_registered: "尚未注册MEET账户 ?"
+          title: "我的精英教育，我喜欢！"
+          description: "使用会话(session)和viminfo，可以把你编辑环境保存下来，然后你在下次启动vim后，可以再恢复回这个环境。我们在开发项目或书写文档时，其周期不是一两天。如果你在中途退出了vim而不能恢复原先的编辑环境的话，你又要重新打开你所打开的文件，重新定义你的映射(map)、缩写 (abbreviate)，"
 
-  label_email: "电邮 :"
-  label_password: "密码 :"
-  label_remember_me: "记住登录状态"
