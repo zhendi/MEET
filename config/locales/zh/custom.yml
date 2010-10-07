@@ -1,5 +1,8 @@
 "zh":
   activerecord:
+    models:
+      user: "用户表"
+      blog: "博客表"
     attributes:
       user:
         email: "电邮 :"
@@ -12,6 +15,44 @@
         updated_at: "更新时间 :"
         gold: "金币 :"
         score:  "积分 :"
+      blog:
+        title: "标题 :"
+        summary: "摘要 :"
+        content: "内容 :"
+        ding: "顶 :"
+        cai: "踩 :"
+        readcount: "阅读次数 :"
+      comment:
+        email: "电邮 :"
+        title: "标题 :"
+        memo: "内容 :"
+        created_at: "创建日期 :"
+        updated_at: "更新时间 :"
+      course:
+        name: "课名 :"
+        description: "描述 :"
+        gold: "金币 :"
+      forum:
+        name: "论坛名 :"
+        description: "论坛描述 :"
+        priority: "优先级 :"
+      forum_post:
+        title: "标题 :"
+        content: "内容 :"
+      profile:
+        name: "中文名 :"
+        address: "地址 :"
+        mobile: "移动电话 :"
+        home_phone: "家庭电话 :"
+        age: "年龄 :"
+        sex: "性别 :"
+        created_at: "创建日期 :"
+        updated_at: "更新日期 :"
+        english_name: "英文名 :"
+        birthday: "生日 :"
+        star: "星座 :"
+        home_province: "省 :"
+        home_city: "市 :"
   view:
     users:
       sessions:
