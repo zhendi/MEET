@@ -1,14 +1,15 @@
 <% form_for [@forum, @topic] do |t| %>
-	<div class="field">
-		<%= t.label	"标题"  %>
-		<%= t.text_field :name, :size=>50 %>
-	</div>
+  <%= f.error_messages %> 
+  <div class="field">
+    <%= t.label	"标题"  %>
+    <%= t.text_field :name, :size=>50 %>
+  </div>
 
-	<div class="field">
-		<%= t.label "内容"  %>
-		<%= t.text_area	:content, :rows=>8, :cols=>80 %>
-	</div>
+  <div class="field">
+    <%= t.label "内容"  %>
+    <%= t.text_area	:content, :rows=>8, :cols=>80 %>
+  </div>
 
-	<%= t.submit %>
+  <%= t.submit %>
 <% end %>
 

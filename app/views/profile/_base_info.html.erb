@@ -1,4 +1,5 @@
 <%= form_for @profile, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %> 
   <div class="field">
     <%= f.label "中文姓名" %>
     <%= f.text_field  :name,:size=>50 %>
