@@ -16,9 +16,24 @@ Level.create(:name=>"High")
 
 Category.delete_all()
 
-cat = ["美国大学本科","美国研究生院","美国中小学教育","美国热点话题课程","留学考试准备",
-  "美国留学申请","在美国留学","找工作","职业提升","IT外包职业培训","出口业务培训","口语沟通",
-  "写作沟通","金融/财务培训","子女教育","教育游戏及其他"]
+cat = [
+  "College education(美国大学本科)",
+  "Graduate education(美国研究生院)",
+  "K12 education(美国中小学教育)",
+  "Hot topic course(美国热点话题课程)",
+  "Test prep(留学考试准备)",
+  "US school application(美国留学申请)",
+  "Live and study in USA(在美国留学)",
+  "Job seeking(找工作)",
+  "Career enhancement(职业提升)",
+  "Career enhancement(IT外包职业培训)",
+  "Exporting training(出口业务培训)",
+  "Conversational communications(口语沟通)",
+  "Writing communications(写作沟通)",
+  "Business finance/accounting(金融/财务培训)",
+  "Parenting(子女教育)",
+  "Games and others(教育游戏及其他)"
+]
 cat.each do |c|
   ct = Category.new(:name=>c)
   ct.save!

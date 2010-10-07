@@ -17,7 +17,7 @@ div {
   word-break: break-all;
   word-wrap: break-word;
   /* 下面两个值是为了父元素可以自适应子元素高度 */
-  zoom:0;
+  zoom:1;
   overflow:auto;
 }
 
@@ -67,7 +67,6 @@ div {
 /* 主内容 */
 
 #divall {
-  background: #EFEFEF;
   border-right: 1px solid #BBB;
   margin: 0px auto;
   overflow: hidden;
@@ -113,10 +112,11 @@ div {
 }
 
 .sidebar-list li {
-  background:url("/images/knowledgeClassBack.png") repeat-x scroll 0 50% transparent;
-  height:22px;
+  overflow: auto;
   padding:6px 10px 0;
   width:144px;
+  border-bottom:1px dotted #999999;
+  background:none repeat scroll 0 0 #EFEFEF;
 }
 
 .sidebar-list img {
