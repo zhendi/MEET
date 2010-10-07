@@ -7,6 +7,7 @@ class Topic < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: topics
@@ -23,6 +24,6 @@ end
 #  created_at        :datetime
 #  updated_at        :datetime
 #  user_id           :integer
-#  answers_count     :integer         default(0)
+#  views             :integer         default(0)
 #
 
