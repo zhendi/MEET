@@ -20,3 +20,9 @@
           title: "我的精英教育，我喜欢！"
           description: "使用会话(session)和viminfo，可以把你编辑环境保存下来，然后你在下次启动vim后，可以再恢复回这个环境。我们在开发项目或书写文档时，其周期不是一两天。如果你在中途退出了vim而不能恢复原先的编辑环境的话，你又要重新打开你所打开的文件，重新定义你的映射(map)、缩写 (abbreviate)，"
 
+  errors:
+    template:
+      header:
+        one: "有 1 个错误发生导致「%{model}」无法被保存。"
+        other: "有 %{count} 个错误发生导致「%{model}」无法被保存。"
+      body: "如下字段出现错误："
