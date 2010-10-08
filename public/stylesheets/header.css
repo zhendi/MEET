@@ -36,7 +36,7 @@ Purpose of the stylesheet follows.
 
 #app-menu{
   margin-top:16px;
-  width:400px;
+  width:460px;
   float:left;
   margin-left: 10px;
 }
@@ -51,12 +51,14 @@ Purpose of the stylesheet follows.
 
 #app-menu ul li.t_title {
   float:left;
-  height:20px;
-  line-height:20px;
   position:relative;
   z-index:100100;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+#app-menu ul li.t_title span {
+  display: block;
 }
 
 #app-menu a.t_link {
@@ -65,8 +67,6 @@ Purpose of the stylesheet follows.
   display:block;
   font-size:14px;
   font-weight:bold;
-  height:20px;
-  line-height:20px;
   text-align:center;
   text-decoration:none;
 }
@@ -97,10 +97,13 @@ Purpose of the stylesheet follows.
   color:#EEEEEE;
   cursor:pointer;
   font-size:12px;
-  height:20px;
-  line-height:20px;
+  line-height:12px;
   text-align:center;
   text-decoration:none;
+}
+
+#info-panel li a span {
+  display: block;
 }
 
 #info-panel li a:hover {

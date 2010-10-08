@@ -60,7 +60,20 @@
           message_not_registered: "尚未注册MEET账户 ?"
           title: "我的精英教育，我喜欢！"
           description: "使用会话(session)和viminfo，可以把你编辑环境保存下来，然后你在下次启动vim后，可以再恢复回这个环境。我们在开发项目或书写文档时，其周期不是一两天。如果你在中途退出了vim而不能恢复原先的编辑环境的话，你又要重新打开你所打开的文件，重新定义你的映射(map)、缩写 (abbreviate)，"
-
+    shared:
+      _header:
+        referral: "<span>Referral</span><span>邀请</span>"
+        my_meet: "<span>My MEET</span><span>我的首页</span>"
+        contact_us: "<span>Contact us</span><span>客服</span>"
+        faq: "<span>FAQ</span><span>常见问题</span>"
+        logout: "<span>Logout</span><span>退出</span>"
+      _nav_menu:
+        home: "<span>Home</span><span>首页</span>"
+        bbs: "<span>BBS</span><span>论坛</span>"
+        chat_room: "<span>Chat room</span><span>聊天室</span>"
+        hot_deals: "<span>Hot deals</span><span>热点促销</span>"
+        live_event: "<span>Live event</span><span>实时事件</span>"
+        expert_reply: "<span>Expert reply</span><span>专家解答</span>"
   errors:
     template:
       header:

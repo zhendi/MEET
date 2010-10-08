@@ -12,14 +12,22 @@
 
 <div id="info-panel">
   <ul>
-    <li class="notready"><%= link_to	raw("Referral<br/>邀请"), new_user_session_path %></li>
+    <li class="notready">
+    <%= link_to raw(t(:referral, :scope=>[:view, :shared, :_header])), new_user_session_path %>
+    </li>
     <li class="t_bar"></li>
-    <li><%= link_to	raw("My MEET我的首页"), personal_path() %></li>
+    <li>
+    <%= link_to	raw(t(:my_meet, :scope=>[:view, :shared, :_header])), personal_path() %>
+    </li>
     <li class="t_bar"></li>
-    <li class="notready"><%= link_to	"客服", new_user_session_path %></li>
+    <li class="notready">
+    <%= link_to raw(t(:contact_us, :scope=>[:view, :shared, :_header])), new_user_session_path %>
+    </li>
     <li class="t_bar"></li>
-    <li class="notready"><%= link_to	"常见问题", profile_path(current_user) %></li>
+    <li class="notready">
+    <%= link_to	raw(t(:faq, :scope=>[:view, :shared, :_header])), profile_path(current_user) %></li>
     <li class="t_bar"></li>
-    <li><%= link_to	"退出", destroy_user_session_path %></li>
+    <li>
+    <%= link_to	raw(t(:logout, :scope=>[:view, :shared, :_header])), destroy_user_session_path %></li>
   </ul>
 </div> 
