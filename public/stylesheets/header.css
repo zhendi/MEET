@@ -52,9 +52,7 @@ Purpose of the stylesheet follows.
 #app-menu ul li.t_title {
   float:left;
   position:relative;
-  z-index:100100;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 3px 5px;
 }
 
 #app-menu ul li.t_title span {
