@@ -30,6 +30,7 @@ GEM
       activesupport (= 3.0.0)
     activesupport (3.0.0)
     acts-as-taggable-on (2.0.6)
+    acts_as_tree (0.1.1)
     admin_data (1.0.10)
       will_paginate (>= 3.0.pre2)
     annotate (2.4.0)
@@ -173,6 +174,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_tree
   admin_data
   annotate
   capistrano

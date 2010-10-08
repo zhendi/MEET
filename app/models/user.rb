@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many	:blogs
   has_many  :forum_posts
-  has_one   :profile
+  has_one   :profile, :dependent=>:destroy
   has_many  :collects
   has_many  :collected_courses, :through=>:collects, :source=>:course
   has_many  :owned_courses, :foreign_key=>"author_id"
@@ -15,11 +15,12 @@ class User < ActiveRecord::Base
   has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"      
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user  
 
-  before_save :add_profile
+  before_create :create_profile
   devise :database_authenticatable, :rememberable, :trackable, :validatable, :registerable	
 
-  def add_profile
-    self.profile = Profile.new()
+  protected
+  def create_profile
+    self.profile ||= Profile.new
   end
 end
 
