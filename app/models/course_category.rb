@@ -1,5 +1,6 @@
 class CourseCategory < ActiveRecord::Base
-  has_many  :courses
+  has_many  :subjects
+  has_many  :schools
 
 end
 

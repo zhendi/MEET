@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101005053418) do
+ActiveRecord::Schema.define(:version => 20101009132835) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20101005053418) do
     t.integer  "courses_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "school_id",     :default => 0, :null => false
   end
 
   create_table "courses", :force => true do |t|
@@ -68,11 +69,12 @@ ActiveRecord::Schema.define(:version => 20101005053418) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "gold"
-    t.integer  "level_id",            :null => false
-    t.integer  "category_id",         :null => false
+    t.integer  "level_id",                           :null => false
+    t.integer  "category_id",                        :null => false
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "subject_id",          :default => 0, :null => false
   end
 
   create_table "forum_posts", :force => true do |t|
@@ -153,6 +155,21 @@ ActiveRecord::Schema.define(:version => 20101005053418) do
 
   create_table "roles", :force => true do |t|
     t.string "name", :limit => 20
+  end
+
+  create_table "schools", :force => true do |t|
+    t.string   "name"
+    t.integer  "course_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "course_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|

@@ -14,7 +14,7 @@ Level.create(:name=>"Middle")
 Level.create(:name=>"High")
 
 
-Category.delete_all()
+CourseCategory.delete_all()
 
 cat = [
   "College education(美国大学本科)",
@@ -35,6 +35,14 @@ cat = [
   "Games and others(教育游戏及其他)"
 ]
 cat.each do |c|
-  ct = Category.new(:name=>c)
+  ct = CourseCategory.new(:name=>c)
   ct.save!
 end
+
+c = CourseCategory.first
+root = Subject.create(:name=>"Engineering （工程）", :course_category => c)
+s1 = root.children.create(:name=>"Electrical （电子工程）", :course_category => c)
+s2 = root.children.create(:name=>"Mechanical （机械工程）", :course_category => c)
+
+sch_1 = School.create(:name=>"Harvard （哈佛大学）", :course_category => c)
+sch_2 = School.create(:name=>"MIT （麻省理工学院）", :course_category => c)
