@@ -4,6 +4,7 @@ describe CourseCategory do
   pending "add some examples to (or delete) #{__FILE__}"
 end
 
+
 # == Schema Information
 #
 # Table name: course_categories
@@ -13,5 +14,6 @@ end
 #  courses_count :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  school_id     :integer         default(0), not null
 #
 

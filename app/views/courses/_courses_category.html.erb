@@ -3,7 +3,7 @@
     <li class="cursorHand">
     <span class="left">
       <%= image_tag "college.png" %>
-      <%= link_to	t.name, "" %>
+      <%= link_to	t.name, :controller=>"courses", :action=>"list", :id=>t %>
     </span>
     </li>
   <% end %>

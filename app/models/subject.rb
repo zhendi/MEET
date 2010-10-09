@@ -4,3 +4,16 @@ class Subject < ActiveRecord::Base
   belongs_to  :course_category
 
 end
+
+# == Schema Information
+#
+# Table name: subjects
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  parent_id          :integer
+#  course_category_id :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+

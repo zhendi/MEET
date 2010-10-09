@@ -7,6 +7,7 @@ class CourseTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: courses
@@ -24,5 +25,6 @@ end
 #  author_id           :integer
 #  created_at          :datetime
 #  updated_at          :datetime
+#  subject_id          :integer         default(0), not null
 #
 

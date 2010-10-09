@@ -2,9 +2,15 @@ class CoursesController < ApplicationController
   respond_to :html,:js
 
   def index
-    @all_courses = Course.all #.paginate :page=>5, :order=>"created_at desc"
-    @rated_courses = Course.paginate  :page => params[:page]
-    @category = Category.all
+    @category = CourseCategory.all
+  end
+
+  def list
+    @category = CourseCategory.all
+    category = CourseCategory.find(params[:id])
+    @subjects = category.subjects
+    @schools = category.schools
+
   end
 
   def new
@@ -21,7 +27,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(params[:course])
     @course.level = Level.find(params[:level])
-    @course.category = Category.find(params[:category])
+    @course.category = CourseCategory.find(params[:category])
     @course.author = current_user
 
     if @course.save

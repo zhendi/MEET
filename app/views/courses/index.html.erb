@@ -2,27 +2,10 @@
   <%= render	"courses_category" %>
 <% end %>
 
-<script type="text/javascript">
-  $(function() {
-      $("#tabs").tabs();
-      });
-</script>
+<div class="box tac" style="margin:20px 10px;height:300px;">
+  <h1 style="margin-top:150px;">推广内容</h1>
+</div>
 
-<h1 id="课程列表">课程列表</h1>
-
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">推荐课程</a></li>
-    <li><a href="#tabs-2">课程列表</a></li>
-  </ul>
-  <div id="tabs-1">
-    <% @all_courses.each do |c| %>
-      <%= render	:partial=>"course", :locals=>{:course=>c} %>
-    <% end %>
-  </div>
-  <div id="tabs-2">
-    <% @rated_courses.each do |c| %>
-      <%= render	:partial=>"course", :locals=>{:course=>c} %>
-    <% end %>
-  </div>
+<div class="box tac" style="margin:20px 10px;height:200px;">
+  <h1 style="margin-top:100px;">其他内容</h1>
 </div>

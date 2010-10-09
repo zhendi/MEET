@@ -1,0 +1,16 @@
+<% content_for	:sidebar do %>
+    <%= render	"courses_category" %>
+<% end %>
+
+<h1 id="课程列表">课程列表</h1>
+
+<div id="tabs">
+    <% @subjects.each do |c| %>
+        <li><%= c.name %></li>
+    <% end %>
+
+    <% @schools.each do |c| %>
+        <li><%= c.name %></li>
+    <% end %>
+</div>
+

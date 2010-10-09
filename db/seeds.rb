@@ -40,9 +40,31 @@ cat.each do |c|
 end
 
 c = CourseCategory.first
-root = Subject.create(:name=>"Engineering （工程）", :course_category => c)
-s1 = root.children.create(:name=>"Electrical （电子工程）", :course_category => c)
-s2 = root.children.create(:name=>"Mechanical （机械工程）", :course_category => c)
+Subject.delete_all()
 
-sch_1 = School.create(:name=>"Harvard （哈佛大学）", :course_category => c)
-sch_2 = School.create(:name=>"MIT （麻省理工学院）", :course_category => c)
+root = Subject.create(:name=>"Engineering （工程）", :course_category => c)
+root.children.create(:name=>"Electrical （电子工程）", :course_category => c )
+root.children.create(:name=>"Mechanical （机械工程）", :course_category => c)
+root.children.create(:name=>"Civil and Environmental（土木及环境）", :course_category => c)
+root.children.create(:name=>"Chemical （化学工程）", :course_category => c)
+root.children.create(:name=>"Materials （材料科学及工程）", :course_category => c)
+root.children.create(:name=>"Industrial （工业工程）", :course_category => c)
+root.children.create(:name=>"Computer （计算机科学及工程）", :course_category => c)
+root.children.create(:name=>"Nuclear & Radiological （核物理）", :course_category => c)
+root1 = Subject.create(:name=>"Science （科学）", :course_category => c)
+root1.children.create(:name=>"Biology （生物学）", :course_category => c)
+root1.children.create(:name=>"Chemistry （化学）", :course_category => c)
+root1.children.create(:name=>"Geology （地理学）", :course_category => c)
+root1.children.create(:name=>"Mathematics （数学）", :course_category => c)
+root1.children.create(:name=>"Physics （物理学）", :course_category => c)
+
+School.delete_all()
+
+School.create(:name=>"Harvard （哈佛大学）", :course_category => c)
+School.create(:name=>"MIT （麻省理工学院）", :course_category => c)
+School.create(:name=>"Princeton （普林斯顿大学）", :course_category => c)
+School.create(:name=>"Yale （耶鲁大学）", :course_category => c)
+School.create(:name=>"Stanford （斯坦佛大学）", :course_category => c)
+School.create(:name=>"UC Berkeley （加大伯克利分校）", :course_category => c)
+School.create(:name=>"Cornell Univ. （康奈尔大学）", :course_category => c)
+School.create(:name=>"Univ. of Michigan（密西根大学）", :course_category => c)
