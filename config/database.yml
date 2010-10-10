@@ -17,7 +17,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: mysql
   database: meet
   encoding: utf8
   username: meet
