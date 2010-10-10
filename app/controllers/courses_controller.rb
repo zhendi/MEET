@@ -2,19 +2,21 @@ class CoursesController < ApplicationController
   respond_to :html,:js
 
   def index
-    @category = CourseCategory.all
-  end
-
-  def list
-    @category = CourseCategory.all
-    cat = CourseCategory.find(params[:id])
-    @subjects = cat.subjects.roots
-    @schools = cat.schools
-
+    @categories = CourseCategory.all
   end
 
   def new
     @course = Course.new()
+    @category = CourseCategory.find(params[:category_id])
+
+    if params[:school_id]
+      @school = School.find(params[:school_id])
+    end
+
+    if params[:subject_id]
+      @subject = Subject.find(params[:subject_id])
+    end
+
     respond_with(@course)
   end
 
@@ -70,16 +72,26 @@ class CoursesController < ApplicationController
     respond_with(@course)
   end
 
+  # 列出某个大类中的所有的Subject以及学校
+  def list
+    @categories = CourseCategory.all
+    @category = CourseCategory.find(params[:id])
+    @subjects = @category.subjects.roots
+    @schools = @category.schools
+  end
+
   def show_school
-    @category = CourseCategory.all
-    school = School.find(params[:id])
-    @courses = school.courses
+    @categories = CourseCategory.all
+    @school = School.find(params[:id])
+    @category = CourseCategory.find(params[:category_id])
+    @courses = @school.courses
   end
 
   def show_subject
-    @category = CourseCategory.all
-    subject = Subject.find(params[:id])
-    @courses = subject.courses
+    @categories = CourseCategory.all
+    @subject = Subject.find(params[:id])
+    @category = CourseCategory.find(params[:category_id])
+    @courses = @subject.courses
   end
 end
 
