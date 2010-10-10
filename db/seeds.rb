@@ -13,7 +13,6 @@ Level.create(:name=>"Low")
 Level.create(:name=>"Middle")
 Level.create(:name=>"High")
 
-
 CourseCategory.delete_all()
 
 cat = [
@@ -71,4 +70,4 @@ School.create(:name=>"UC Berkeley （加大伯克利分校）", :course_category
 School.create(:name=>"Cornell Univ. （康奈尔大学）", :course_category => c)
 School.create(:name=>"Univ. of Michigan（密西根大学）", :course_category => c)
 
-School.create(:name=>"Uncategoried", :course_catetory=>c)
+School.create(:name=>"Uncategoried", :course_category=>c)
