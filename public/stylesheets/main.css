@@ -125,7 +125,7 @@ ul.circle {
 
 .sidebar-list li {
   overflow: auto;
-  padding:6px 10px 0;
+  padding:6px 3px 0;
   border-bottom:1px dotted #999999;
   background:none repeat scroll 0 0 #EFEFEF;
 }
