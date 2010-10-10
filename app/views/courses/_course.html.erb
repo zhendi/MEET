@@ -13,15 +13,15 @@
     <div class="col_riht_text">
       <ul>
         <li class="course_description">
-        <%= course.description %>
+        <%= raw(course.description) %>
         </li>
         <li class="course_info">
         <span> 等级：</span>
         <%= course.level.name %> 
-        | <span>类别：</span>
-        <%= course.name %> 
         | 主题：
-        学习 
+        <%= link_to course.subject.name, :controller=>:courses, :action=>:show_subject, :id=>course.subject.id %> 
+        | 学校:
+        <%= link_to course.school.name, :controller=>:courses,  :action=>:show_school,  :id=>course.school.id %>
         | 说金： 
         <%= course.gold %> <%= image_tag "ico_money.gif" %>
         </li>

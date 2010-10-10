@@ -1,1 +1,9 @@
-<embed src="http://www.tudou.com/v/5O9bi77a3O0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400"></embed>
+<% content_for	:sidebar do %>
+  <%= render	"courses_category" %>
+<% end %>
+
+<%= link_to "edit", edit_course_path(:course_category_id=>@course_category.id, :school_id=>@school.id,  :subject_id=>@subject.id) %>
+
+<div class="field">
+ <%= raw(@course.description) %> 
+</div>

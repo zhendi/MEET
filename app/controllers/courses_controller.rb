@@ -43,13 +43,21 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    @course_category = CourseCategory.find(params[:course_category_id])
+    
+    @school = School.find(params[:school_id])
+    @subject = Subject.find(params[:subject_id])
+
+    @subjects = @course_category.subjects
+    @schools = @course_category.schools
+
     respond_with(@course)	
   end
 
   def update
     @course = Course.find(params[:id])
-    if @course.update_attributes(parsms[:course])
-      redirect_to :action=>"index", :notice=>"Update Succeed"
+    if @course.update_attributes(params[:course])
+      redirect_to study_course_course_path(@course), :notice=>"Update Succeed"
     else
       render	:action=>:edit, :notice=>"Update Failed"
     end
@@ -99,6 +107,13 @@ class CoursesController < ApplicationController
 
   def select_categories
     @categories = CourseCategory.all
+  end
+
+  def study_course
+    @course = Course.find(params[:id])
+    @course_category = @course.course_category
+    @school = @course.school
+    @subject = @course.subject
   end
 end
 
