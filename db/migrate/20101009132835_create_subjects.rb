@@ -8,13 +8,9 @@ class CreateSubjects < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    add_column  :courses, :subject_id,  :integer, :null=>false, :default=>0
   end
 
   def self.down
     drop_table :subjects
-
-    remove_column :courses, :subject_id
   end
 end

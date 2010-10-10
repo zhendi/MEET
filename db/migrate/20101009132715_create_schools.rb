@@ -6,13 +6,9 @@ class CreateSchools < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    add_column  :course_categories, :school_id, :integer, :null=>false, :default=>0
   end
 
   def self.down
     drop_table :schools
-
-    remove_column :courses, :school_id
   end
 end

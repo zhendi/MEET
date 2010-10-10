@@ -2,6 +2,8 @@
   <div class="m1t"></div>
   <div class="logindiv">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
       <div>
         <%= f.label :email, :class=>"tar left mt30", :style=>"width:55px;" %>
         <%= f.text_field :email, :class=>"left mt30 mb10", :size=>22 %>
