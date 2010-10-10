@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field  :couse_category_id,  :value=>@course_category.id %>
+  <%= f.hidden_field  :course_category_id,  :value=>@course_category.id %>
 
   <div class="field">
     <%= f.label "标题" %>
@@ -27,24 +27,24 @@
     <%= f.text_field :gold, {:size=>50}%>
   </div>
 
+ <% if @subject.name == "Uncategoried" -%>
   <div class="field">
     <%= f.label "subject" %>
     <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name', @subject.id)) %>
   </div>
+<% end %>
 
-  <% unless @subject.name == "Uncategoried" -%>
+  <% if @school.name == "Uncategoried" -%>
     <div class="field">
       <%= f.label "school" %>
       <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name', @school.id)) %>
     </div>
   <% end -%>
 
-  <% unless @school.name == "Uncategoried" -%>
     <div class="field">
       <%= f.label "级别" %>
       <%= f.select('level_id', options_from_collection_for_select(Level.all, 'id', 'name')) %>
     </div>
-  <% end -%>
 
   <div class="actions">
     <%= f.submit "提交", :class=>"submit_action" %>

@@ -1,12 +1,12 @@
 class CoursesController < ApplicationController
   respond_to :html,:js
 
+  before_filter :select_categories
+
   def index
-    @categories = CourseCategory.all
   end
 
   def new
-    @categories = CourseCategory.all
     @course = Course.new()
     @course_category = CourseCategory.find(params[:course_category_id])
 
@@ -78,14 +78,12 @@ class CoursesController < ApplicationController
 
   # 列出某个大类中的所有的Subject以及学校
   def list
-    @categories = CourseCategory.all
     @course_category = CourseCategory.find(params[:id])
     @subjects = @course_category.subjects.roots
     @schools = @course_category.schools
   end
 
   def show_school
-    @categories = CourseCategory.all
     @school = School.find(params[:id])
     @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @school.courses
@@ -93,11 +91,14 @@ class CoursesController < ApplicationController
   end
 
   def show_subject
-    @categories = CourseCategory.all
     @subject = Subject.find(params[:id])
     @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @subject.courses
     @subjects = @course_category.subjects
+  end
+
+  def select_categories
+    @categories = CourseCategory.all
   end
 end
 
