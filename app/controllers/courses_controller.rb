@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  layout  "course"
   respond_to :html,:js
 
   before_filter :select_categories
