@@ -6,16 +6,22 @@ class CoursesController < ApplicationController
   end
 
   def new
+    @categories = CourseCategory.all
     @course = Course.new()
-    @category = CourseCategory.find(params[:category_id])
+    @course_category = CourseCategory.find(params[:course_category_id])
 
     if params[:school_id]
       @school = School.find(params[:school_id])
+      @subject = Subject.where("name=?", "Uncategoried").first
     end
 
     if params[:subject_id]
       @subject = Subject.find(params[:subject_id])
+      @school = School.where("name=?", "Uncategoried").first
     end
+
+    @subjects = @course_category.subjects
+    @schools = @course_category.schools
 
     respond_with(@course)
   end
@@ -28,8 +34,6 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(params[:course])
-    @course.level = Level.find(params[:level])
-    @course.category = CourseCategory.find(params[:category])
     @course.author = current_user
 
     if @course.save
@@ -75,23 +79,25 @@ class CoursesController < ApplicationController
   # 列出某个大类中的所有的Subject以及学校
   def list
     @categories = CourseCategory.all
-    @category = CourseCategory.find(params[:id])
-    @subjects = @category.subjects.roots
-    @schools = @category.schools
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools
   end
 
   def show_school
     @categories = CourseCategory.all
     @school = School.find(params[:id])
-    @category = CourseCategory.find(params[:category_id])
+    @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @school.courses
+    @schools = @course_category.schools
   end
 
   def show_subject
     @categories = CourseCategory.all
     @subject = Subject.find(params[:id])
-    @category = CourseCategory.find(params[:category_id])
+    @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @subject.courses
+    @subjects = @course_category.subjects
   end
 end
 

@@ -2,5 +2,6 @@
   <%= render	"courses_category" %>
 <% end %>
 
-<%= link_to "添加课程", new_course_path(:category_id=>@category, :subject_id=>@subject) %>
+<%= link_to "添加课程", new_course_path(:course_category_id=>@course_category.id, :subject_id=>@subject) %>
+
 <%= render  :partial=>"course", :collection=>@courses %>

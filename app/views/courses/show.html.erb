@@ -17,10 +17,11 @@
         <ul>
         	<li class="course_description">
     		<%= @course.description %>
+    		<%= debug(@course.course_category) %>
     		</li>
         	<li class="course_info">
 				<span> 等级：</span><a href="/index.php/Lesson/index/levelId/3"><%= @course.level.name %></a> 
-				| <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= @course.category.name %></a> 
+				| <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= @course.name %></a> 
 				| 主题：<a href="/index.php/Lesson/index/topicId/60">学习</a> 
 				| 说金： <a><%= @course.gold %><img src="/SNS/Tpl/speak2me/Public/images/appicons/ico_money.gif"></a>
 			</li>

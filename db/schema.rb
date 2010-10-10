@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101010055455) do
+ActiveRecord::Schema.define(:version => 20101010072839) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20101010055455) do
     t.datetime "avatar_updated_at"
     t.integer  "gold"
     t.integer  "level_id",                           :null => false
-    t.integer  "category_id",                        :null => false
+    t.integer  "course_category_id",                 :null => false
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"

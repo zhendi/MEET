@@ -7,7 +7,7 @@
   <ul style="list-style:square inside;">
     <% @schools.each do |c| %>
       <li>
-      <%= link_to c.name, :controller=>"courses", :action=>"show_school", :id=>c, :category_id=>c.course_category %>
+      <%= link_to c.name, :controller=>"courses", :action=>"show_school", :id=>c, :course_category_id=>c.course_category %>
       </li>
     <% end %>
   </ul>
@@ -19,7 +19,7 @@
     <ul style="list-style:square inside;">
       <% c.children.each do |s| %>
         <li>
-        <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :category_id=>c.course_category %>
+        <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :course_category_id=>c.course_category %>
         </li>
       <% end %>
     </ul>

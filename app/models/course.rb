@@ -1,12 +1,15 @@
 class Course < ActiveRecord::Base
   belongs_to	:level
-  belongs_to	:category
+  belongs_to	:course_category
+  belongs_to    :subject
+  belongs_to    :school
   has_many      :collects
   
   has_many      :collecters,  :through=>:collects, :source=>:user
   belongs_to    :author,  :class_name=>"User"
 
 end
+
 
 
 # == Schema Information
@@ -27,5 +30,6 @@ end
 #  created_at          :datetime
 #  updated_at          :datetime
 #  subject_id          :integer         default(0), not null
+#  school_id           :integer         default(0), not null
 #
 

@@ -1,8 +1,10 @@
 class CourseCategory < ActiveRecord::Base
   has_many  :subjects
   has_many  :schools
+  has_many  :courses
 
 end
+
 
 
 # == Schema Information
@@ -14,6 +16,5 @@ end
 #  courses_count :integer
 #  created_at    :datetime
 #  updated_at    :datetime
-#  school_id     :integer         default(0), not null
 #
 
