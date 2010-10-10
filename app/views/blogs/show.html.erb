@@ -1,5 +1,5 @@
 <% content_for :header do %>
-	<%= stylesheet_link_tag	"sns" %>
+  <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
 <% content_for :sidebar do %>
@@ -20,24 +20,26 @@
             id="dig-good-41975">0</span>)</span>
       </span>
     </h4>
-    <span class="time"><%= @blog.updated_at %></span>
+    <span class="time"><%= l(@blog.updated_at) %></span>
     <span class="pipe">|</span>
-    <%= link_to 'Edit', edit_blog_path(@blog) %>
+    <%= link_to t(:edit, :scope=>[:view, :blog, :show]), edit_blog_path(@blog) %>
     <span class="pipe">|</span>
-    <%= link_to 'Destroy', blog_path(@blog), :method=>:delete,:confirm=>"是否删除?" %>
+    <%= link_to t(:destroy, :scope=>[:view, :blog, :show]), blog_path(@blog), :method=>:delete,
+      :confirm=>t(:confirm_msg, :scope=>[:view, :blog, :show], :name=>@blog.title) %>
+    </div>
+    <div class="content">
+      <%= @blog.content %>
+    </div>
+    <p class="stat">
+    <%= t(:read_count, :scope=>[:view, :blog], :count=>@blog.readcount) %>
+    |
+    <%= t(:comment_count, :scope=>[:view, :blog], :count=>@blog.comments.count) %>
+    </p>
   </div>
-  <div class="content">
-    <%= @blog.content %>
-  </div>
-  <p class="stat">
-  <%= @blog.readcount %> 次阅读 |
-  <span id="plnum"><%= @blog.comments.count %></span> 个评论
-  </p>
-</div>
 
-<ol id="comments">
-  <%= render  @blog.comments %>
-</ol>
+  <ol id="comments">
+    <%= render  @blog.comments %>
+  </ol>
 
-<h2>添加留言</h2>
-<%= render  :partial=>"comments/form" %>
+  <h2>添加留言</h2>
+  <%= render  :partial=>"comments/form" %>

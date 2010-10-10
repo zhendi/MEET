@@ -22,6 +22,7 @@
         ding: "顶 :"
         cai: "踩 :"
         readcount: "阅读次数 :"
+        tag_list: "标签 :"
       comment:
         email: "电邮 :"
         title: "标题 :"
@@ -54,6 +55,8 @@
         home_province: "省 :"
         home_city: "市 :"
   view:
+    delete: "删除"
+    ago: "前"
     users:
       sessions:
         new:
@@ -74,6 +77,23 @@
         hot_deals: "<span>Hot deals</span><span>热点促销</span>"
         live_event: "<span>Live event</span><span>实时事件</span>"
         expert_reply: "<span>Expert reply</span><span>专家解答</span>"
+    blog:
+      index:
+        blog_list : "博客列表"
+        reply: "发表评论"
+      new:
+        create_blog: "新建日志"
+        go_back: "返回"
+      show:
+        confirm_msg: "是否确认删除文章'%{name}'？"
+        edit: "编辑"
+        destroy: "删除"
+      read_count : "阅读 %{count} 次"
+      comment_count : "评论 %{count} 次"
+    course:
+      _collect_link:
+        uncollect: "取消收藏"
+        collect: "加入收藏"
   errors:
     template:
       header:

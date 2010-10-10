@@ -5,9 +5,9 @@
   </p>
   <div class="info">
     <span class="author"></span>
-    <span class="time"><%= time_ago_in_words(comment.updated_at) %> ago</span>
+    <span class="time"><%= time_ago_in_words(comment.updated_at) %> <%= t(:ago, :scope=>[:view]) %></span>
     <span class="delete">
-      <%= link_to '删除', blog_comment_path(comment.blog, comment), :method=>:delete,
+      <%= link_to t(:delete, :scope=>[:view]), blog_comment_path(comment.blog, comment), :method=>:delete,
 					:remote=>true, :class=>"Qconfirm" %>
   </span>									</div>
   <div class="content">

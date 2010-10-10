@@ -10,7 +10,7 @@
   <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
 <% end %>
 
-<h1 id="博客列表">博客列表</h1>
+<h1><%= t(:blog_list, :scope=>[:view, :blog, :index]) %></h1>
 
 <ul id="bloglist">	
   <% @blogs.each do |blog| %>
@@ -22,18 +22,20 @@
       <div class="info">
         <h4><%= link_to blog.title, blog %></h4>
         <span class="author"><%= blog.user.profile.name %></span>
-        <span class="time"><%= time_ago_in_words(blog.created_at) %> ago</span>
+        <span class="time"><%= time_ago_in_words(blog.created_at) %>
+          <%= t(:ago, :scope=>[:view, :blog, :index]) %></span>
       </div>
       <div class="summary">
         <p>
         <%= blog.content %> 
         </p>
       </div>
-      <p class="stat">阅读 <%= blog.readcount %>
+      <p class="stat">
+      <%= t(:read_count, :scope=>[:view, :blog], :count=>blog.readcount) %>
       <span class="pipe">|</span>
-      评论 <%= blog.comments.count %>
+      <%= t(:comment_count, :scope=>[:view, :blog], :count=>blog.comments.count) %>
       <span class="pipe">|</span>
-      <%= link_to   "发表评论", blog_path(blog) %>					
+      <%= link_to  t(:reply, :scope=>[:view, :blog, :index]), blog_path(blog) %>					
       </p>
     </div>
     </li>

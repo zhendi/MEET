@@ -1,13 +1,13 @@
 <% content_for :header do %>
-	<%= stylesheet_link_tag	"sns" %>
+  <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
 <% content_for :sidebar do %>
-	<%= render	"/shared/application" %>
-  <% end %>
+  <%= render	"/shared/application" %>
+<% end %>
 
-<h1 id="heading">新建日志</h1>
+<h1 id="heading"><%= t(:create_blog, :scope=>[:view, :blog, :new]) %></h1>
 
 <%= render  'form' %>
 
-<%= link_to '返回', blogs_path %>
+<%= link_to t(:go_back, :scope=>[:view, :blog, :new]), blogs_path %>
