@@ -1,16 +1,24 @@
 <% content_for	:sidebar do %>
-    <%= render	"courses_category" %>
+  <%= render	"courses_category" %>
 <% end %>
 
-<h1 id="课程列表">课程列表</h1>
-
-<div id="tabs">
-    <% @subjects.each do |c| %>
-        <li><%= c.name %></li>
-    <% end %>
-
+<div class="left" style="width:45%;">
+  <h1>By School</h1>
+  <ul style="list-style:square inside;">
     <% @schools.each do |c| %>
-        <li><%= c.name %></li>
+      <li><%= c.name %></li>
     <% end %>
+  </ul>
+</div>
+<div class="left" style="width:45%;">
+  <h1>By Subject</h1>
+  <% @subjects.each do |c| %>
+    <h2><%= c.name %></h2>
+    <ul style="list-style:square inside;">
+      <% c.children.each do |s| %>
+        <li><%= s.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 

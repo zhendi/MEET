@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   def list
     @category = CourseCategory.all
     category = CourseCategory.find(params[:id])
-    @subjects = category.subjects
+    @subjects = category.subjects.roots
     @schools = category.schools
 
   end

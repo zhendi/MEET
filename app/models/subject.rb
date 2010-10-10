@@ -3,6 +3,9 @@ class Subject < ActiveRecord::Base
   has_many  :courses
   belongs_to  :course_category
 
+  def roots
+    Subject.find(["parent_id=?"], 0)
+  end
 end
 
 # == Schema Information
