@@ -37,14 +37,16 @@ class CoursesController < ApplicationController
     @course.author = current_user
 
     if @course.save
-      respond_with(@course)
+      redirect_to study_course_course_path(@course), :notice=>"Create Succeed"
+    else
+      render	:action=>:new, :notice=>"Create Failed"
     end
   end
 
   def edit
     @course = Course.find(params[:id])
     @course_category = CourseCategory.find(params[:course_category_id])
-    
+
     @school = School.find(params[:school_id])
     @subject = Subject.find(params[:subject_id])
 
@@ -111,6 +113,9 @@ class CoursesController < ApplicationController
 
   def study_course
     @course = Course.find(params[:id])
+    logger.info("----------------------------")
+    logger.info("#{@course.course_category.id} selected")
+
     @course_category = @course.course_category
     @school = @course.school
     @subject = @course.subject

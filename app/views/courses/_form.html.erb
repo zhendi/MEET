@@ -27,24 +27,20 @@
     <%= f.text_field :gold, {:size=>50}%>
   </div>
 
- <% if @subject.name == "Uncategoried" -%>
   <div class="field">
     <%= f.label "subject" %>
     <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name', @subject.id)) %>
   </div>
-<% end %>
 
-  <% if @school.name == "Uncategoried" -%>
-    <div class="field">
-      <%= f.label "school" %>
-      <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name', @school.id)) %>
-    </div>
-  <% end -%>
+  <div class="field">
+    <%= f.label "school" %>
+    <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name', @school.id)) %>
+  </div>
 
-    <div class="field">
-      <%= f.label "级别" %>
-      <%= f.select('level_id', options_from_collection_for_select(Level.all, 'id', 'name')) %>
-    </div>
+  <div class="field">
+    <%= f.label "级别" %>
+    <%= f.select('level_id', options_from_collection_for_select(Level.all, 'id', 'name')) %>
+  </div>
 
   <div class="actions">
     <%= f.submit "提交", :class=>"submit_action" %>
