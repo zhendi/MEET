@@ -20,6 +20,8 @@ MEET::Application.routes.draw do
   end
 
   match "/course/category/:id"  => "courses#list"
+  match "/course/show_school/:id" =>  "courses#show_school"
+  match "/course/show_subject/:id"  =>  "courses#show_subject"
 
   resources :forums do
     resources :topics

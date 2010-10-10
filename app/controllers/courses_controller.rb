@@ -69,4 +69,15 @@ class CoursesController < ApplicationController
 
     respond_with(@course)
   end
+
+  def show_school
+    school = School.find(params[:id])
+    @courses = school.courses
+  end
+    
+  def show_subject
+    subject = Subject.find(params[:id])
+    @courses = subject.courses
+  end
 end
+

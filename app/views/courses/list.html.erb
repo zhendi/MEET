@@ -6,7 +6,7 @@
   <h1>By School</h1>
   <ul style="list-style:square inside;">
     <% @schools.each do |c| %>
-      <li><%= c.name %></li>
+      <li><%= link_to c.name, :controller=>"courses", :action=>"show_school", :id=>c %></li>
     <% end %>
   </ul>
 </div>
@@ -16,7 +16,7 @@
     <h2><%= c.name %></h2>
     <ul style="list-style:square inside;">
       <% c.children.each do |s| %>
-        <li><%= s.name %></li>
+        <li><%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s %></li>
       <% end %>
     </ul>
   <% end %>
