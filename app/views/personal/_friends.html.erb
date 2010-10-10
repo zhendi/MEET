@@ -1,5 +1,7 @@
-<div id="你的好友" style="height:160px">
-  <h2 class="blue-title">Your Friends</h2>  
+<div style="height:160px">
+  <h2 class="blue-title">
+    <%= t(:title, :scope=>[:view, :personal, :_friends]) %>
+  </h2>  
   <ul>      
     <% for friendship in current_user.friendships %>      
       <li>

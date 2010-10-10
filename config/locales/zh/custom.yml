@@ -94,6 +94,29 @@
       _collect_link:
         uncollect: "取消收藏"
         collect: "加入收藏"
+    personal:
+      _added_groups:
+        title: "Groups joined  加入的群"
+      _friends:
+        title: "My friends  我的好友"
+      _friends_birthday:
+        title: "Birthday reminder  好友生日"
+      _message_board:
+        title: "Message board 留言板"
+      _message_center:
+        title: "Message center  消息中心"
+      _network_activity:
+        title: "Network activity  好友动态"
+      _personal_info:
+        english_name: "英文姓名 :"
+        chinese_name: "中文姓名 :"
+        sex: "Gender 性别 :"
+        hometown: "Hometown  家乡"
+        current_location: "Current location  现居地 :"
+        gold: "金币 :"
+        score: "积分 :"
+      _recent_visits:
+        title: "Recent visitors  最近来访"
   errors:
     template:
       header:
