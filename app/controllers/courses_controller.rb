@@ -94,32 +94,39 @@ class CoursesController < ApplicationController
     @schools = @course_category.schools
   end
 
+  # 显示学校信息
   def show_school
     @school = School.find(params[:id])
-    @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @school.courses
-    @schools = @course_category.schools
+
+    @subjects = []
+    @courses.each do |c|
+      @subjects << c.subject
+    end
   end
 
   def show_subject
     @subject = Subject.find(params[:id])
-    @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @subject.courses
-    @subjects = @course_category.subjects
+
+    @schools = []
+    @courses.each do |c|
+      @schools << c.school
+    end
   end
 
-  def select_categories
-    @categories = CourseCategory.all
-  end
 
   def study_course
     @course = Course.find(params[:id])
-    logger.info("----------------------------")
-    logger.info("#{@course.course_category.id} selected")
 
     @course_category = @course.course_category
     @school = @course.school
     @subject = @course.subject
+  end
+
+  protected
+  def select_categories
+    @categories = CourseCategory.all
   end
 end
 

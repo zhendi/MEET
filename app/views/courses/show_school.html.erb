@@ -2,6 +2,17 @@
   <%= render	"courses_category" %>
 <% end %>
 
-<%= link_to "添加课程", new_course_path(:course_category_id=>@course_category.id, :school_id=>@school.id) %>
+<div style="margin-left: 50px;">
+  <h1><%= @school.name %></h1>
+  <% @subjects.each do |s| %>
+    <h3><%= s.name %></h3>
+    <ul style="list-style: square inside none;margin-left: 15px;">
+      <% Course.school_courses(@school, s).each do |c| %>
+        <li> 
+        <%= link_to c.name, study_course_course_path(c) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>  
+</div>
 
-<%= render  :partial=>"course", :collection=>@courses %>

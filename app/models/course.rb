@@ -8,7 +8,11 @@ class Course < ActiveRecord::Base
   has_many      :collecters,  :through=>:collects, :source=>:user
   belongs_to    :author,  :class_name=>"User"
 
+  def self.school_courses(school, subject)
+    where("school_id = ? and subject_id = ?", school.id, subject.id).all
+  end
 end
+
 
 
 
@@ -25,7 +29,7 @@ end
 #  avatar_updated_at   :datetime
 #  gold                :integer
 #  level_id            :integer         not null
-#  category_id         :integer         not null
+#  course_category_id  :integer         not null
 #  author_id           :integer
 #  created_at          :datetime
 #  updated_at          :datetime

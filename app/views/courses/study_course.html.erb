@@ -4,6 +4,18 @@
 
 <%= link_to "edit", edit_course_path(:course_category_id=>@course_category.id, :school_id=>@school.id,  :subject_id=>@subject.id) %>
 
-<div class="field">
- <%= raw(@course.description) %> 
+<h1><%= @school.name %></h1>
+
+<div style="margin-left: 20px;">
+  <div>
+    <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %></h3>
+    <%= @course.author.profile.name %>
+  </div>
+
+  <div>
+    <h3><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h3>
+    <div style="margin-left: 50px;margin-right: 100px;">
+      <%= raw(@course.description) %>
+    </div>
+  </div>
 </div>

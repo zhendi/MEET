@@ -110,6 +110,9 @@
       _collect_link:
         uncollect: "取消收藏"
         collect: "加入收藏"
+      _study_course:
+        author: "Instructor :"
+        description:  "Course description"
     personal:
       _added_groups:
         title: "Groups joined  加入的群"

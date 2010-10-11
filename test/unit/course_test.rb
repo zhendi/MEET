@@ -9,6 +9,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: courses
@@ -22,7 +23,7 @@ end
 #  avatar_updated_at   :datetime
 #  gold                :integer
 #  level_id            :integer         not null
-#  category_id         :integer         not null
+#  course_category_id  :integer         not null
 #  author_id           :integer
 #  created_at          :datetime
 #  updated_at          :datetime
