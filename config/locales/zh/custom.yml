@@ -127,7 +127,7 @@
         english_name: "英文姓名 :"
         chinese_name: "中文姓名 :"
         sex: "Gender 性别 :"
-        hometown: "Hometown  家乡"
+        hometown: "Hometown  家乡 :"
         current_location: "Current location  现居地 :"
         gold: "金币 :"
         score: "积分 :"
