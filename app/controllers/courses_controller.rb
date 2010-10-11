@@ -107,6 +107,7 @@ class CoursesController < ApplicationController
 
   def show_subject
     @subject = Subject.find(params[:id])
+    @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @subject.courses
 
     @schools = []

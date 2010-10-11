@@ -29,12 +29,20 @@
 
   <div class="field">
     <%= f.label "subject" %>
-    <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name', @subject.id)) %>
+    <% if @subject %>
+      <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name', @subject.id)) %>
+    <% else %>
+      <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name')) %>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label "school" %>
-    <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name', @school.id)) %>
+    <% if @school %>
+      <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name', @school.id)) %>
+    <% else %>
+      <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name')) %>
+    <% end %>
   </div>
 
   <div class="field">
