@@ -7,27 +7,29 @@
     </div>
     <ul class="left">
       <li>
-      <span>
+      <span class="left">
         <%= t(:english_name, :scope=>[:view, :personal, :_personal_info]) %>
-      </span><%= current_user.profile.english_name %>
-      </li>
-      <li>
-      <span><%= t(:chinese_name, :scope=>[:view, :personal, :_personal_info]) %>
-      </span><%= current_user.profile.name %>
-      </li>
-      <li>
-      <span>
+      </span>
+      <label>
+        <%= current_user.profile.english_name %>
+      </label>
+      <span class="left">
+        <%= t(:chinese_name, :scope=>[:view, :personal, :_personal_info]) %>
+      </span>
+      <%= current_user.profile.name %>
+      <span class="left">
         <%= t(:sex, :scope=>[:view, :personal, :_personal_info]) %>
-        </span><%= current_user.profile.sex %>
+      </span>
+      <%= current_user.profile.sex %>
       </li>
       <li>
       <span><%= t(:hometown, :scope=>[:view, :personal, :_personal_info]) %>
-         </span>
+      </span>
       <%= current_user.profile.home_province %> <%= current_user.profile.home_city %>
       </li>
       <li>
       <span><%= t(:current_location, :scope=>[:view, :personal, :_personal_info]) %>
-        </span><%= current_user.profile.address %>
+      </span><%= current_user.profile.address %>
       </li>
       <li>
       <span><%= t(:gold, :scope=>[:view, :personal, :_personal_info]) %> </span><%= current_user.gold %> <%= image_tag	"ico_money.gif" %>
@@ -36,4 +38,4 @@
       <span><%= t(:score, :scope=>[:view, :personal, :_personal_info]) %> </span><%= current_user.score %>
       </li>
     </ul>
-</div>
+  </div>

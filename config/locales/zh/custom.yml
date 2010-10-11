@@ -78,6 +78,7 @@
         live_event: "<span>Live event</span><span>实时事件</span>"
         expert_reply: "<span>Expert reply</span><span>专家解答</span>"
       _application:
+        title: "Applications 应用"
         group: "Group  群"
         friend: "Friend  好友"
         gift: "Gift 礼物"
@@ -132,6 +133,11 @@
         score: "积分 :"
       _recent_visits:
         title: "Recent visitors  最近来访"
+      _personal_setting:
+        title: "Personal Info 个人信息"
+        account: "Account  帐户/课程管理"
+        data_setting: "Data setting  信息设置"
+        privacy_setting: "Privacy setting 隐私设置"
   errors:
     template:
       header:
