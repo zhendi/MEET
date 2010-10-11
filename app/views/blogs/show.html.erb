@@ -28,7 +28,7 @@
       :confirm=>t(:confirm_msg, :scope=>[:view, :blog, :show], :name=>@blog.title) %>
     </div>
     <div class="content">
-      <%= @blog.content %>
+      <%= raw @blog.content %>
     </div>
     <p class="stat">
     <%= t(:read_count, :scope=>[:view, :blog], :count=>@blog.readcount) %>
