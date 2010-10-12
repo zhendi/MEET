@@ -2,6 +2,9 @@
   <%= render	"courses_category" %>
 <% end %>
 
+<%= link_to t(:add_course, :scope=>[:view, :course, :show_school]), 
+  new_course_path(:course_category_id=>@course_category.id, :school_id=>@school.id) %>
+
 <div style="margin-left: 50px;">
   <h1><%= @school.name %></h1>
   <% @subjects.each do |s| %>

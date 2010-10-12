@@ -97,6 +97,7 @@ class CoursesController < ApplicationController
   # 显示学校信息
   def show_school
     @school = School.find(params[:id])
+    @course_category = CourseCategory.find(params[:course_category_id])
     @courses = @school.courses
 
     @subjects = []

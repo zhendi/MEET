@@ -2,7 +2,7 @@
   <%= render	"courses_category" %>
 <% end %>
 
-<%= link_to "添加课程", new_course_path(:course_category_id=>@course_category.id, :subject_id=>@subject) %>
+<%= link_to t(:add_course, :scope=>[:view, :course, :show_subject]), new_course_path(:course_category_id=>@course_category.id, :subject_id=>@subject) %>
 
 <div style="margin-left: 50px;">
   <h1><%= @subject.name %></h1>

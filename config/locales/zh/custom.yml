@@ -113,6 +113,10 @@
       _study_course:
         author: "Instructor :"
         description:  "Course description"
+      show_school:
+        add_course: "添加课程"
+      show_subject:
+        add_course: "添加课程"
     personal:
       _added_groups:
         title: "Groups joined  加入的群"

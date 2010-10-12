@@ -23,7 +23,7 @@
         <h4><%= link_to blog.title, blog %></h4>
         <span class="author"><%= blog.user.profile.name %></span>
         <span class="time"><%= time_ago_in_words(blog.created_at) %>
-          <%= t(:ago, :scope=>[:view, :blog, :index]) %></span>
+          <%= t(:ago, :scope=>[:view]) %></span>
       </div>
       <div class="summary">
         <p>
