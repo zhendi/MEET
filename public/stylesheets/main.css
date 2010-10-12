@@ -136,6 +136,10 @@ ul.circle {
   float: left;
 }
 
+#cke_top_blog_content .cke_toolbox {
+  float: left;
+}
+
 /*页脚开始*/
 
 #footer{ 
