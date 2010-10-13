@@ -1,0 +1,12 @@
+﻿<ul>
+<% @course_categories.each do |cc| %>
+    <li>
+    <%= cc.name %>  
+    <%= link_to "Edit", edit_admin_course_category_path(cc) %>
+    <%= link_to "Delete", admin_course_category_path(cc), :method=>:delete, 
+      :confirm=>"Are you sure to delete #{cc.name}" %>
+    </li>
+<% end %>
+</ul>
+
+<%= link_to "New",  new_admin_course_category_path %>

@@ -36,7 +36,7 @@ gem 'annotate'
 gem 'webrat'
 
 # Admin-Data
-gem 'admin_data'
+# gem 'admin_data'
 
 group :development do
   gem 'rspec-rails', '2.0.0.beta.18'
