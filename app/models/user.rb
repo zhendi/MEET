@@ -17,11 +17,20 @@ class User < ActiveRecord::Base
 
   before_create :create_profile
   devise :database_authenticatable, :rememberable, :trackable, :validatable, :registerable	
+  has_many :assignments
+  has_many  :roles, :through=>:assignments
+
+  def role_symbols  
+    roles.map do |role|
+      role.name.underscore.to_sym  
+    end  
+  end  
 
   protected
   def create_profile
     self.profile ||= Profile.new
   end
+
 end
 
 

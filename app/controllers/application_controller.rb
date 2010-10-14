@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   #before_filter :set_locale
 
   layout :layout_by_resource
+  before_filter { |c| Authorization.current_user = c.current_user }  
 
   def set_locale 
     I18n.locale = params[:locale] 

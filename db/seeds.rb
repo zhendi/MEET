@@ -57,8 +57,6 @@ root1.children.create(:name=>"Geology （地理学）", :course_category => c)
 root1.children.create(:name=>"Mathematics （数学）", :course_category => c)
 root1.children.create(:name=>"Physics （物理学）", :course_category => c)
 
-Subject.create(:name=>"Uncategoried", :course_category => c)
-
 School.delete_all()
 
 School.create(:name=>"Harvard （哈佛大学）", :course_category => c)
@@ -70,4 +68,3 @@ School.create(:name=>"UC Berkeley （加大伯克利分校）", :course_category
 School.create(:name=>"Cornell Univ. （康奈尔大学）", :course_category => c)
 School.create(:name=>"Univ. of Michigan（密西根大学）", :course_category => c)
 
-School.create(:name=>"Uncategoried", :course_category=>c)
