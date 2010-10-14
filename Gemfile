@@ -35,6 +35,7 @@ gem 'annotate'
 
 gem 'webrat'
 
+gem "simple_form"
 # Admin-Data
 # gem 'admin_data'
 

@@ -8,6 +8,7 @@ class UserTest < ActiveSupport::TestCase
 end
 
 
+
 # == Schema Information
 #
 # Table name: users
@@ -28,7 +29,6 @@ end
 #  updated_at          :datetime
 #  gold                :integer         default(0)
 #  score               :integer         default(0)
-#  role_id             :integer
 #  answers             :integer         default(0)
 #
 

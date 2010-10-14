@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   layout  "course"
+  filter_resource_access
   respond_to :html,:js
 
   before_filter :select_categories

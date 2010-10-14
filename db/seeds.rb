@@ -68,3 +68,6 @@ School.create(:name=>"UC Berkeley （加大伯克利分校）", :course_category
 School.create(:name=>"Cornell Univ. （康奈尔大学）", :course_category => c)
 School.create(:name=>"Univ. of Michigan（密西根大学）", :course_category => c)
 
+User.create(:email=>"wuhy80@gmail.com", :password=>"123456")
+
+Role.create(:name=>"admin")

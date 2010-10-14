@@ -31,12 +31,3 @@ form label {
   line-height:22px;
 }
 
-form div.input:hover label, form div.input:active label, form div.input:focus label {
-  background:url("/images/label.png") no-repeat scroll left -40px transparent;
-  color:#000000;
-}
-
-form div.input:hover
-{
-  background-color:#00FF00;
-}

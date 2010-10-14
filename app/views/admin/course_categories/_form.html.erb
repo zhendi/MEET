@@ -1,10 +1,6 @@
-﻿<%= form_for ([:admin, @course_category])  do  |f| %>
-    <div class="field">
-        <%= f.label :name  %>
-        <%= f.text_field    :name %>
-    </div>
+﻿<%= simple_form_for ([:admin, @course_category])  do  |f| %>
+  <%= f.error_messages %>
 
-    <div class="field">
-        <%= f.submit %>
-    </div>
+  <%= f.input :name %>
+  <%= f.button  :submit %>
 <% end %>
