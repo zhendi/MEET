@@ -33,5 +33,7 @@ MEET::Application.configure do
     :password => "xbgEdDM0tulB5t",
     :authentication => :login 
   }
+  
+  config.colorize_logging = true
 end
 

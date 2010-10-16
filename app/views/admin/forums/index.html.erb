@@ -1,0 +1,11 @@
+﻿<%= link_to t(:new, :scope=>[:common]), new_admin_forum_path %>
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    <% @forums.each do |forum| %>
+        <tr>
+            <td><%= forum.name %></td>
+        </tr>
+    <% end %>
+</table>

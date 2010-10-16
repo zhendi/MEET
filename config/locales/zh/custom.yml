@@ -1,4 +1,15 @@
 "zh":
+  common:
+    create_succeed: "创建'#{name}'成功"
+    delete_succeed: "删除'#{name}'成功"
+    update_succeed: "更新'#{name}'成功"
+    create_failed: "创建'#{name}'失败"
+    delete_failed: "删除'#{name}'失败"
+    update_failed: "更新'#{name}'失败"
+
+    new: "新建"
+    edit: "编辑"
+    destroy: "删除"
   activerecord:
     models:
       user: "用户表"

@@ -36,6 +36,7 @@ MEET::Application.routes.draw do
 
   namespace :admin  do
     resources :course_categories
+    resources :forums
   end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
