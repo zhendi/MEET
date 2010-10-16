@@ -55,7 +55,7 @@ class Admin::RolesController < ApplicationController
 
     respond_to do |format|
       if @admin_role.update_attributes(params[:role])
-        format.html { redirect_to(@role, :notice => 'Role was successfully updated.') }
+        format.html { redirect_to([:admin, @role], :notice => 'Role was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end

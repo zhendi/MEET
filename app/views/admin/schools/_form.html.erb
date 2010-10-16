@@ -1,0 +1,8 @@
+<%= simple_form_for([:admin, @admin_school]) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.input :name %>
+  <%= f.association :course_category %>
+
+  <%= f.button :submit %>
+<% end %>

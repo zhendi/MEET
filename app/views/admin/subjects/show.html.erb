@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<b>Name:</b>
+<%= @admin_subject.name %>
+</p>
+
+<p>
+<b>Parent:</b>
+<%= @admin_subject.parent_id %>
+</p>
+
+<p>
+<b>Course category:</b>
+<% if @admin_subject.course_category %>
+  <%= @admin_subject.course_category.name %>
+<% else %>
+  asdfsadf
+<% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_subject_path(@admin_subject) %> |
+<%= link_to 'Back', admin_subjects_path %>
