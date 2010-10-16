@@ -6,10 +6,14 @@
     create_failed: "创建'#{name}'失败"
     delete_failed: "删除'#{name}'失败"
     update_failed: "更新'#{name}'失败"
-
     new: "新建"
     edit: "编辑"
     destroy: "删除"
+  helpers:
+    submit:
+      forum:
+        create: "添加%{model}"
+        update: "更新"
   activerecord:
     models:
       user: "用户表"

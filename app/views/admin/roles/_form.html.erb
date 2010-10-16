@@ -1,0 +1,7 @@
+<%= simple_form_for([:admin, @role]) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.input :name %>
+
+  <%= f.button :submit %>
+<% end %>
