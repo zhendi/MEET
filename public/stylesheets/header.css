@@ -11,6 +11,7 @@ Purpose of the stylesheet follows.
   background: #D01E3B url(http://img1.kaixin001.com.cn/i/n_bg_r.gif) repeat-x 50% 0%;
   margin: 0px auto;
   width: 1005px;
+  height: 100px;
 }
 
 #divHeader .logo{
@@ -35,7 +36,7 @@ Purpose of the stylesheet follows.
 }
 
 #app-menu{
-  margin-top:16px;
+  margin-top:50px;
   width:460px;
   float:left;
   margin-left: 10px;

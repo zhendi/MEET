@@ -15,8 +15,9 @@
     <div id="divall">
       <div id="sidebar_application">
         <!-- <div class="m1t"></div> -->
-        <%= yield :sidebar %>
-        <%= render  :partial=>"/shared/admin_panel" %>
+        <%= render  "personal_setting" -%>
+        <%= render  "/shared/application" -%>
+        <%= render  "/shared/admin_panel" -%>
       </div>
 
       <div id="main" style="width:842px;margin-left:-3px;">
