@@ -31,3 +31,35 @@ form label {
   line-height:22px;
 }
 
+/* Table Define */
+table {
+border-collapse:collapse;
+font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+font-size:12px;
+margin:20px;
+text-align:left;
+}
+
+table th {
+background:none repeat scroll 0 0 #B9C9FE;
+border-bottom:1px solid #FFFFFF;
+border-top:4px solid #AABCFE;
+color:#003399;
+font-size:13px;
+font-weight:normal;
+padding:8px;
+}
+
+table td {
+background:none repeat scroll 0 0 #E8EDFF;
+border-bottom:1px solid #FFFFFF;
+border-top:1px solid transparent;
+color:#666699;
+padding:8px;
+}
+
+table tr:hover td {
+background:none repeat scroll 0 0 #D0DAFD;
+color:#333399;
+}
+
