@@ -1,20 +1,11 @@
-<%= form_for @profile do |f| %>
+<%= simple_form_for @profile do |f| %>
   <%= f.error_messages %> 
-  <div class="field">
-    <%= f.label "学历" %>
-    <%= f.select	:education_level, ["高中","大专","本科","研究生"] %>
-  </div>
 
-  <div class="field">
-    <%= f.label "学校名称" %>
-    <%= f.text_field :school_name, :size=>50 %>
-  </div>
+  <%= f.input :education_level, :collection=>["高中","大专","本科","研究生"] %>
+  <%= f.input :school_name %>
+  <%= f.input :income_year %>
 
-  <div class="field">
-    <%= f.label "入学时间" %>
-    <%= f.text_field	:income_year, :size=>50 %>
-  </div>
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>
 
 

@@ -1,50 +1,19 @@
-<%= form_for @profile do |f| %>
+<%= simple_form_for @profile do |f| %>
   <%= f.error_messages %> 
-  <div class="field">
-    <%= f.label "地址" %>
-    <%= f.text_field  :address, :size=>50 %>
-  </div>
 
-  <div class="field">
-    <%= f.label "移动电话"%>
-    <%= f.text_field :mobile,:size=>50 %>
-  </div>
+  <%= f.input :address %>
+  <%= f.input :mobile %>
+  <%= f.input :home_phone %>
+  <%= f.input :home_province,  :collection=> ["上海", "北京"] %>
+  <%= f.input :home_city,  :collection=> ["浦东新区", "徐汇区"]  %>
 
-  <div class="field">
-    <%= f.label "家庭电话" %>
-    <%= f.text_field :home_phone, :size=>50 %>
-  </div>
+  <%= f.input :msn %>
+  <%= f.input :qq %>
+  <%= f.input :gmail %>
+  <%= f.input :blog %>
+  <%= f.input :homepage %>
 
-  <div class="field">
-    <%= f.label "家乡" %>
-    <%= f.select :home_province, ["上海", "北京"] %>
-    <%= f.select :home_city, ["浦东新区", "徐汇区"] %>
-  </div>
 
-  <div class="field">
-    <%= f.label "MSN" %>
-    <%= f.text_field	:msn,	:size=>50 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "QQ"  %>
-    <%= f.text_field :qq, :size=>50 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "GMail" %>
-    <%= f.text_field :gmail, :size=>50 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "blog" %>
-    <%= f.text_field	:blog,	:size=>50 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "主页" %>
-    <%= f.text_field :homepage,	:size=>50 %>
-  </div>
-  <%= f.submit %>
+  <%= f.button :submit %>
 <% end %>
 

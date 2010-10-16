@@ -69,9 +69,14 @@
         star: "星座 :"
         home_province: "省 :"
         home_city: "市 :"
+        school_name: "学校名称 :"
+        income_year: "入学年龄 :"
+        education_level: "最高学历 :"
   view:
     delete: "删除"
     ago: "前"
+    profile:
+        
     users:
       sessions:
         new:
@@ -146,12 +151,12 @@
       _network_activity:
         title: "Network activity  好友动态"
       _personal_info:
-        english_name: "英文姓名 :"
-        chinese_name: "中文姓名 :"
+        english_name: "English name 英文姓名 :"
+        chinese_name: "Chinese name 中文姓名 :"
         sex: "Gender 性别 :"
         hometown: "Hometown  家乡 :"
         current_location: "Current location  现居地 :"
-        gold: "金币 :"
+        gold: "M$ M币 :"
         score: "积分 :"
       _recent_visits:
         title: "Recent visitors  最近来访"

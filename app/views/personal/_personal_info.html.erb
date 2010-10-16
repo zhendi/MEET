@@ -6,24 +6,25 @@
       </div>
     </div>
     <div>
-      <div style="width:30%;" class="left">
+      <div style="width:50%;" class="left">
         <span class="left">
           <%= t(:english_name, :scope=>[:view, :personal, :_personal_info]) %>
         </span>
         <%= current_user.profile.english_name %>
       </div>
-      <div style="width:30%;" class="left">
+      <div style="width:50%;" class="left">
         <span class="left">
           <%= t(:chinese_name, :scope=>[:view, :personal, :_personal_info]) %>
         </span>
         <%= current_user.profile.name %>
       </div>
-      <div style="width:30%;" class="left">
-        <span class="left">
-          <%= t(:sex, :scope=>[:view, :personal, :_personal_info]) %>
-        </span>
-        <%= sex_display(current_user.profile.sex) %>
-      </div>
+    </div>
+
+    <div>
+      <span class="left">
+        <%= t(:sex, :scope=>[:view, :personal, :_personal_info]) %>
+      </span>
+      <%= sex_display(current_user.profile.sex) %>
     </div>
 
     <div>
@@ -40,9 +41,5 @@
     <div>
       <span><%= t(:gold, :scope=>[:view, :personal, :_personal_info]) %> </span>
       <%= current_user.gold %> <%= image_tag	"ico_money.gif" %>
-    </div>
-
-    <div>
-      <span><%= t(:score, :scope=>[:view, :personal, :_personal_info]) %> </span><%= current_user.score %>
     </div>
   </div>

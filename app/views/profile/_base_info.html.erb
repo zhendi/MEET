@@ -1,40 +1,14 @@
-<%= form_for @profile, :html => { :multipart => true } do |f| %>
+<%= simple_form_for @profile, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %> 
-  <div class="field">
-    <%= f.label "中文姓名" %>
-    <%= f.text_field  :name,:size=>50 %>
-  </div>
 
-  <div class="field">
-    <%= f.label "英文名字"  %>
-    <%= f.text_field  :english_name,  :size=>50 %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :english_name %>
+  <%= f.input :birthday %>
+  <%= f.input :star, :collection=>['双子座','天平座'] %>
+  <%= f.input :sex, :collection=>['男', '女'] %>
+  <%= f.input :avatar,  :as=>:file %>
 
-  <div class="field">
-    <%= f.label "生日" %>
-    <%= f.date_select :birthday %>
-  </div>
-
-  <div class="field" style="clear:both">
-    <%= f.label "星座",{:style=>"margin-top:5px"} %>
-    <%= f.select :star, ["水牛", "白鹤", "双瓶", "天马"] %>
-  </div>
-  <div class="field" style="clear:both">
-    <%= f.label "性别",{:style=>"margin-top:5px"} %>
-    <%= f.check_box :sex, :size=>50 %>
-  </div>
-
-  <div class="field" style="clear:both">
-    <%= f.label "头像",{:style=>"margin-top:5px"} %>
-    <span style="display:block;float:left">
-      <%= image_tag @profile.avatar.url %><br/>
-      <%= f.file_field :avatar %>
-    </span>
-  </div> 
-
-  <div class="field" style="clear:both">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit %>
 <% end %>
 
 

@@ -3,6 +3,7 @@
 
   <div class="inputs">
     <%= f.input :email %>
+    <%= f.association :roles, :input_html => { :size=>6 } %>
     <%= f.input :created_at %>
   </div>
 
