@@ -83,6 +83,7 @@ ul.circle {
   margin: 0px auto;
   overflow: hidden;
   width: 1004px;
+  background:none repeat scroll 0 0 #EFEFEF;
 }
 
 #divall #sidebar
@@ -127,7 +128,6 @@ ul.circle {
   overflow: auto;
   padding:6px 3px 0;
   border-bottom:1px dotted #999999;
-  background:none repeat scroll 0 0 #EFEFEF;
 }
 
 .sidebar-list img {

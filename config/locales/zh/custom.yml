@@ -75,8 +75,9 @@
   view:
     delete: "删除"
     ago: "前"
-    profile:
-        
+    layout:
+      application:
+        title: "MEET-属于你的精英教育"
     users:
       sessions:
         new:

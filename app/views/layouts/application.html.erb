@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MEET-属于你的精英教育</title>
+    <title><%= t(:title, :scope=>[:view, :layout, :application]) %></title>
     <%= stylesheet_link_tag 'reset', 'main', 'form','header','courses','forum', 'smoothness/jquery-ui-1.8.5.custom' %>
-    <%= javascript_include_tag "jquery-1.4.2.min","rails","jquery-ui-1.8.5.custom.min","application","jquery.jwplayer","/ckeditor/ckeditor" %>
+    <%= javascript_include_tag "jquery-1.4.2.min","rails","jquery-ui-1.8.5.custom.min","application","/ckeditor/ckeditor" %>
     <%= csrf_meta_tag %>
     <%= yield :header %>
+
+    <script type="text/javascript">
+      function alignHeight(eleA,eleB){
+        if(!document.getElementById(eleA)){return false;}
+        if(!document.getElementById(eleB)){return false;}
+        var heightA = document.getElementById(eleA).clientHeight;
+        var heightB = document.getElementById(eleB).clientHeight;
+        if(heightA > heightB){
+          document.getElementById(eleB).style.height = heightA + "px";
+          document.getElementById(eleA).style.height = heightA + "px";
+        }else{
+          document.getElementById(eleA).style.height = heightB + "px";
+          document.getElementById(eleB).style.height = heightB + "px";
+        }
+      }
+
+window.onload = function z_align(){
+  alignHeight("sidebar_application","main");
+}
+</script>
+
   </head>
   <body>
     <div id="divHeader">
@@ -14,8 +35,10 @@
 
     <div id="divall">
       <div id="sidebar_application">
-        <!-- <div class="m1t"></div> -->
-        <%= render  "personal_setting" -%>
+        <!--<div class="m1t"></div>
+        <%= yield :sidebar %>
+        -->
+        <%= render  "/personal/personal_setting" -%>
         <%= render  "/shared/application" -%>
         <%= render  "/shared/admin_panel" -%>
       </div>
@@ -25,7 +48,7 @@
       </div>
     </div>
 
-    <div id="footer" style="border:none;">
+    <div id="footer">
       <%= render  "shared/footer" %>
     </div>
   </body>
