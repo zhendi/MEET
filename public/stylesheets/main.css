@@ -21,6 +21,23 @@ div {
   overflow:auto;
 }
 
+.miniBtn {
+  -moz-border-radius:3px 3px 3px 3px;
+  background:-moz-linear-gradient(center top , #F4F4F4, #ECECEC) repeat scroll 0 0 transparent;
+  border:1px solid #D4D4D4;
+  color:#333333;
+  cursor:pointer;
+  display:inline-block;
+  font-family:helvetica,arial,freesans,clean,sans-serif;
+  font-size:11px;
+  font-weight:bold;
+  padding: 2px 5px;
+  overflow:visible;
+  padding:3px;
+  text-shadow:1px 1px 0 #FFFFFF;
+  white-space:nowrap;
+}
+
 .notready {
   /*text-decoration : line-through;*/
 }
@@ -57,9 +74,26 @@ div {
   margin-top: 30px;
 }
 
+.mt10 {
+  margin-top: 10px;
+}
+
 .mb10 {
   margin-bottom: 10px;
 }
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.ml140 {
+  margin-left:  140px;
+}
+
 
 ul.circle {
   list-style-type:circle;

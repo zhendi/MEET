@@ -23,6 +23,11 @@ form input, form textarea {
   float: left;
 }
 
+form input[type="submit"] {
+  float: none;
+  margin-top: 20px;
+}
+
 form input.check_boxes {
   float:  left;
   margin-left: 2px;
@@ -52,8 +57,10 @@ table {
   border-collapse:collapse;
   font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
   font-size:12px;
-  margin:20px;
   text-align:left;
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 table th {
