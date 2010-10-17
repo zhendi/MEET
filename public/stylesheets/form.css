@@ -1,23 +1,45 @@
-form  input,form  textarea
-{
-  border: 1px solid #999;
-  outline:  none;
-  padding:  2px 3px;
-  margin: 2px;
-  background-color:#fff;
+div.input {
+  margin-top: 10px;
 }
+
+form label 
+{ 
+  float: left;
+  text-align:right; 
+  width:130px; 
+  margin-right: 10px;
+}
+
+form label.collection_check_boxes {
+  float: left;
+  width: auto;
+  display: block;
+  margin-right: 10px;
+}
+
+form input, form textarea { 
+  padding:  5px;
+  border: 1px solid #999;
+  float: left;
+}
+
+form input.check_boxes {
+  float:  left;
+  margin-left: 2px;
+  display: block;
+}
+
+form label.check, form label.radio { position:relative; text-align:left; }
 
 form input.focus, form textarea.focus,  form input:focus, form textarea:focus
 {
-  border:2px 
+  border:1px 
   solid #39c;
-  padding:1px 2px;
 }
 
-form  select{outline:none;}
-
-form input, form select, form textarea {
-  font: normal normal normal 12px/1.5 tahoma, arial, simsun, sans-serif;
+form  select{
+  outline:none;
+  padding: 3px;
 }
 
 .submit_action{
@@ -25,41 +47,35 @@ form input, form select, form textarea {
   margin-top: 10px;
 }
 
-form label {
-  display:block;
-  height:24px;
-  line-height:22px;
-}
-
 /* Table Define */
 table {
-border-collapse:collapse;
-font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
-font-size:12px;
-margin:20px;
-text-align:left;
+  border-collapse:collapse;
+  font-family:"Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+  font-size:12px;
+  margin:20px;
+  text-align:left;
 }
 
 table th {
-background:none repeat scroll 0 0 #B9C9FE;
-border-bottom:1px solid #FFFFFF;
-border-top:4px solid #AABCFE;
-color:#003399;
-font-size:13px;
-font-weight:normal;
-padding:8px;
+  background:none repeat scroll 0 0 #B9C9FE;
+  border-bottom:1px solid #FFFFFF;
+  border-top:4px solid #AABCFE;
+  color:#003399;
+  font-size:13px;
+  font-weight:normal;
+  padding:8px;
 }
 
 table td {
-background:none repeat scroll 0 0 #E8EDFF;
-border-bottom:1px solid #FFFFFF;
-border-top:1px solid transparent;
-color:#666699;
-padding:8px;
+  background:none repeat scroll 0 0 #E8EDFF;
+  border-bottom:1px solid #FFFFFF;
+  border-top:1px solid transparent;
+  color:#666699;
+  padding:8px;
 }
 
 table tr:hover td {
-background:none repeat scroll 0 0 #D0DAFD;
-color:#333399;
+  background:none repeat scroll 0 0 #D0DAFD;
+  color:#333399;
 }
 

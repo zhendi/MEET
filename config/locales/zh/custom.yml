@@ -30,6 +30,7 @@
         updated_at: "更新时间 :"
         gold: "金币 :"
         score:  "积分 :"
+        roles: "角色 :"
       blog:
         title: "标题 :"
         summary: "摘要 :"
