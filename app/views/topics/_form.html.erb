@@ -1,15 +1,10 @@
-<% form_for [@forum, @topic] do |t| %>
+<%= simple_form_for [@forum, @topic] do |f| %>
   <%= f.error_messages %> 
-  <div class="field">
-    <%= t.label	"标题"  %>
-    <%= t.text_field :name, :size=>50 %>
-  </div>
 
-  <div class="field">
-    <%= t.label "内容"  %>
-    <%= t.text_area	:content, :rows=>8, :cols=>80 %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :content, :as=>:text, :input_html=>{:rows=>8, :cols=>80} %>
 
-  <%= t.submit %>
+
+  <%= f.button :submit, :class=>"ml140" %>
 <% end %>
 
