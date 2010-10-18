@@ -7,7 +7,6 @@
   end
 
   def create
-    logger.info("-------------------------------------------")
     @commentable = find_commentable
     @comment = @commentable.comments.build(params[:comment])
     if @comment.save

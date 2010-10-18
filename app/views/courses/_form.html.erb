@@ -1,56 +1,15 @@
-<%= form_for (@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="errorExplanation">
-      <h2>一共有 <%= @course.errors.count %> 个错误:</h2>
-      <ul>
-        <% @course.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for (@course) do |f| %>
 
-  <%= f.hidden_field  :course_category_id,  :value=>@course_category.id %>
+  <%= f.input :course_category_id, :as=>:hidden, :input_html => { :value => @course_category.id } %>
 
-  <div class="field">
-    <%= f.label "标题" %>
-    <%= f.text_field :name, {:size=>50} %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :gold %>
 
-  <div class="field">
-    <%= f.label "介绍"  %>
-    <%= f.text_area :description, {:rows=>6, :cols=>80, :class=>"ckeditor"} %>
-  </div>
+  <%= f.association :subject %>
+  <%= f.association :school %>
 
-  <div class="field">
-    <%= f.label "说金" %>
-    <%= f.text_field :gold, {:size=>50}%>
-  </div>
+  <%= f.association :level  %>
 
-  <div class="field">
-    <%= f.label "subject" %>
-    <% if @subject %>
-      <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name', @subject.id)) %>
-    <% else %>
-      <%= f.select('subject_id', options_from_collection_for_select(@subjects, 'id', 'name')) %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label "school" %>
-    <% if @school %>
-      <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name', @school.id)) %>
-    <% else %>
-      <%= f.select('school_id', options_from_collection_for_select(@schools, 'id', 'name')) %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label "级别" %>
-    <%= f.select('level_id', options_from_collection_for_select(Level.all, 'id', 'name')) %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "提交", :class=>"submit_action" %>
-  </div>
+  <%= f.button  :submit %>
 <% end %>
