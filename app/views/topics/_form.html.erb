@@ -1,10 +1,8 @@
 <%= simple_form_for [@forum, @topic] do |f| %>
-  <%= f.error_messages %> 
 
   <%= f.input :name %>
-  <%= f.input :content, :as=>:text, :input_html=>{:rows=>8, :cols=>80} %>
+  <%= f.input :content, :as=>:text, :input_html=>{:rows=>8, :cols=>60} %>
 
-
-  <%= f.button :submit, :class=>"ml140" %>
+  <%= f.button :submit %>
 <% end %>
 

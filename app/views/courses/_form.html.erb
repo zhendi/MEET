@@ -3,7 +3,7 @@
   <%= f.input :course_category_id, :as=>:hidden, :input_html => { :value => @course_category.id } %>
 
   <%= f.input :name %>
-  <%= f.input :description %>
+  <%= f.input :description, :input_html=>{:cols=>60, :rows=>6} %>
   <%= f.input :gold,  :as=>:integer %>
 
   <%= f.association :subject %>

@@ -1,36 +1,11 @@
 ﻿<% @blog.tags.build %>
 
-<%= form_for (@blog) do |blog_form| %>
-  <% if @blog.errors.any? %>
-    <div id="errorExplanation">
-      <h2>一共有 <%= @blog.errors.count %> 个错误:</h2>
-      <ul>
-        <% @blog.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for (@blog) do |f| %>
 
-  <div class="field">
-    <%= blog_form.label :title %>
-    <%= blog_form.text_field :title, {:size=>50} %>
-  </div>
-  <!--
-  <div class="field">
-    <%= blog_form.label :summary  %>
-    <%= blog_form.text_area :summary, {:rows=>5,:cols=>80} %>
-  </div>
-  -->
-  <div class="field">
-    <%= blog_form.label :content %>
-    <%= blog_form.text_area :content, {:rows=>18,:cols=>80,:class=>"ckeditor"} %>
-  </div>
+  <%= f.input :title %>
+  <%= f.input :content, :input_html=>{:rows=>12, :cols=>60} %>
 
-  <%= blog_form.label	:tag_list %>
-  <%= blog_form.text_field	:tag_list %>
+  <%= f.input :tag_list %>
 
-    <div class="actions">
-      <%= blog_form.submit %>
-    </div>
-  <% end %>
+  <%= f.button  :submit %>
+<% end %>

@@ -47,13 +47,10 @@
 </div>
 
 <div id="add-reply">
-  <%= form_for  [@topic, @topic.forum_posts.build], :remote=>true do |f| %>
-    <div class="field">
-      <%= f.text_area :content, {:rows=>5, :cols=>80} %> 
-    </div>
+  <%= simple_form_for  [@topic, @topic.forum_posts.build], :remote=>true do |f| %>
 
-    <div class="field">
-      <%= f.submit %>
-    </div>
+    <%= f.input :content, :input_html=>{:rows=>6, :cols=>60} %>
+
+    <%= f.button  :submit %>
   <% end %>
 </div>

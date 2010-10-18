@@ -1,15 +1,6 @@
-<%= form_for([@blog, Comment.new], :remote=>true) do |f| %>
-  <%= f.error_messages %> 
-  <!--
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title,:size=>50 %>
-  </div>
-  -->
-  <div class="field">
-    <%= f.text_area :memo, :cols=>80, :rows=>3 %>
-  </div>
+<%= simple_form_for([@blog, Comment.new], :remote=>true) do |f| %>
+  <%= f.input :memo,  :input_html=>{:cols=>60, :rows=>6} %>
 
-  <%= f.submit %>
+  <%= f.button  :submit %>
 <% end %>
 

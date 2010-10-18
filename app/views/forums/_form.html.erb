@@ -1,20 +1,8 @@
-<%= form_for (@forum) do |f| %>
-  <%= f.error_messages %> 
-  <div class="field">
-    <%= f.label "标题" %>
-    <%= f.text_field :name, {:size=>50} %>
-  </div>
-  <div class="field">
-    <%= f.label "介绍"  %>
-    <%= f.text_area :description, {:rows=>6,:cols=>80} %>
-  </div>
-  <div class="field">
-    <%= f.label "优先级" %>
-    <%= select :forum, :priority, Forum::PRIORITY %>
-  </div>
+<%= simple_form_for (@forum) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, :input_html=>{:rows=>6, :cols=>60} %>
+  <%= f.input :priority, :collection=>Forum::PRIORITY %>
 
-  <div class="actions">
-    <%= f.submit "提交", :class=>"submit_action" %>
-  </div>
+  <%= f.button :submit %>
 <% end %>
 
