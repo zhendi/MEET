@@ -1,13 +1,13 @@
 <li class="comment" display="none" id="comment_<%= comment.id %>">
 <div class="post parent-post">
   <p class="image">
-  <%= link_to image_tag("male.gif", :height=>48, :width=>48), blog_comment_path(comment.blog, comment) %>
+  <%= link_to image_tag("male.gif", :height=>48, :width=>48), blog_comment_path(comment.commentable, comment) %>
   </p>
   <div class="info">
     <span class="author"></span>
     <span class="time"><%= time_ago_in_words(comment.updated_at) %> <%= t(:ago, :scope=>[:view]) %></span>
     <span class="delete">
-      <%= link_to t(:delete, :scope=>[:view]), blog_comment_path(comment.blog, comment), :method=>:delete,
+      <%= link_to t(:delete, :scope=>[:view]), blog_comment_path(comment.commentable, comment), :method=>:delete,
 					:remote=>true, :class=>"Qconfirm" %>
   </span>									</div>
   <div class="content">

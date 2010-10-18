@@ -152,6 +152,8 @@
         title: "Message center  消息中心"
       _network_activity:
         title: "Network activity  好友动态"
+      _promotional:
+        title: "为您推荐的内容"
       _personal_info:
         english_name: "English name 英文姓名 :"
         chinese_name: "Chinese name 中文姓名 :"

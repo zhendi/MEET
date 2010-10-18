@@ -8,14 +8,14 @@ Purpose of the stylesheet follows.
 
 /* 头部定义 */
 #divHeader {
-  background: #D01E3B url(http://img1.kaixin001.com.cn/i/n_bg_r.gif) repeat-x 50% 0%;
+  background: url("/images/logo_expand.png"); 
   margin: 0px auto;
   width: 1005px;
   height: 100px;
 }
 
 #divHeader .logo{
-  padding-left:55px;
+  background: url("/images/logo.png");
 }
 
 #divHeader .login_panel{

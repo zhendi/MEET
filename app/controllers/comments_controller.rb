@@ -1,23 +1,39 @@
 ﻿class CommentsController < ApplicationController
   respond_to :html,:js
 
+  def index
+    @commentable = find_commentable
+    @comments = @commentable.comments
+  end
+
   def create
-    @blog = Blog.find(params[:blog_id])
-    @comment = @blog.comments.build(params[:comment])
+    logger.info("-------------------------------------------")
+    @commentable = find_commentable
+    @comment = @commentable.comments.build(params[:comment])
     if @comment.save
-		respond_with(@comment)
+      flash[:notice] = "Successfully created comment."
     else
-		redirect_to blog_path(blog, :notice=>"保存失败")
+      render :action => 'new'
     end
   end
 
   def destroy
-    blog = Blog.find(params[:blog_id])
-    comment = blog.comments.find(params[:id])
-	@comment_id = "comment_" + comment.id.to_s()
-	
-    comment.destroy
-	
-	respond_with(@comment_id)
+    @commentable = find_commentable
+    @comment = @commentable.comments.find(params[:id])
+    @comment_id = "comment_#{@comment.id}"
+    if @comment.destroy
+      flash[:notice] = "Successfully deleted"
+    end
+  end
+
+  private
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 end
