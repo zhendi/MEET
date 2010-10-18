@@ -4,11 +4,10 @@
 
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :gold %>
+  <%= f.input :gold,  :as=>:integer %>
 
   <%= f.association :subject %>
   <%= f.association :school %>
-
   <%= f.association :level  %>
 
   <%= f.button  :submit %>
