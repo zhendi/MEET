@@ -4,10 +4,9 @@
   </h2>  
   <ul>      
     <% for friendship in current_user.friendships %>      
-      <li>
-      <%= link_to friendship.friend.profile.name, profile_path(friendship.friend) %>
-      (<%= link_to "remove", friendship, :method => :delete %>)
-      </li>      
+      <div class="left" >
+        <%= link_to image_tag(user_pic(friendship.friend), {:width=>64, :height=>64}), profile_path(friendship.friend) %>
+      </div>
     <% end %> 
   </ul> 
 
