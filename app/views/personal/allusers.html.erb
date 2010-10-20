@@ -3,12 +3,11 @@
 <% end %>
 
 <% for user in @users %> 
-  <div> 
+  <div style="height:120px;"> 
     <%= image_tag user_pic(user), :class=>"left" %>
-    <div style="width:50%">
+    <div style="width:70%">
       <div class="blue-title mt10"><%= user.email %></div> 
-
-      <div class="">
+      <div style="float:right;">
         <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %> 
       </div>
       </p> 
