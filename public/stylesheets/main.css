@@ -16,10 +16,12 @@ div {
   display: block;
   word-break: break-all;
   word-wrap: break-word;
+}
+
+.auto_height {
   /* 下面两个值是为了父元素可以自适应子元素高度 */
-  /*zoom:1;
+  zoom:1;
   overflow:auto;
-  */
 }
 
 .miniBtn {
