@@ -1,40 +1,14 @@
-<%= form_for @profile do |f| %>
-  <%= f.error_messages %> 
-  <div class="field">
-    <%= f.label "兴趣" %>
-    <%= f.text_area	:interest, :rows=>5 %>
-  </div>
+<%= simple_form_for @profile do |f| %>
+  <%= f.input :interest,  :input_html=>{:rows=>3} %>
+  <%= f.input :loved_music,  :input_html=>{:rows=>3} %>
+  <%= f.input :loved_movie,  :input_html=>{:rows=>3} %>
+  <%= f.input :loved_game,  :input_html=>{:rows=>3} %>
+  <%= f.input :loved_sport,  :input_html=>{:rows=>3} %>
+  <%= f.input :loved_person,  :input_html=>{:rows=>3} %>
 
-  <div class="field">
-    <%=f.label "喜欢的歌"  %>
-    <%= f.text_area	:loved_music, :rows=>5 %>
-  </div>
 
-  <div class="field">
-    <%= f.label "喜欢的电影" %>
-    <%= f.text_area	:loved_movie, :rows=>5 %>
-  </div>
+  <%= f.input :self_description,  :input_html=>{:rows=>3} %>
 
-  <div class="field">
-    <%= f.label "喜欢的游戏" %>
-    <%= f.text_area :loved_game, :rows=>5 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "喜欢的运动" %>
-    <%= f.text_area	:loved_sport, :rows=>5 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "喜欢的人" %>
-    <%= f.text_area :loved_person, :rows=>5 %>
-  </div>
-
-  <div class="field">
-    <%= f.label "自我描述" %>
-    <%= f.text_area :self_description, :rows=>5 %>
-  </div>
-
-  <%= f.submit %>
+  <%= f.button  :submit %>
 <% end %>
 

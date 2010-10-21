@@ -1,20 +1,9 @@
-<%= form_for @profile do |f| %>
-  <%= f.error_messages %> 
-  <div class="field">
-    <%= f.label "公司名称" %>
-    <%= f.text_field :company,	:size=>40 %>
-  </div>
+<%= simple_form_for @profile do |f| %>
 
-  <div class="field">
-    <%= f.label "公司描述" %>
-    <%= f.text_area :company_description, :rows=>5, :cols=>50 %>
-  </div>
+  <%= f.input :company %>
+  <%= f.input :company_description, :input_html=>{:rows=>5} %>
+  <%= f.input :company_province %>
+  <%= f.input :company_city %>
 
-  <div class="field">
-    <%= f.label "所属地区" %>
-    <%= f.select :company_province, ["上海"] %>
-    <%= f.select :company_city, ["上海"] %>
-  </div>
-
-  <%= f.submit %>
+  <%= f.button  :submit %>
 <% end %>
