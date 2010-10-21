@@ -1,11 +1,12 @@
-class PersonalController < ApplicationController
+class PeopleController < ApplicationController
   respond_to  :html, :js
 
   def index
-    
+    logger.info("--------------------------index")
   end
 
   def people
+    logger.info("---------------------------people")
     @user = User.find(params[:id])
 
     respond_with(@user)

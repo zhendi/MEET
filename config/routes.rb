@@ -1,9 +1,11 @@
 MEET::Application.routes.draw do
   devise_for :users
 
-  match "/personal" => "personal#show"
-  match "/people/:id" => "personal#people"
-  match "/people" => "personal#allusers"
+  #match "/personal" => "personal#show"
+  #match "/people/:id" => "personal#people"
+  #match "/people" => "personal#allusers"
+
+  resources :people
 
   resources	:blogs	do
     resources	:comments
