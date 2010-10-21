@@ -5,7 +5,7 @@
   <ul>      
     <% for friendship in current_user.friendships %>      
       <div class="left" style="margin: 1px;" >
-        <%= link_to image_tag(user_pic(friendship.friend), {:width=>60, :height=>60}), people_path(friendship.friend) %>
+        <%= link_to image_tag(user_pic(friendship.friend), {:width=>60, :height=>60}), person_path(friendship.friend) %>
       </div>
     <% end %> 
   </ul> 

@@ -1,18 +1,12 @@
 class PeopleController < ApplicationController
   respond_to  :html, :js
 
-  def index
-    logger.info("--------------------------index")
-  end
-
-  def people
-    logger.info("---------------------------people")
+  def show
     @user = User.find(params[:id])
-
-    respond_with(@user)
+    respond_with  @user
   end
 
-  def allusers
+  def index
     @users = User.find(:all)
 
     respond_with(@users)

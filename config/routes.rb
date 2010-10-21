@@ -55,7 +55,7 @@ MEET::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 end
 #== Route Map
-# Generated on 14 Oct 2010 07:20
+# Generated on 21 Oct 2010 23:18
 #
 #                   new_user_session GET    /users/sign_in(.:format)                         {:action=>"new", :controller=>"devise/sessions"}
 #                       user_session POST   /users/sign_in(.:format)                         {:action=>"create", :controller=>"devise/sessions"}
@@ -65,9 +65,13 @@ end
 #             edit_user_registration GET    /users/edit(.:format)                            {:action=>"edit", :controller=>"devise/registrations"}
 #                  user_registration PUT    /users(.:format)                                 {:action=>"update", :controller=>"devise/registrations"}
 #                  user_registration DELETE /users(.:format)                                 {:action=>"destroy", :controller=>"devise/registrations"}
-#                           personal        /personal(.:format)                              {:controller=>"personal", :action=>"show"}
-#                                           /people/:id(.:format)                            {:controller=>"personal", :action=>"people"}
-#                             people        /people(.:format)                                {:controller=>"personal", :action=>"allusers"}
+#                             people GET    /people(.:format)                                {:action=>"index", :controller=>"people"}
+#                             people POST   /people(.:format)                                {:action=>"create", :controller=>"people"}
+#                         new_person GET    /people/new(.:format)                            {:action=>"new", :controller=>"people"}
+#                        edit_person GET    /people/:id/edit(.:format)                       {:action=>"edit", :controller=>"people"}
+#                             person GET    /people/:id(.:format)                            {:action=>"show", :controller=>"people"}
+#                             person PUT    /people/:id(.:format)                            {:action=>"update", :controller=>"people"}
+#                             person DELETE /people/:id(.:format)                            {:action=>"destroy", :controller=>"people"}
 #                      blog_comments GET    /blogs/:blog_id/comments(.:format)               {:action=>"index", :controller=>"comments"}
 #                      blog_comments POST   /blogs/:blog_id/comments(.:format)               {:action=>"create", :controller=>"comments"}
 #                   new_blog_comment GET    /blogs/:blog_id/comments/new(.:format)           {:action=>"new", :controller=>"comments"}
@@ -151,6 +155,41 @@ end
 #              admin_course_category GET    /admin/course_categories/:id(.:format)           {:action=>"show", :controller=>"admin/course_categories"}
 #              admin_course_category PUT    /admin/course_categories/:id(.:format)           {:action=>"update", :controller=>"admin/course_categories"}
 #              admin_course_category DELETE /admin/course_categories/:id(.:format)           {:action=>"destroy", :controller=>"admin/course_categories"}
+#                       admin_forums GET    /admin/forums(.:format)                          {:action=>"index", :controller=>"admin/forums"}
+#                       admin_forums POST   /admin/forums(.:format)                          {:action=>"create", :controller=>"admin/forums"}
+#                    new_admin_forum GET    /admin/forums/new(.:format)                      {:action=>"new", :controller=>"admin/forums"}
+#                   edit_admin_forum GET    /admin/forums/:id/edit(.:format)                 {:action=>"edit", :controller=>"admin/forums"}
+#                        admin_forum GET    /admin/forums/:id(.:format)                      {:action=>"show", :controller=>"admin/forums"}
+#                        admin_forum PUT    /admin/forums/:id(.:format)                      {:action=>"update", :controller=>"admin/forums"}
+#                        admin_forum DELETE /admin/forums/:id(.:format)                      {:action=>"destroy", :controller=>"admin/forums"}
+#                        admin_roles GET    /admin/roles(.:format)                           {:action=>"index", :controller=>"admin/roles"}
+#                        admin_roles POST   /admin/roles(.:format)                           {:action=>"create", :controller=>"admin/roles"}
+#                     new_admin_role GET    /admin/roles/new(.:format)                       {:action=>"new", :controller=>"admin/roles"}
+#                    edit_admin_role GET    /admin/roles/:id/edit(.:format)                  {:action=>"edit", :controller=>"admin/roles"}
+#                         admin_role GET    /admin/roles/:id(.:format)                       {:action=>"show", :controller=>"admin/roles"}
+#                         admin_role PUT    /admin/roles/:id(.:format)                       {:action=>"update", :controller=>"admin/roles"}
+#                         admin_role DELETE /admin/roles/:id(.:format)                       {:action=>"destroy", :controller=>"admin/roles"}
+#                      admin_schools GET    /admin/schools(.:format)                         {:action=>"index", :controller=>"admin/schools"}
+#                      admin_schools POST   /admin/schools(.:format)                         {:action=>"create", :controller=>"admin/schools"}
+#                   new_admin_school GET    /admin/schools/new(.:format)                     {:action=>"new", :controller=>"admin/schools"}
+#                  edit_admin_school GET    /admin/schools/:id/edit(.:format)                {:action=>"edit", :controller=>"admin/schools"}
+#                       admin_school GET    /admin/schools/:id(.:format)                     {:action=>"show", :controller=>"admin/schools"}
+#                       admin_school PUT    /admin/schools/:id(.:format)                     {:action=>"update", :controller=>"admin/schools"}
+#                       admin_school DELETE /admin/schools/:id(.:format)                     {:action=>"destroy", :controller=>"admin/schools"}
+#                     admin_subjects GET    /admin/subjects(.:format)                        {:action=>"index", :controller=>"admin/subjects"}
+#                     admin_subjects POST   /admin/subjects(.:format)                        {:action=>"create", :controller=>"admin/subjects"}
+#                  new_admin_subject GET    /admin/subjects/new(.:format)                    {:action=>"new", :controller=>"admin/subjects"}
+#                 edit_admin_subject GET    /admin/subjects/:id/edit(.:format)               {:action=>"edit", :controller=>"admin/subjects"}
+#                      admin_subject GET    /admin/subjects/:id(.:format)                    {:action=>"show", :controller=>"admin/subjects"}
+#                      admin_subject PUT    /admin/subjects/:id(.:format)                    {:action=>"update", :controller=>"admin/subjects"}
+#                      admin_subject DELETE /admin/subjects/:id(.:format)                    {:action=>"destroy", :controller=>"admin/subjects"}
+#                        admin_users GET    /admin/users(.:format)                           {:action=>"index", :controller=>"admin/users"}
+#                        admin_users POST   /admin/users(.:format)                           {:action=>"create", :controller=>"admin/users"}
+#                     new_admin_user GET    /admin/users/new(.:format)                       {:action=>"new", :controller=>"admin/users"}
+#                    edit_admin_user GET    /admin/users/:id/edit(.:format)                  {:action=>"edit", :controller=>"admin/users"}
+#                         admin_user GET    /admin/users/:id(.:format)                       {:action=>"show", :controller=>"admin/users"}
+#                         admin_user PUT    /admin/users/:id(.:format)                       {:action=>"update", :controller=>"admin/users"}
+#                         admin_user DELETE /admin/users/:id(.:format)                       {:action=>"destroy", :controller=>"admin/users"}
 #                               root        /(.:format)                                      {:controller=>"courses", :action=>"index"}
 #          graph_authorization_rules GET    /authorization_rules/graph(.:format)             {:controller=>"authorization_rules", :action=>"graph"}
 #         change_authorization_rules GET    /authorization_rules/change(.:format)            {:controller=>"authorization_rules", :action=>"change"}

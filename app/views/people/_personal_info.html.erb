@@ -1,47 +1,68 @@
 <div id="p-detail" style="height:140px;">
   <div class="left">
-    <div class="limg" title="<%= current_user.profile.name %>">
-      <%= link_to	image_tag("male.gif",:width=>120, :height=>120), profile_path(current_user) %>
+    <div class="limg" title="<%= user_name(@user) %>">
+      <%= link_to	image_tag("male.gif",:width=>80, :height=>80), profile_path(@user) %>
     </div>
-  </div>
+    <div>
+      <% unless current_user?(@user) %>
+        <% unless Friendship.exists?(current_user, @user) %>
+          <%= link_to "Add Friend", friendships_path(:friend_id=>@user),  :method=>:post %>
+        <% end %>
+        <% if Friendship.connected?(@user, current_user) %>
+          <%= link_to "Remove Friend",  friendship_path(Friendship.conn(current_user, @user)),  :method=>:delete, :confirm=>"sure to delete?" %>
+        <% end %>
+        <% if Friendship.pending?(current_user, @user) %>
+          <li>
+          <%= user_name(@user) %> has contacted you
+          <br />
+          (<%= link_to "confirm request", 
+           edit_friend_ship_path(Friendship.conn(current_user, @user)) %>)
+           </li>
+         <% end %>
+         <% if Friendship.pending?(@user, current_user) %>
+           <%= user_name(@user) %>
+         <% end %>
+       <% end %>
+     </div>
+   </div>
 
-  <div>
-    <div style="height: 22px">
-    <div style="width:180px;" class="left">
-      <span class="left">
-        <%= t(:english_name, :scope=>[:view, :personal, :_personal_info]) %>
-      </span>
-      <%= current_user.profile.english_name %>
-    </div>
-    <div style="width:180px;" class="left">
-      <span class="left">
-        <%= t(:chinese_name, :scope=>[:view, :personal, :_personal_info]) %>
-      </span>
-      <%= current_user.profile.name %>
-    </div>
-    </div>
+   <div>
+     <div style="height: 22px">
+       <div style="width:180px;" class="left">
+         <span class="left">
+           <%= t(:english_name, :scope=>[:view, :personal, :_personal_info]) %>
+         </span>
+         <%= @user.profile.english_name %>
+       </div>
+       <div style="width:180px;" class="left">
+         <span class="left">
+           <%= t(:chinese_name, :scope=>[:view, :personal, :_personal_info]) %>
+         </span>
+         <%= @user.profile.name %>
+       </div>
+     </div>
 
-    <div style="height: 22px;">
-    <span class="left">
-      <%= t(:sex, :scope=>[:view, :personal, :_personal_info]) %>
-    </span>
-    <%= sex_display(current_user.profile.sex) %>
-    </div>
+     <div style="height: 22px;">
+       <span class="left">
+         <%= t(:sex, :scope=>[:view, :personal, :_personal_info]) %>
+       </span>
+       <%= sex_display(@user.profile.sex) %>
+     </div>
 
-    <div style="height: 22px;">
-    <span><%= t(:hometown, :scope=>[:view, :personal, :_personal_info]) %>
-    </span>
-    <%= current_user.profile.home_province %> <%= current_user.profile.home_city %>
-    </div>
+     <div style="height: 22px;">
+       <span><%= t(:hometown, :scope=>[:view, :personal, :_personal_info]) %>
+       </span>
+       <%= @user.profile.home_province %> <%= @user.profile.home_city %>
+     </div>
 
-    <div style="height: 22px;">
-    <span><%= t(:current_location, :scope=>[:view, :personal, :_personal_info]) %>
-    </span><%= current_user.profile.address %>
-    </div>
+     <div style="height: 22px;">
+       <span><%= t(:current_location, :scope=>[:view, :personal, :_personal_info]) %>
+       </span><%= @user.profile.address %>
+     </div>
 
-    <div style="height: 22px;">
-    <span><%= t(:gold, :scope=>[:view, :personal, :_personal_info]) %> </span>
-    <%= current_user.gold %> <%= image_tag	"ico_money.gif" %>
-    </div>
-  </div>
-</div>
+     <div style="height: 22px;">
+       <span><%= t(:gold, :scope=>[:view, :personal, :_personal_info]) %> </span>
+       <%= @user.gold %> <%= image_tag	"ico_money.gif" %>
+     </div>
+   </div>
+ </div>

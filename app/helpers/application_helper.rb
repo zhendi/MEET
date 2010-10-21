@@ -24,4 +24,12 @@ module ApplicationHelper
 
     return "male.gif"
   end
+
+  def current_user?(user)
+    if current_user == user
+      return true
+    else
+      return false
+    end
+  end
 end

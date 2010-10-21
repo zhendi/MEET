@@ -28,9 +28,9 @@ class Friendship < ActiveRecord::Base
 
     # Make a pending connection request.
     def request(user, friend, send_mail=nil)
-      if send_mail.nil?
-        send_mail = !global_prefs.nil? && global_prefs.email_notifications? && contact.connection_notifications?
-      end
+      #if send_mail.nil?
+      #  send_mail = !global_prefs.nil? && global_prefs.email_notifications? && contact.connection_notifications?
+      #end
       if user == friend or Friendship.exists?(user, friend)
         nil
       else
@@ -38,12 +38,12 @@ class Friendship < ActiveRecord::Base
           create(:user => user, :friend => friend, :status => PENDING)
           create(:user => friend, :friend => user, :status => REQUESTED)
         end
-        if send_mail
+        #if send_mail
           # The order here is important: the mail is sent *to* the friend,
           # so the connection should be from the friend's point of view.
-          connection = conn(friend, user)
-          PersonMailer.deliver_connection_request(connection)
-        end
+        #  connection = conn(friend, user)
+        #  PersonMailer.deliver_connection_request(connection)
+        #end
         true
       end
     end
@@ -92,6 +92,8 @@ class Friendship < ActiveRecord::Base
     end
 
     def pending?(user, friend)
+      logger.info("--------------------pending")
+      logger.info("#{user.id} #{friend.id}")
       exist?(user, friend) and conn(friend,user).status == PENDING
     end
   end

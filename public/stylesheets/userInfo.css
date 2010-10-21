@@ -15,12 +15,10 @@
 }
 
 .limg {
-  background:url("/images/l120_s.gif") no-repeat scroll 0 0 transparent;
-  height:140px;
   overflow:hidden;
   padding-top:6px;
+  margin: 0px 20px;
   text-align:center;
-  width:146px;
 }
 
 #p-info-left {

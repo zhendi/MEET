@@ -1,20 +1,35 @@
 class FriendshipsController < ApplicationController
+  before_filter :authorize_user, :only => [:edit, :update, :destroy]
+
   def create 
-    friend = current_user.friendships.where("friend_id=?", params[:friend_id])
-    @friendship = current_user.friendships.build(:friend_id => params[:friend_id]) 
-    if @friendship.save 
+    friend = User.find(params[:friend_id])
+    if Friendship.request(current_user, friend) 
       flash[:notice] = "Added friend." 
-      redirect_to root_url 
     else      
       flash[:notice] = "Unable to add friend."      
-      redirect_to root_url 
     end      
+
+    redirect_to root_path
   end      
 
   def destroy      
-    @friendship = current_user.friendships.find(params[:id])      
-    @friendship.destroy 
+    @friendship.breakup
+
     flash[:notice] = "Removed friendship."      
-    redirect_to current_user      
+    redirect_to root_path
   end  
+
+  private
+  # Make sure the current person is correct for this connection.
+  def authorize_user
+    @friendship = Friendship.find(params[:id],
+                                  :include => [:user])
+    unless current_user == @friendship.friend
+      flash[:error] = "Invalid connection."
+      redirect_to root_url
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = "Invalid or expired connection request"
+    redirect_to root_url
+  end
 end

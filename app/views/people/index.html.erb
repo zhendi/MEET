@@ -2,3 +2,18 @@
   <%= render	"/shared/application" %>
 <% end %>
 
+<% for user in @users %> 
+  <div style="height:120px;"> 
+    <%= image_tag user_pic(user), :class=>"left" %>
+    <div style="width:70%">
+      <div class="blue-title mt10"><%= user.email %></div> 
+      <!--
+      <div style="float:right;">
+        <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %> 
+      </div>
+      -->
+      </p> 
+    </div>
+  </div> 
+<% end %>
+

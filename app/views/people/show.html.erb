@@ -7,19 +7,8 @@
   <%= render  "/shared/application" %>
 <% end %>
 
-<div id="p-info-all">
-  <div id="p-info-left" class="left" style="width:580px;margin-left:5px;margin-right:5px;border-right:1px solid #DDDDDD;">
-    <%= render	"personal_info" %>
-    <%= render  "promotional" %>
-    <%= render  "message_center" %>
-    <%= render  "network_activity" %>
-    <%= render  "message_board" %>
-  </div>
-
-  <div id="p-info-right" class="left" style="width:249px;">
-    <%= render  "recent_visits" %>
-    <%= render  "friends" %>
-    <%= render  "friends_birthday" %>
-    <%= render  "added_groups" %>
-  </div>
-</div>
+<% if @user == current_user %>
+  <%= render  "current_people" %>
+<% else %>
+  <%= render  "other_people" %>
+<% end %>

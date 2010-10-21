@@ -1,2 +1,2 @@
-module PersonalHelper
+module PeopleHelper
 end
