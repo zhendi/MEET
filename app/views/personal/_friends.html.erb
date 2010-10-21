@@ -4,8 +4,8 @@
   </h2>  
   <ul>      
     <% for friendship in current_user.friendships %>      
-      <div class="left" >
-        <%= link_to image_tag(user_pic(friendship.friend), {:width=>64, :height=>64}), profile_path(friendship.friend) %>
+      <div class="left" style="margin: 1px;" >
+        <%= link_to image_tag(user_pic(friendship.friend), {:width=>60, :height=>60}), profile_path(friendship.friend) %>
       </div>
     <% end %> 
   </ul> 
