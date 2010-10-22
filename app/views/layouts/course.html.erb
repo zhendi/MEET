@@ -35,13 +35,12 @@ window.onload = function z_align(){
 
     <div id="divall">
       <div id="sidebar">
-        <!--
-        <div class="m1t"></div>
-        -->
         <%= yield :sidebar %>
       </div>
 
       <div id="main" style="width:775px;margin-left:-3px;">
+        <%= flash[:notice] %>
+        <%= flash[:error] %>
         <%= yield %>
       </div>
     </div>

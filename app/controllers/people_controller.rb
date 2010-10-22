@@ -8,7 +8,8 @@ class PeopleController < ApplicationController
 
   def index
     @users = User.find(:all)
-
-    respond_with(@users)
+    @connected_friends = Friendship.where("friend_id=? and status=?", current_user, Friendship::ACCEPTED)
+    @requested_friends = Friendship.where("friend_id=? and status=?", current_user, Friendship::REQUESTED)
+    @pending_friends = Friendship.where("friend_id=? and status=?", current_user, Friendship::PENDING)
   end
 end

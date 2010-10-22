@@ -1,4 +1,4 @@
-class FriendshipsController < ApplicationController
+﻿class FriendshipsController < ApplicationController
   before_filter :authorize_user, :only => [:edit, :update, :destroy]
 
   def create 
@@ -19,11 +19,24 @@ class FriendshipsController < ApplicationController
     redirect_to root_path
   end  
 
+  def update
+    contact = @friendship.friend
+    name = user_name(contact)
+    case params[:commit]
+    when "Accept"
+      @friendship.accept
+      flash[:notice] = %(Accepted connection with
+                           <a href="#{person_url(contact)}">#{name}</a>)
+    when "Decline"
+      @friendship.breakup
+      flash[:notice] = "Declined connection with #{name}"
+    end
+  end 
+
   private
   # Make sure the current person is correct for this connection.
   def authorize_user
-    @friendship = Friendship.find(params[:id],
-                                  :include => [:user])
+    @friendship = Friendship.find(params[:id], :include => [:user])
     unless current_user == @friendship.friend
       flash[:error] = "Invalid connection."
       redirect_to root_url
