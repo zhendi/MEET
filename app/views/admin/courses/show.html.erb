@@ -35,3 +35,10 @@
 
 <h2>添加留言</h2>
 <%= render  :partial=>"comment_form" %>
+
+<script type="text/javascript" charset="utf-8">
+  $(".info").click(function (event) {
+      oid = "#" + event.target.id.replace('info', 'content');
+      $(oid).slideToggle("slow"); 
+      });
+</script>

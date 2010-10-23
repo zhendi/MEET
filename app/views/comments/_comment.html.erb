@@ -1,18 +1,10 @@
 <li class="comment" display="none" id="comment_<%= comment.id %>">
 
 <div class="post parent-post">
-  <p class="image">
-  <%= image_tag "male.gif", :height=>48, :width=>48 %>
-  </p>
-  <div class="info">
-    <% if comment.commentable.class == Course %>
-      <%= render  :partial=>"/admin/courses/comment_snippet", :locals=>{:comment=>comment} %>
-    <% else %>
-      <%= render :partial=>"/blogs/comment_snippet", :locals=>{:comment=>comment} %>
-    <% end %>
-  </div>
-  <div class="content">
-    <div><%= comment.memo %></div>
-  </div>
+  <% if comment.commentable.class == Course %>
+    <%= render  :partial=>"/admin/courses/comment_snippet", :locals=>{:comment=>comment} %>
+  <% else %>
+    <%= render :partial=>"/blogs/comment_snippet", :locals=>{:comment=>comment} %>
+  <% end %>
 </div>
 </li>
