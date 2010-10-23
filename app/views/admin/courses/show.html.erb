@@ -1,0 +1,24 @@
+<%= link_to "Edit", edit_admin_course_path(@course) %>
+
+<div id="course_show">
+	<div class="course_style">
+	<div class="course_pic">
+		<img src="">
+	</div>
+ 
+    <div class="col_riht_text">
+        <ul>
+        	<li class="course_description">
+    		<%= @course.description %>
+    		</li>
+        	<li class="course_info">
+				<span> 等级：</span><%= @course.level.name %> 
+				| <span>类别：</span><%= @course.course_category.name %> 
+                | 主题：
+                <%= @course.subject.name %>
+				| 说金： <%= @course.gold %> <%= image_tag "ico_money.gif" %>
+			</li>
+        </ul>
+    </div>
+</div>
+</div>

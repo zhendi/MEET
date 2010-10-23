@@ -1,0 +1,12 @@
+<%= link_to t(:add_course, :scope=>[:view, :course, :show_school]), new_admin_course_path %>
+
+<div style="margin-left: 50px;">
+  <ul style="list-style: square inside none;margin-left: 15px;">
+    <% @courses.each do |c| %>
+      <li> 
+      <%= link_to c.name, admin_course_path(c) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
