@@ -8,29 +8,33 @@ Purpose of the stylesheet follows.
 
 /* 头部定义 */
 #divHeader {
-  background: url("/images/logo_expand.png"); 
+  background: url("/images/logo.png"); 
   margin: 0px auto;
   width: 1005px;
-  height: 100px;
+  height: 145px;
 }
 
-#divHeader .logo{
-  background: url("/images/logo.png");
+/* 这是首页的头部定义 */
+#divHeader_login {
+  background: url("/images/logo_login.png"); 
+  margin: 0px auto;
+  width: 1005px;
+  height: 145px;
 }
 
-#divHeader .login_panel{
+#divHeader_login .login_panel{
   clear: right;
   color: #CCC;
   float: right;
   margin: 1px 12px;
 }
 
-#divHeader .login_panel a {
+#divHeader_login .login_panel a {
   color: #EEE;
   font-family: Arial;
 }
 
-#divHeader .login_panel a:hover {
+#divHeader_login .login_panel a:hover {
   color: #fff;
   font-family: Arial;
 }
@@ -39,7 +43,7 @@ Purpose of the stylesheet follows.
   margin-top:50px;
   width:460px;
   float:left;
-  margin-left: 10px;
+  margin-left: 230px;
 }
 
 #app-menu ul, #app-menu ul li, #info-panel ul, #info-panel ul li {
