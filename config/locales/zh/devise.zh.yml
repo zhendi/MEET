@@ -1,0 +1,39 @@
+zh:
+  errors:
+    messages:
+      not_found: "没有找到此账户"
+      already_confirmed: "此账户已经激活"
+      not_locked: "此账户没有被锁定"
+
+  devise:
+    failure:
+      unauthenticated: '您尚未登录，无法进行此操作，请登录.'
+      unconfirmed: '请激活您的账号.'
+      locked: '账号被锁定.'
+      invalid: '账号密码不匹配.'
+      invalid_token: '校验Token不正确.'
+      timeout: 'Session过期，请重新登录.'
+      inactive: '请重新激活您的账号.'
+    sessions:
+      signed_in: '登陆成功.'
+      signed_out: '成功签退.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
