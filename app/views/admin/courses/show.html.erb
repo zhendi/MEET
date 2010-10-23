@@ -1,24 +1,37 @@
+<% content_for :header do %>
+  <%= stylesheet_link_tag	"sns" %>
+<% end %>
+
+<%= link_to "Show All", admin_courses_path %>
 <%= link_to "Edit", edit_admin_course_path(@course) %>
 
 <div id="course_show">
-	<div class="course_style">
-	<div class="course_pic">
-		<img src="">
-	</div>
- 
-    <div class="col_riht_text">
-        <ul>
-        	<li class="course_description">
-    		<%= @course.description %>
-    		</li>
-        	<li class="course_info">
-				<span> 等级：</span><%= @course.level.name %> 
-				| <span>类别：</span><%= @course.course_category.name %> 
-                | 主题：
-                <%= @course.subject.name %>
-				| 说金： <%= @course.gold %> <%= image_tag "ico_money.gif" %>
-			</li>
-        </ul>
-    </div>
+  <div class="col_riht_text">
+    <ul>
+      <li class="course_description">
+      <%= @course.description %>
+      </li>
+      <li class="course_info">
+      <span> 等级：</span><%= @course.level.name %> 
+      | <span>类别：</span><%= @course.course_category.name %> 
+      | 主题：
+      <%= @course.subject.name %>
+      | 说金： <%= @course.gold %> <%= image_tag "ico_money.gif" %>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<div>
+  <h3><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h3>
+  <div style="margin-left: 50px;margin-right: 100px;">
+    <%= raw(@course.description) %>
+  </div>
 </div>
+
+<ol id="comments">
+  <%= render  :partial=>"comment", :collection=>@course.comments %>
+</ol>
+
+<h2>添加留言</h2>
+<%= render  :partial=>"comment_form" %>

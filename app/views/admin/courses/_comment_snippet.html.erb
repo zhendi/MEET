@@ -1,0 +1,2 @@
+﻿<span class="time"><%= comment.title %></span>
+      <span class="delete">  <%= link_to t(:delete, :scope=>[:view]), admin_course_comment_path(comment.commentable, comment), :method=>:delete, :remote=>true, :class=>"Qconfirm" %></span>

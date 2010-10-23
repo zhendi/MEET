@@ -3,33 +3,33 @@
 <% end %>
 
 <div id="course_show">
-	<div class="course_style">
-	<div class="course_pic">
-		<img src="">
-	</div>
+  <div class="course_style">
+    <div class="course_pic">
+      <img src="">
+    </div>
 
-	<div class="course_header">
-    	<p>
-    		<span class="course_title" title="<%= @course.name %>"><%= @course.name %></span> 
-    		<span class="nonehui12 STYLE3" style="float:right;"> 
-    			<a href="javascript:void(0)" onclick="lessonSave(648,1);" style="cursor:pointer">加入收藏</a>
-			</span>
-		</p>
+    <div class="course_header">
+      <p>
+      <span class="course_title" title="<%= @course.name %>"><%= @course.name %></span> 
+      <span class="nonehui12 STYLE3" style="float:right;"> 
+        <a href="javascript:void(0)" onclick="lessonSave(648,1);" style="cursor:pointer">加入收藏</a>
+      </span>
+      </p>
     </div>
-    
+
     <div class="col_riht_text">
-        <ul>
-        	<li class="course_description">
-    		<%= @course.description %>
-    		</li>
-        	<li class="course_info">
-				<span> 等级：</span><a href="/index.php/Lesson/index/levelId/3"><%= @course.level.name %></a> 
-				| <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= @course.course_category.name %></a> 
-                | 主题：
-                <%= link_to @course.subject.name, :controller=>:courses, :action=>:show_subject, :id=>@course.subject.id %>
-				| 说金： <a><%= @course.gold %><img src="/SNS/Tpl/speak2me/Public/images/appicons/ico_money.gif"></a>
-			</li>
-        </ul>
+      <ul>
+        <li class="course_description">
+        <%= @course.description %>
+        </li>
+        <li class="course_info">
+        <span> 等级：</span><a href="/index.php/Lesson/index/levelId/3"><%= @course.level.name %></a> 
+        | <span>类别：</span><a href="/index.php/Lesson/index/typeId/1"><%= @course.course_category.name %></a> 
+        | 主题：
+        <%= link_to @course.subject.name, :controller=>:courses, :action=>:show_subject, :id=>@course.subject.id %>
+        | 说金： <a><%= @course.gold %><img src="/SNS/Tpl/speak2me/Public/images/appicons/ico_money.gif"></a>
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
 </div>
