@@ -2,14 +2,11 @@
   <%= render	"courses_category" %>
 <% end %>
 
-<%= link_to t(:add_course, :scope=>[:view, :course, :show_school]), 
-  new_course_path(:course_category_id=>@course_category.id, :school_id=>@school.id) %>
-
-<div style="margin-left: 50px;">
+<div style="margin-left: 50px;" class="mt10">
   <h1><%= @school.name %></h1>
   <% @subjects.each do |s| %>
-    <h3><%= s.name %></h3>
-    <ul style="list-style: square inside none;margin-left: 15px;">
+    <h3 class="mt10"><%= s.name %></h3>
+    <ul style="margin-left: 15px;">
       <% Course.school_courses(@school, s).each do |c| %>
         <li> 
         <%= link_to c.name, study_course_course_path(c) %>

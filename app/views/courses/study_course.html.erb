@@ -1,14 +1,14 @@
 <% content_for	:sidebar do %>
   <%= render	"courses_category" %>
 <% end %>
+<% content_for :header do %>
+  <%= stylesheet_link_tag	"sns" %>
+<% end %>
 
-<h1><%= @school.name %></h1>
+<h1 style="margin-left: 20px;" class="mt10"><%= @school.name %></h1>
 
-<div style="margin-left: 20px;">
-  <div>
-    <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %></h3>
-    <%= @course.author.profile.name %>
-  </div>
+<div style="margin-left: 20px;" class="mt10">
+  <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %> <%= @course.author.profile.name %></h3>
 
   <div>
     <h3><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h3>
@@ -17,3 +17,14 @@
     </div>
   </div>
 </div>
+
+<ol id="comments" class="mt10">
+  <%= render  :partial=>"comment", :collection=>@course.comments %>
+</ol>
+
+<script type="text/javascript" charset="utf-8">
+  $(".info").click(function (event) {
+      oid = "#" + event.target.id.replace('info', 'content');
+      $(oid).slideToggle("slow"); 
+      });
+</script>
