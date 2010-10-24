@@ -8,7 +8,11 @@
 <h1 style="margin-left: 20px;" class="mt10"><%= @school.name %></h1>
 
 <div style="margin-left: 20px;" class="mt10">
-  <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %> <%= @course.author.profile.name %></h3>
+  <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %> 
+    <span id="instructor" style="color: blue;">
+      <%= @course.instructor %>
+    </span>
+  </h3>
 
   <div>
     <h3><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h3>
@@ -18,13 +22,22 @@
   </div>
 </div>
 
-<ol id="comments" class="mt10">
+<ol id="comments" style="margin-top: 30px">
   <%= render  :partial=>"comment", :collection=>@course.comments %>
 </ol>
 
-<script type="text/javascript" charset="utf-8">
-  $(".info").click(function (event) {
-      oid = "#" + event.target.id.replace('info', 'content');
-      $(oid).slideToggle("slow"); 
-      });
+<div id="dialog" title="Instructor" style="display:none;">
+  <%= raw @course.instructor_description %>
+</div>
+
+<%= content_for :footer do %>
+  <script type="text/javascript" charset="utf-8">
+    $(".info").click(function (event) {
+        oid = "#" + event.target.id.replace('info', 'content');
+        $(oid).slideToggle("slow"); 
+        });
+$("#instructor").click(function (event) {
+    $("#dialog").dialog({ height: 300, width: 500 })
+    });
 </script>
+<% end %>

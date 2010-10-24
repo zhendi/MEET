@@ -1,6 +1,10 @@
 ﻿<%= simple_form_for ([:admin, @course]) do |f| %>
   <%= f.input :name %>
-  <%= f.input :description, :input_html=>{:cols=>60, :rows=>6} %>
+  <%= f.input :description, :input_html=>{:cols=>80, :rows=>15} %>
+
+  <%= f.input :instructor %>
+  <%= f.input :instructor_description,  :input_html=>{:cols=>80, :rows=>10} %>
+
   <%= f.input :gold,  :as=>:integer %>
 
   <%= f.association :course_category %>

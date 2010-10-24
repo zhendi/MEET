@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101020232801) do
+ActiveRecord::Schema.define(:version => 20101024024104) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -77,13 +77,15 @@ ActiveRecord::Schema.define(:version => 20101020232801) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "gold"
-    t.integer  "level_id",                           :null => false
-    t.integer  "course_category_id",                 :null => false
+    t.integer  "level_id",                              :null => false
+    t.integer  "course_category_id",                    :null => false
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "subject_id",          :default => 0, :null => false
-    t.integer  "school_id",           :default => 0, :null => false
+    t.integer  "subject_id",             :default => 0, :null => false
+    t.integer  "school_id",              :default => 0, :null => false
+    t.string   "instructor"
+    t.text     "instructor_description"
   end
 
   create_table "forum_posts", :force => true do |t|

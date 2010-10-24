@@ -1,10 +1,10 @@
 <li class="comment" display="none" id="comment_<%= comment.id %>">
 <div class="post parent-post" style="padding: 0px 20px;min-height:30px;">
-  <div class="info" id="info_<%= comment.id %>">
-    <span class="time"><%= comment.title %></span>
+  <div class="info" id="info_<%= comment.id %>" style="text-align:left;">
+    <%= comment.title %>
   </div>
   <div class="content" id="content_<%= comment.id %>" style="display:none">
-    <div><%= raw comment.memo %></div>
+    <div><%= simple_format(comment.memo) %></div>
   </div>
 
 </div>
