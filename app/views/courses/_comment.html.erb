@@ -4,7 +4,7 @@
     <%= comment.title %>
   </div>
   <div class="content" id="content_<%= comment.id %>" style="display:none">
-    <div><%= simple_format(comment.memo) %></div>
+    <div><%= raw comment.memo %></div>
   </div>
 
 </div>
