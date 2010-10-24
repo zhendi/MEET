@@ -43,9 +43,7 @@ group :development do
   gem 'rspec-rails', '2.0.0.beta.18'
 end
 
-group :production do
-  gem 'mysql', '>= 2.8.1'
-end
+gem 'mysql2', '>= 0.2.6'
 
 group :test do
   gem 'rspec', '2.0.0.beta.18'

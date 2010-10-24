@@ -1,8 +1,7 @@
 set :application, "meet"
 
-set :repository, "git@github.com:wuhy80/MEET.git" 
+set :repository, "git://github.com/wuhy80/MEET.git"
 set :scm, "git"
-ssh_options[:forward_agent] = true
 
 set :deploy_to, "/home/wuhy80/#{application}"
 set :use_sudo,  false
