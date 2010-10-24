@@ -1,0 +1,35 @@
+<h1>Listing admin_friendships</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Friend</th>
+    <th>Status</th>
+    <th>Accepted at</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @admin_friendships.each do |admin_friendship| %>
+    <tr>
+      <td><%= user_name(admin_friendship.user) %></td>
+      <td><%= user_name(admin_friendship.friend) %></td>
+      <td>
+        <% if admin_friendship.status == 0 %>
+          ACCEPTED
+        <% elsif admin_friendship.status == 1 %>
+          REQUESTED
+        <% elsif admin_friendship.status == 2 %>
+          PENDING
+        <% end %>
+      </td>
+      <td><%= admin_friendship.accepted_at %></td>
+      <td><%= link_to 'Edit', edit_admin_friendship_path(admin_friendship) %></td>
+      <td><%= link_to 'Destroy', admin_friendship, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Friendship', new_admin_friendship_path %>

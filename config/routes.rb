@@ -44,6 +44,7 @@ MEET::Application.routes.draw do
     resources :courses  do
       resources	:comments
     end
+    resources :friendships
   end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

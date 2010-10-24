@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @admin_friendship.user_id %>
+</p>
+
+<p>
+  <b>Friend:</b>
+  <%= @admin_friendship.friend_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @admin_friendship.status %>
+</p>
+
+<p>
+  <b>Accepted at:</b>
+  <%= @admin_friendship.accepted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_friendship_path(@admin_friendship) %> |
+<%= link_to 'Back', admin_friendships_path %>

@@ -24,13 +24,17 @@
     name = user_name(contact)
     case params[:commit]
     when "Accept"
+      logger.info("------------------------------Accept")
       @friendship.accept
       flash[:notice] = %(Accepted connection with
                            <a href="#{person_url(contact)}">#{name}</a>)
     when "Decline"
+      logger.info("-------------------------------Decline")
       @friendship.breakup
       flash[:notice] = "Declined connection with #{name}"
     end
+
+    redirect_to peoples_path
   end 
 
   private
