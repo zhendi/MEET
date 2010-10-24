@@ -1,0 +1,10 @@
+<li class="comment" display="none" id="comment_<%= comment.id %>">
+
+<div class="post parent-post">
+  <% if comment.commentable.class == Course %>
+    <%= render  :partial=>"/admin/courses/comment_snippet", :locals=>{:comment=>comment} %>
+  <% else %>
+    <%= render :partial=>"/blogs/comment_snippet", :locals=>{:comment=>comment} %>
+  <% end %>
+</div>
+</li>

@@ -1,0 +1,6 @@
+<%= simple_form_for([@blog, Comment.new], :remote=>true) do |f| %>
+  <%= f.input :memo,  :input_html=>{:cols=>60, :rows=>6} %>
+
+  <%= f.button  :submit %>
+<% end %>
+
