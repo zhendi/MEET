@@ -116,7 +116,7 @@
         group: "Group  群"
         friend: "Friend  好友"
         gift: "Gift 礼物"
-        crowdsouring: "CrowdSourcing 专家解答"
+        crowdsouring: "CrowdSourcing 众包"
         bidding: "Bidding center 互动竞价"
         groupon: "GroupOn 团购"
         vote: "Vote 投票"
@@ -165,7 +165,7 @@
       _network_activity:
         title: "Network activity  好友动态"
       _promotional:
-        title: "为您推荐的内容"
+        title: "Content you may be interested in 为您推荐的内容"
       _personal_info:
         english_name: "English name 英文姓名 :"
         chinese_name: "Chinese name 中文姓名 :"
