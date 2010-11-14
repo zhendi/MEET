@@ -1,0 +1,296 @@
+<div class='ChatApplication is-chat' id='ChatApplication'>
+  <div class='body csb-body'>
+    <div class='applets'>
+      <div class='FriendsApplet bar-container'>
+        <div class='Bubble decoration TEMPLATE hidden'>
+          <div class='header bbl-header'>
+            <div class='title'>
+              <span class='out-title'>
+                [TITLE]
+              </span>
+              <span class='date out-date'>
+                [DATE]
+              </span>
+            </div>
+            <div class='do-close action'>
+              x
+            </div>
+          </div>
+          <div class='body bbl-body'>
+            <div class='message'>
+              <div class='icon left'>
+                <img align='absmiddle' class='author out-author P' height='60' src='/images/user-avatar-default.png' width='60' />
+              </div>
+              <div class='text out-text'>
+                [TEXT]
+              </div>
+              <div class='clearer'>
+                &nbsp;
+              </div>
+            </div>
+          </div>
+          <div class='footer bbl-footer'>
+            <div class='operations'>
+              <button class='do-ok out-ok action T'>
+                reply
+              </button>
+              <span class='hsep-5'></span>
+              <button class='do-cancel out-cancel action T'>
+                decline
+              </button>
+            </div>
+            <div class='tip'>
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <div class='FriendsList SlidingPane hidden'>
+          <div class='header fl-header'>
+            <div class='title T'>
+              My friends
+            </div>
+            <img align='absmiddle' class='do-collapse action P' height='16' src='/images/icon-collapse.png' width='16' />
+            <div class='clearer'>
+              &nbsp;
+            </div>
+          </div>
+          <div class='body fl-body'>
+            <ul class='friends'>
+              <li class='when-empty when-service_available'>
+                <div class='message when-empty'>
+                  <span class='text T'>
+                    No online friend
+                  </span>
+                </div>
+              </li>
+              <li class='when-not_service_available hidden'>
+                <div class='message'>
+                  <span class='text T'>
+                    No service
+                  </span>
+                  <!-- %button.action.do-reconnect.T -->
+                  <!-- reconnect -->
+                  <div class='clearer'>
+                    &nbsp;
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class='clearer'>
+              &nbsp;
+            </div>
+          </div>
+          <div class='footer TEMPLATES'>
+            <ul>
+              <li class='friend-element when-service_available'>
+                <div class='friend'>
+                  <div class='left'>
+                    <img align='absmiddle' class='icon out-picture P' height='30' src='/images/user-avatar-default.png' width='30' />
+                  </div>
+                  <div class='name out-name'>
+                    NAME
+                  </div>
+                  <div class='status out-status'>
+                    STATUS
+                  </div>
+                  <span class='when-not_in_discussion hidden'>
+                    <button class='do-invite action T'>
+                      invite
+                    </button>
+                  </span>
+                  <span class='when-in_discussion'>
+                    <button class='do-seeChat action T'>
+                      chat
+                    </button>
+                  </span>
+                  <div class='clearer'>
+                    &nbsp;
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='UserStatus StatusBar'>
+          <div class='body us-body'>
+            <div class='info'>
+              <img align='absmiddle' class='P' height='16' src='/images/icon-contact.png' width='16' />
+              <span>
+                <span class='hi'>
+                  <span class='out-onlineFriends'>
+                    0
+                  </span>
+                  <span class='T out-onlineFriendsLabel'>
+                    friends
+                  </span>
+                </span>
+                <span></span>
+                <span class='T'>
+                  online
+                </span>
+              </span>
+            </div>
+            <div class='toggle'>
+              <img align='absmiddle' class='do-expand action when-not_expanded P' height='16' src='/images/icon-expand.png' width='16' />
+              <img align='absmiddle' class='do-collapse action when-expanded hidden P' height='16' src='/images/icon-collapse.png' width='16' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='clearer'>
+      &nbsp;
+    </div>
+  </div>
+  <div class='footer TEMPLATES'>
+    <div class='DiscussionApplet bar-container'>
+      <div class='Bubble decoration TEMPLATE hidden'>
+        <div class='header bbl-header'>
+          <div class='title'>
+            <span class='out-title'>
+              [TITLE]
+            </span>
+            <span class='date out-date'>
+              [DATE]
+            </span>
+          </div>
+          <div class='do-close action'>
+            x
+          </div>
+        </div>
+        <div class='body bbl-body'>
+          <div class='message'>
+            <div class='icon left'>
+              <img align='absmiddle' class='author out-author P' height='60' src='/images/user-avatar-default.png' width='60' />
+            </div>
+            <div class='text out-text'>
+              [TEXT]
+            </div>
+            <div class='clearer'>
+              &nbsp;
+            </div>
+          </div>
+        </div>
+        <div class='footer bbl-footer'>
+          <div class='operations'>
+            <button class='do-ok out-ok action T'>
+              reply
+            </button>
+            <span class='hsep-5'></span>
+            <button class='do-cancel out-cancel action T'>
+              decline
+            </button>
+          </div>
+          <div class='tip'>
+            &nbsp;
+          </div>
+        </div>
+      </div>
+      <div class='ChatLog SlidingPane decoration hidden'>
+        <div class='header cl-header'>
+          <div class='icon left'>
+            <img align='absmiddle' class='out-withPicture P' height='45' src='/images/user-avatar-default.png' width='45' />
+          </div>
+          <div class='name out-withName'>
+            NAME
+          </div>
+          <div class='status out-withStatus'>
+            STATUS
+          </div>
+          <img align='absmiddle' class='do-collapse action P' height='16' src='/images/icon-collapse.png' width='16' />
+          <img align='absmiddle' class='do-close-discussion action P' height='16' src='/images/icon-close.png' width='16' />
+          <div class='clearer'>
+            &nbsp;
+          </div>
+        </div>
+        <div class='header cl-header-2'>
+          <div class='left'>
+            <div class='discussionStatus'>
+              <span class='out'>
+                <!-- / TODO : find something interesting to display here... -->
+                &nbsp;
+              </span>
+            </div>
+          </div>
+          <div class='right'>
+            <span class='on-state when-initiated when-accepted when-active when-inactive hidden'>
+              <button class='do-endDiscussion action T'>
+                end
+              </button>
+            </span>
+            <span class='on-state when-ended when-cancelled when-declined hidden'>
+              <button class='do-closeDiscussion action T'>
+                close
+              </button>
+            </span>
+          </div>
+          <div class='clearer'>
+            &nbsp;
+          </div>
+        </div>
+        <div class='body cl-body'>
+          <ul class='messages is-empty'>
+            <li class='when-empty hidden'></li>
+          </ul>
+          <div class='TEMPLATES'>
+            <ul>
+              <li>
+                <div class='message'>
+                  <div class='header'>
+                    <div class='left out name'>
+                      NAME
+                    </div>
+                    <div class='right out date'>
+                      HHhMM
+                    </div>
+                  </div>
+                  <div class='body out text'>
+                    TEXT
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='footer cl-footer'>
+          <div class='on-state when-initiated when-accepted when-active when-inactive'>
+            <input class='in-message' type='text' />
+            <button class='do-writeMessage action'>
+              <img align='absmiddle' class='action P' height='16' src='/images/icon-bubble_and_shadow.png' width='16' />
+            </button>
+          </div>
+          <div class='on-state when-ended when-cancelled when-declined hidden'>
+            <span class='T'>
+              discussion ended
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class='ChatStatus StatusBar'>
+        <div class='body us-body'>
+          <div class='info'>
+            <img align='absmiddle' class='P' height='16' src='/images/icon-bubble.png' width='16' />
+            <span>
+              <span class='hi'>
+                <span class='out-withName'>
+                  NAME
+                </span>
+              </span>
+              :
+              <span class='out-messageCount'>
+                0
+              </span>
+              <span class='T'>
+                messages
+              </span>
+            </span>
+          </div>
+          <div class='toggle action'>
+            <img align='absmiddle' class='do-expand when-not_expanded hidden action P' height='16' src='/images/icon-expand.png' width='16' />
+            <img align='absmiddle' class='do-collapse when-expanded action P' height='16' src='/images/icon-collapse.png' width='16' />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
