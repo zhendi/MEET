@@ -10,7 +10,7 @@
     <th></th>
   </tr>
 
-  <% @admin_friendships.each do |admin_friendship| %>
+  <% @friendships.each do |admin_friendship| %>
     <tr>
       <td><%= user_name(admin_friendship.user) %></td>
       <td><%= user_name(admin_friendship.friend) %></td>
