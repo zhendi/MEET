@@ -16,6 +16,8 @@ gem 'will_paginate', "~> 3.0.pre2"
 # 个人认为，不需要使用这个组件。事实上，最好是什么组件都不使用，每个组件都有他自己的一些规则
 gem 'devise'
 # 
+# 非常酷的一套东西，可以相当程度上替代partial的
+gem 'cells'
 
 gem 'declarative_authorization'
 
