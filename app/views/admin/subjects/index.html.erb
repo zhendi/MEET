@@ -3,6 +3,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th>Parent</th>
     <th>Course category</th>
@@ -13,6 +14,7 @@
 
 <% @admin_subjects.each do |admin_subject| %>
   <tr>
+    <td><%= admin_subject.id %></td>
     <td><%= admin_subject.name %></td>
     <td><%= admin_subject.parent_id %></td>
     

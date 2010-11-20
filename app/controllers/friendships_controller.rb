@@ -9,14 +9,14 @@
       flash[:notice] = "Unable to add friend."      
     end      
 
-    redirect_to root_path
+    redirect_to people_path
   end      
 
   def destroy      
     @friendship.breakup
 
     flash[:notice] = "Removed friendship."      
-    redirect_to root_path
+    redirect_to people_path
   end  
 
   def update
@@ -34,7 +34,7 @@
       flash[:notice] = "Declined connection with #{name}"
     end
 
-    redirect_to peoples_path
+    redirect_to people_path
   end 
 
   private
@@ -43,10 +43,10 @@
     @friendship = Friendship.find(params[:id], :include => [:user])
     unless current_user == @friendship.friend
       flash[:error] = "Invalid connection."
-      redirect_to root_url
+      redirect_to people_path
     end
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "Invalid or expired connection request"
-    redirect_to root_url
+    redirect_to people_path
   end
 end

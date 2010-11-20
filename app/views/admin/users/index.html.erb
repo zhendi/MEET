@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Email</th>
     <th>Created at</th>
     <th></th>
@@ -11,6 +12,7 @@
 
   <% @admin_users.each do |admin_user| %>
     <tr>
+      <td><%= admin_user.id %></td>
       <td><%= admin_user.email %></td>
       <td><%= admin_user.created_at %></td>
       <td><%= link_to 'Show', [:admin, admin_user] %></td>

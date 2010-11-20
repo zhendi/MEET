@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>User</th>
     <th>Friend</th>
     <th>Status</th>
@@ -12,6 +13,7 @@
 
   <% @friendships.each do |admin_friendship| %>
     <tr>
+      <td><%= admin_friendship.id %></td>
       <td><%= user_name(admin_friendship.user) %></td>
       <td><%= user_name(admin_friendship.friend) %></td>
       <td>

@@ -2,10 +2,12 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Name</th>
   </tr>
   <% @forums.each do |forum| %>
     <tr>
+      <td><%= forum.id %></td>
       <td><%= forum.name %></td>
     </tr>
   <% end %>

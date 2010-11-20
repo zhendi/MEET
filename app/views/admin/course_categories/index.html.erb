@@ -2,12 +2,16 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th></th>
     <th></th>
   </tr>
   <% @course_categories.each do |cc| %>
     <tr>
+      <td>
+        <%= cc.id %>
+      </td>
       <td>
         <%= cc.name %>  
       </td>
