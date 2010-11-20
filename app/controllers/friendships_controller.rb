@@ -42,7 +42,7 @@
   def authorize_user
     @friendship = Friendship.find(params[:id], :include => [:user])
     logger.error("Friendship is #{@friendship.inspect}")
-    if current_user == @friendship.user
+    unless current_user == @friendship.friend
       flash[:error] = "Invalid connection."
       redirect_to people_path
     end

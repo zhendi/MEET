@@ -6,7 +6,6 @@
       <%= image_tag user_pic(friend.user), :class=>"left" %>
       <div style="width:70%">
         <div class="blue-title mt10"><%= user_name(friend.user) %></div> 
-        <%= link_to "Accept", friendship_accept_path(Friendship.conn(friend.friend, friend.user)), :method=>:post %>
         <div style="float:right;">
           <%= simple_form_for friend do |f| %>
             <%= f.submit  :Accept %>
