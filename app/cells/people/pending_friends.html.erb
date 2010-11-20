@@ -1,15 +1,18 @@
-﻿<h2>Pending Friends</h2>
-<% for friend in @pending_friends %> 
-  <div style="height:120px;"> 
-    <%= image_tag user_pic(friend.friend), :class=>"left" %>
-    <div style="width:70%">
-      <div class="blue-title mt10"><%= friend.friend.email %></div> 
-      <%= simple_form_for friend  do |f| %>
-        <%= f.submit  :Accept %>
-        <%= f.submit  :Decline %>
-      <% end %>
-      </p> 
-    </div>
-  </div> 
-<% end %>
+﻿<h2 class="blue-title">Pending Friends</h2>
+
+<ul style="overflow: hidden;">
+  <% for friend in @pending_friends %> 
+    <span style="height:120px;"> 
+      <%= image_tag user_pic(friend.friend), :class=>"left" %>
+      <div style="width:70%">
+        <div class="blue-title mt10"><%= friend.friend.email %></div> 
+        <%= simple_form_for friend  do |f| %>
+          <%= f.submit  :Accept %>
+          <%= f.submit  :Decline %>
+        <% end %>
+        </p> 
+      </div>
+    </span> 
+  <% end %>
+</ul>
 
