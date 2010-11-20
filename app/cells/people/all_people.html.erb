@@ -1,0 +1,9 @@
+<ul>      
+  <% for user in @users %>      
+    <div class="left" style="margin: 1px;" >
+      <%= image_tag(user_pic(user), {:width=>60, :height=>60}) %><br/>
+      <%= link_to user_name(user),  person_path(user) %>
+    </div>
+  <% end %> 
+</ul> 
+<br/>

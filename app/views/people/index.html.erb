@@ -1,45 +1,10 @@
 ﻿<% content_for :sidebar do %>
   <%= render	"/shared/application" %>
 <% end %>
-<h2>Connected Friends</h2>
-<% for friend in @connected_friends %> 
-  <div style="height:120px;"> 
-    <%= image_tag user_pic(friend.friend), :class=>"left" %>
-    <div style="width:70%">
-      <div class="blue-title mt10"><%= link_to  friend.friend.email, people_path(friend.friend) %></div> 
-      <%= simple_form_for friend  do |f| %>
-        <%= f.button  :Accept %>
-        <%= f.button  :Decline %>
-      <% end %>
-      </p> 
-    </div>
-  </div> 
-<% end %>
-<h2>Requested Friends</h2>
-<% for friend in @requested_friends %> 
-  <div style="height:120px;"> 
-    <%= image_tag user_pic(friend.friend), :class=>"left" %>
-    <div style="width:70%">
-      <div class="blue-title mt10"><%= friend.friend.email %></div> 
-      <div style="float:right;">
-        <%= link_to "Add Friend", friendships_path(:friend_id => friend.friend), :method => :post %> 
-      </div>
-      </p> 
-    </div>
-  </div> 
-<% end %>
-<h2>Pending Friends</h2>
-<% for friend in @pending_friends %> 
-  <div style="height:120px;"> 
-    <%= image_tag user_pic(friend.friend), :class=>"left" %>
-    <div style="width:70%">
-      <div class="blue-title mt10"><%= friend.friend.email %></div> 
-      <%= simple_form_for friend  do |f| %>
-        <%= f.submit  :Accept %>
-        <%= f.submit  :Decline %>
-      <% end %>
-      </p> 
-    </div>
-  </div> 
-<% end %>
 
+<h2>All Users</h2>
+<%= render_cell :people,  :all_people %>
+
+<%= render_cell :people,  :connected_friends, {:current_user=>current_user} %>
+<%= render_cell :people,  :requested_friends, {:current_user=>current_user} %>
+<%= render_cell :people,  :pending_friends, {:current_user=>current_user} %>

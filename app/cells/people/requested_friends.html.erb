@@ -1,0 +1,13 @@
+﻿<h2>Requested Friends</h2>
+<% for friend in @requested_friends %> 
+  <div style="height:120px;"> 
+    <%= image_tag user_pic(friend.friend), :class=>"left" %>
+    <div style="width:70%">
+      <div class="blue-title mt10"><%= friend.friend.email %></div> 
+      <div style="float:right;">
+        <%= link_to "Add Friend", friendships_path(:friend_id => friend.friend), :method => :post %> 
+      </div>
+      </p> 
+    </div>
+  </div> 
+<% end %>
