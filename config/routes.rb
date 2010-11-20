@@ -31,7 +31,9 @@ MEET::Application.routes.draw do
     resources :forum_posts
   end
 
-  resources :friendships
+  resources :friendships  do
+    post "accept"
+  end
   resources	:profile
 
   namespace :admin  do

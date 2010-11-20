@@ -2,7 +2,7 @@
   <%= render	"/shared/application" %>
 <% end %>
 
-<%= render_cell :people,  :all_people %>
+<%= render_cell :people,  :all_people, {:current_user=>current_user} %>
 <%= render_cell :people,  :connected_friends, {:current_user=>current_user} %>
 <%= render_cell :people,  :requested_friends, {:current_user=>current_user} %>
 <%= render_cell :people,  :pending_friends, {:current_user=>current_user} %>

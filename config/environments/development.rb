@@ -35,5 +35,7 @@ MEET::Application.configure do
   }
   
   config.colorize_logging = true
+
+  config.logger = Logger.new(STDOUT)
 end
 

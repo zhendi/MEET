@@ -6,10 +6,7 @@
       <%= image_tag user_pic(friend.friend), :class=>"left" %>
       <div style="width:70%">
         <div class="blue-title mt10"><%= link_to  friend.friend.email, people_path(friend.friend) %></div> 
-        <%= simple_form_for friend  do |f| %>
-          <%= f.button  :Accept %>
-          <%= f.button  :Decline %>
-        <% end %>
+        <%= link_to "Unlink", friendship_path(friend), :method=>:delete, :condirm=>"sure to delete?" %>
         </p> 
       </div>
     </span> 

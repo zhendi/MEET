@@ -2,9 +2,11 @@
 
 <ul style="overflow: hidden;"> 
   <% for user in @users %> 
-    <span style="margin: 1px;display:block;width:120px;" class="left">
-      <%= image_tag(user_pic(user), {:width=>100, :height=>100}) %><br/>
-      <%= link_to user_name(user),  person_path(user) %>
-    </span>
+    <% unless user.id == @current_user.id %>
+      <span style="margin: 1px;display:block;width:120px;" class="left">
+        <%= image_tag(user_pic(user), {:width=>100, :height=>100}) %><br/>
+        <%= link_to user_name(user),  person_path(user) %>
+      </span>
+    <% end %>
   <% end %> 
 </ul> 

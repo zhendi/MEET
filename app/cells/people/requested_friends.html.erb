@@ -3,11 +3,15 @@
 <ul style="overflow: hidden;"> 
   <% for friend in @requested_friends %> 
     <span style="height:120px;"> 
-      <%= image_tag user_pic(friend.friend), :class=>"left" %>
+      <%= image_tag user_pic(friend.user), :class=>"left" %>
       <div style="width:70%">
-        <div class="blue-title mt10"><%= friend.friend.email %></div> 
+        <div class="blue-title mt10"><%= user_name(friend.user) %></div> 
+        <%= link_to "Accept", friendship_accept_path(Friendship.conn(friend.friend, friend.user)), :method=>:post %>
         <div style="float:right;">
-          <%= link_to "Add Friend", friendships_path(:friend_id => friend.friend), :method => :post %> 
+          <%= simple_form_for friend do |f| %>
+            <%= f.submit  :Accept %>
+            <%= f.submit  :Decline %>
+          <% end %>
         </div>
         </p> 
       </div>

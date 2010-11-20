@@ -57,9 +57,9 @@ class Friendship < ActiveRecord::Base
       end
       # Exclude the first admin to prevent everyone's feed from
       # filling up with new registrants.
-      unless [user, friend].include?(Person.find_first_admin)
-        log_activity(conn(user, friend))
-      end
+      #unless [user, friend].include?(User.find_first_admin)
+      #  log_activity(conn(user, friend))
+      #end
     end
 
     def connect(user, friend, send_mail = nil)
@@ -72,6 +72,7 @@ class Friendship < ActiveRecord::Base
 
     # Delete a connection or cancel a pending request.
     def breakup(user, friend)
+      logger.info("breakup #{user} #{friend}")
       transaction do
         destroy(conn(user, friend))
         destroy(conn(friend, user))

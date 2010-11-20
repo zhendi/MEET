@@ -1,5 +1,6 @@
 ﻿class FriendshipsController < ApplicationController
-  before_filter :authorize_user, :only => [:edit, :update, :destroy]
+  helper  ApplicationHelper
+  before_filter :authorize_user, :only => [:edit, :update, :destroy, :accept, :decline]
 
   def create 
     friend = User.find(params[:friend_id])
@@ -10,9 +11,9 @@
     end      
 
     redirect_to people_path
-  end      
+  end
 
-  def destroy      
+  def destroy
     @friendship.breakup
 
     flash[:notice] = "Removed friendship."      
@@ -21,13 +22,12 @@
 
   def update
     contact = @friendship.friend
-    name = user_name(contact)
+    name = contact.profile.name
     case params[:commit]
     when "Accept"
-      logger.info("------------------------------Accept")
+      logger.debug("------------------------------Accept")
       @friendship.accept
-      flash[:notice] = %(Accepted connection with
-                           <a href="#{person_url(contact)}">#{name}</a>)
+      flash[:notice] = "Accepted connection with #{name}"
     when "Decline"
       logger.info("-------------------------------Decline")
       @friendship.breakup
@@ -41,7 +41,8 @@
   # Make sure the current person is correct for this connection.
   def authorize_user
     @friendship = Friendship.find(params[:id], :include => [:user])
-    unless current_user == @friendship.friend
+    logger.error("Friendship is #{@friendship.inspect}")
+    if current_user == @friendship.user
       flash[:error] = "Invalid connection."
       redirect_to people_path
     end
