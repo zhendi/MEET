@@ -1,0 +1,19 @@
+﻿<div class="sidebar-list">
+  <h3><%= t(:title, :scope=>[:view, :personal, :_personal_setting]) %></h3>
+  <ul>
+    <li class="notready">
+    <%= image_tag "college.png" %>
+    <%= link_to t(:account, :scope=>[:view, :personal, :_personal_setting]), "" %>
+    </li>
+
+    <li>
+    <%= image_tag "college.png" %>
+    <%= link_to	t(:data_setting, :scope=>[:view, :personal, :_personal_setting]), people_path %>
+    </li>
+
+    <li class="notready">
+    <%= image_tag "college.png" %>
+    <%= link_to	t(:privacy_setting, :scope=>[:view, :personal, :_personal_setting]), people_path %>
+    </li>
+  </ul>
+</div>

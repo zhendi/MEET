@@ -1,0 +1,21 @@
+<div style="height:160px">
+  <h2 class="blue-title">
+    <%= t(:title, :scope=>[:view, :personal, :_friends]) %>
+  </h2>  
+  <ul>      
+    <% for friendship in current_user.friendships %>      
+      <div class="left" style="margin: 1px;" >
+        <%= link_to image_tag(user_pic(friendship.friend), {:width=>60, :height=>60}), person_path(friendship.friend) %>
+      </div>
+    <% end %> 
+  </ul> 
+
+  <!--
+  <h2>Users Who Have Befriended You</h2> 
+  <ul> 
+    <% for user in current_user.inverse_friends %> 
+      <li><%= link_to user.profile.name, profile_path(user) %></li> 
+    <% end %> 
+  </ul> 
+  -->
+</div>
