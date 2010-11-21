@@ -14,12 +14,13 @@
 
     <div id="divall">
       <div id="sidebar">
-        <%= render_cell :misc,  :courses_category %>
+        <%= render_cell :course,  :courses_category %>
       </div>
 
       <div id="main" style="width:775px;margin-left:-3px;">
         <%= flash[:notice] %>
         <%= flash[:error] %>
+        <h3 class="blue-title"><%= yield :nav_bar %></h3>
         <%= yield %>
       </div>
     </div>

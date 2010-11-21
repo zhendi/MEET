@@ -117,7 +117,6 @@ class CoursesController < ApplicationController
     end
   end
 
-
   def study_course
     @course = Course.find(params[:id])
 
