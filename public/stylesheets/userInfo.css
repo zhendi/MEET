@@ -29,7 +29,12 @@
   float: left;
 }
 
-#p-detail span {
+.p-info {
+  width:  220px;
+  float:  left;
+}
+
+.p-title {
   color: #808080;
   font-weight: 400;
   text-align: right;

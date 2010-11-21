@@ -30,13 +30,13 @@
    <div>
      <div style="height: 22px">
        <div style="width:220px;" class="left">
-         <span class="left">
+         <span class="p-title">
            <%= t(:english_name, :scope=>[:view, :personal, :_personal_info]) %>
          </span>
          <%= @user.profile.english_name %>
        </div>
        <div style="width:220px;" class="left">
-         <span class="left">
+         <span class="p-title">
            <%= t(:chinese_name, :scope=>[:view, :personal, :_personal_info]) %>
          </span>
          <%= @user.profile.name %>
@@ -44,25 +44,30 @@
      </div>
 
      <div style="height: 22px;">
-       <span class="left">
+       <span class="p-title">
          <%= t(:sex, :scope=>[:view, :personal, :_personal_info]) %>
        </span>
        <%= sex_display(@user.profile.sex) %>
      </div>
 
      <div style="height: 22px;">
-       <span><%= t(:hometown, :scope=>[:view, :personal, :_personal_info]) %>
+       <span class="p-title">
+         <%= t(:hometown, :scope=>[:view, :personal, :_personal_info]) %>
        </span>
        <%= @user.profile.home_province %> <%= @user.profile.home_city %>
      </div>
 
      <div style="height: 22px;">
-       <span><%= t(:current_location, :scope=>[:view, :personal, :_personal_info]) %>
-       </span><%= @user.profile.address %>
+       <span class="p-title">
+         <%= t(:current_location, :scope=>[:view, :personal, :_personal_info]) %>
+       </span>
+       <%= @user.profile.address %>
      </div>
 
      <div style="height: 22px;">
-       <span><%= t(:gold, :scope=>[:view, :personal, :_personal_info]) %> </span>
+       <span class="p-title">
+         <%= t(:gold, :scope=>[:view, :personal, :_personal_info]) %>
+       </span>
        <%= @user.gold %> <%= image_tag	"ico_money.gif" %>
      </div>
    </div>
