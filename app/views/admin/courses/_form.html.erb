@@ -7,10 +7,14 @@
 
   <%= f.input :gold,  :as=>:integer %>
 
-  <%= f.association :course_category %>
-  <%= f.association :subject %>
-  <%= f.association :school %>
-  <%= f.association :level  %>
+  <%= f.input :course_category_id, :as=>:hidden, :input_html=>{:value=>@course_category.id} %>
+  <%= f.input :subject_id, :as=>:hidden, :input_html=>{:value=>@subject.id} %>
+
+  <% if @course_category.name.downcase.index("college education") %>
+    <%= f.association :school %>
+  <% end %>
+
+  <%= f.association :level %>
 
   <%= f.button  :submit %>
 <% end %>

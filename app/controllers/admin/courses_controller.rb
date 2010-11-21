@@ -7,6 +7,9 @@
     end
 
     def new
+        @course_category = CourseCategory.find(params[:category_id])
+        @subject = Subject.find(params[:subject_id])
+
         @course = Course.new()
     end
 
@@ -16,6 +19,8 @@
 
     def edit
         @course = Course.find(params[:id])
+        @course_category = @course.course_category
+        @subject = @course.subject
     end
 
     def update

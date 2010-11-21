@@ -1,24 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-<b>Name:</b>
+<h1 class="blue-title">
+<%= @admin_subject.course_category.name %> >> 
 <%= @admin_subject.name %>
-</p>
+</h1>
 
-<p>
-<b>Parent:</b>
-<%= @admin_subject.parent_id %>
-</p>
+<div style="margin-left: 50px;">
+  <ul style="list-style: square inside none;margin-left: 15px;">
+    <% @courses.each do |c| %>
+      <li> 
+      <%= link_to c.name, admin_course_path(c) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<p>
-<b>Course category:</b>
-<% if @admin_subject.course_category %>
-  <%= @admin_subject.course_category.name %>
-<% else %>
-  asdfsadf
-<% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_admin_subject_path(@admin_subject) %> |
+<%= link_to 'Create Course', new_admin_course_path(:category_id=>@course_category, :subject_id=>@admin_subject) %>
 <%= link_to 'Back', admin_course_category_path(@course_category) %>
