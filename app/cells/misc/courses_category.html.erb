@@ -1,0 +1,11 @@
+<ul class="sidebar-list">
+  <% @categories.each do |t| %>
+    <li class="cursorHand">
+    <%= image_tag "college.png", {:class=>"left"} %>
+    <div style="margin-left: 15px">
+    <%= link_to t.name, :controller=>"courses", :action=>"list", :id=>t %>
+  </div>
+    </li>
+  <% end %>
+</ul>
+
