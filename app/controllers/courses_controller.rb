@@ -90,8 +90,82 @@ class CoursesController < ApplicationController
   # 列出某个大类中的所有的Subject以及学校
   def list
     @course_category = CourseCategory.find(params[:id])
+    course_name = @course_category.name.downcase
+    if course_name.index("college education")
+      redirect_to :action=>:show_college_edution, :id=>params[:id]
+    elsif course_name.index("hot topic course")
+      redirect_to :action=>:show_hot_topic_course,  :id=>params[:id]
+    elsif course_name.index("test prep")
+      redirect_to :action=>:show_test_prep, :id=>params[:id]
+    elsif course_name.index("job seeking")
+      redirect_to :action=>:show_job_seeking, :id=>params[:id]
+    elsif course_name.index("conversational communications")
+      redirect_to :action=>:show_conversational_communications, :id=>params[:id]
+    elsif course_name.index("us school application")
+      redirect_to :action=>:show_us_school_application, :id=>params[:id]
+    elsif course_name.index("k12 education")
+      redirect_to :action=>:show_k12_education, :id=>params[:id]
+    elsif course_name.index("online practice and games")
+      redirect_to :action=>:show_online_practice_and_games, :id=>params[:id]
+    elsif course_name.index("watch and listen")
+      redirect_to :action=>:show_watch_and_listen,  :id=>params[:id]
+    else
+      redirect_to  :action=>:index
+    end
+  end
+
+  def show_college_edution
+    @course_category = CourseCategory.find(params[:id])
     @subjects = @course_category.subjects.roots
-    @schools = @course_category.schools
+    @schools = @course_category.schools   
+  end
+
+  def show_hot_topic_course
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_test_prep
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_job_seeking
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_conversational_communications
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_k12_education
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_online_practice_and_games
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_watch_and_listen
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
+  end
+
+  def show_us_school_application
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = @course_category.subjects.roots
+    @schools = @course_category.schools    
   end
 
   # 显示学校信息

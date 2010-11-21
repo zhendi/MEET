@@ -1,0 +1,30 @@
+<% content_for :nav_bar  do %>
+  <%= link_to "首页", root_path %> >>
+  <%= @course_category.name %>
+<% end %>
+
+<div class="left" style="width:45%;">
+  <h1 class="mt10 ml20">By School</h1>
+  <ul class="mt10">
+    <% @schools.each do |c| %>
+      <li class="ml20">
+      <%= link_to c.name, :controller=>"courses", :action=>"show_school", :id=>c, :course_category_id=>c.course_category %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="left" style="width:45%;">
+  <h1 class="mt10 ml20">By Subject</h1>
+  <% @subjects.each do |c| %>
+    <h2 class="ml20 mt10"><%= c.name %></h2>
+    <ul class="mt10">
+      <% c.children.each do |s| %>
+        <li class="ml20">
+        <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :course_category_id=>c.course_category %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+

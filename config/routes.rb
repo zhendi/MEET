@@ -16,6 +16,16 @@ MEET::Application.routes.draw do
       post "collect"
       post "uncollect"
       get "study_course"
+
+      get "show_college_edution"
+      get "show_hot_topic_course"
+      get "show_test_prep"
+      get "show_us_school_application"
+      get "show_job_seeking"
+      get "show_conversational_communications"
+      get "show_k12_education"
+      get "show_online_practice_and_games"
+      get "show_watch_and_listen"
     end
   end
 
