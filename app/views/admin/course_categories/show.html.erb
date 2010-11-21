@@ -1,0 +1,28 @@
+<h2 class="blue-title"><%= @course_category.name %></h2>
+
+<%= link_to t(:new, :scope=>[:common]), new_admin_subject_path(:category_id=>@course_category), :method=>:get %>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Parent</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subjects.each do |admin_subject| %>
+  <tr>
+    <td><%= admin_subject.id %></td>
+    <td><%= admin_subject.name %></td>
+    <td><%= admin_subject.parent_id %></td>
+    
+    <td><%= link_to 'Show', [:admin, admin_subject] %></td>
+    <td><%= link_to 'Edit', edit_admin_subject_path(admin_subject) %></td>
+    <td><%= link_to 'Destroy', [:admin, admin_subject], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Back', admin_course_categories_path() %>

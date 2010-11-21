@@ -5,6 +5,11 @@ class Admin::CourseCategoriesController < ApplicationController
     @course_categories = CourseCategory.all
   end
 
+  def show
+    @course_category = CourseCategory.find(params[:id])
+    @subjects = Subject.where("course_category_id=#{@course_category.id}")
+  end
+
   def new
     @course_category = CourseCategory.new()
   end

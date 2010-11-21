@@ -13,6 +13,7 @@ class Admin::SubjectsController < ApplicationController
   # GET /admin/subjects/1.xml
   def show
     @admin_subject = Subject.find(params[:id])
+    @course_category = @admin_subject.course_category
 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,6 +24,7 @@ class Admin::SubjectsController < ApplicationController
   # GET /admin/subjects/new.xml
   def new
     @admin_subject = Subject.new
+    @course_category = CourseCategory.find(params[:category_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,12 +34,15 @@ class Admin::SubjectsController < ApplicationController
   # GET /admin/subjects/1/edit
   def edit
     @admin_subject = Subject.find(params[:id])
+    @course_category = @admin_subject.course_category
   end
 
   # POST /admin/subjects
   # POST /admin/subjects.xml
   def create
     @admin_subject = Subject.new(params[:subject])
+    logger.error("xxxxxxxxxxxxx0000000000000")
+    logger.error(@admin_subject)
 
     respond_to do |format|
       if @admin_subject.save
