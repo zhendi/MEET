@@ -117,15 +117,27 @@ ul.circle {
 }
 
 .box_half {
-  float:    left;
+  float:  left;
   overflow: hidden;
-  width:    46%;
+  width:  48%;
+  border: 1px solid #B4B4B4;
+  height: 250px;
+  margin: 0.8%;
 }
 
 .box_full {
   float:    left;
   overflow: hidden;
-  width:    95%;
+  width:    98%;
+  margin: 0.8%;
+}
+
+.box_title {
+  background:none repeat scroll 0 0 #565662;
+  color:#FFFFFF;
+  height:21px;
+  line-height:21px;
+  margin:1px auto 0;
 }
 /* 主内容 */
 
