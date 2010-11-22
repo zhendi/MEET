@@ -4,14 +4,16 @@
 <% end %>
 
 <% @subjects.each do |c| %>
-  <h2 class="ml20 mt10"><%= c.name %></h2>
-  <ul class="mt10">
-    <% c.children.each do |s| %>
-      <li class="ml20">
-      <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :course_category_id=>c.course_category %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="box_half">
+    <h2 class="ml20 mt10"><%= c.name %></h2>
+    <ul class="mt10">
+      <% c.children.each do |s| %>
+        <li class="ml20">
+        <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :course_category_id=>c.course_category %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 

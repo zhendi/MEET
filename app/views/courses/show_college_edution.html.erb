@@ -3,7 +3,7 @@
   <%= @course_category.name %>
 <% end %>
 
-<div class="left" style="width:45%;">
+<div class="box_half">
   <h1 class="mt10 ml20">By School</h1>
   <ul class="mt10">
     <% @schools.each do |c| %>
@@ -14,7 +14,7 @@
   </ul>
 </div>
 
-<div class="left" style="width:45%;">
+<div class="box_half">
   <h1 class="mt10 ml20">By Subject</h1>
   <% @subjects.each do |c| %>
     <h2 class="ml20 mt10"><%= c.name %></h2>

@@ -116,7 +116,17 @@ ul.circle {
   border: 1px solid #CCCCCC;
 }
 
+.box_half {
+  float:    left;
+  overflow: hidden;
+  width:    46%;
+}
 
+.box_full {
+  float:    left;
+  overflow: hidden;
+  width:    95%;
+}
 /* 主内容 */
 
 #divall {
