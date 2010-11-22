@@ -9,6 +9,12 @@
     new: "新建"
     edit: "编辑"
     destroy: "删除"
+  New: "新建"
+  Show: "查看"
+  Edit: "编辑"
+  Delete: "删除"
+  ID: "编号"
+  Back: "返回"
   helpers:
     submit:
       forum:
@@ -45,6 +51,10 @@
         memo: "内容 :"
         created_at: "创建日期 :"
         updated_at: "更新时间 :"
+      school:
+        name: "学校 :"
+        course_category: "分类 :"
+        submit: "提交"
       course:
         name: "课名 :"
         description: "描述 :"
@@ -85,6 +95,23 @@
         company_description: "公司描述 :"
         company_province: "所在省份 :"
         company_city: "所在城市 :"
+  admin:
+    course_categories:
+      index:
+        Name: "教程类别"
+      show:
+        Name: "主题"
+        Parent: "父类"
+    subjects:
+      show:
+        Name: "课程名称"
+    schools:
+      index:
+        Name: "学校名称"
+        CourseCategory: "教程类别"
+      show:
+        Name: "学校名称 :"
+        CourseCategory: "教程类别 :"
   view:
     delete: "删除"
     ago: "前"

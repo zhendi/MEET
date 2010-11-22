@@ -1,9 +1,9 @@
-﻿<%= link_to "New", new_admin_course_category_path,  :class=>"miniBtn ml20 mt10" %>
+﻿<%= link_to t("New"), new_admin_course_category_path,  :class=>"miniBtn ml20 mt10" %>
 
 <table>
   <tr>
-    <th>ID</th>
-    <th>Name</th>
+    <th><%= t "ID" %></th>
+    <th><%= t ".Name" %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,13 @@
         <%= cc.name %>  
       </td>
       <td>
-        <%= link_to "Show", admin_course_category_path(cc) %>
+        <%= link_to t("Show"), admin_course_category_path(cc) %>
       </td>
       <td>
-        <%= link_to "Edit", edit_admin_course_category_path(cc) %>
+        <%= link_to t("Edit"), edit_admin_course_category_path(cc) %>
       </td>
       <td>
-        <%= link_to "Delete", admin_course_category_path(cc), :method=>:delete, :confirm=>"Are you sure to delete #{cc.name}" %>
+        <%= link_to t("Delete"), admin_course_category_path(cc), :method=>:delete, :confirm=>"Are you sure to delete #{cc.name}" %>
       </td>
     </tr>
   <% end %>

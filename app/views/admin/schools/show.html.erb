@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= t(".Name") %></b>
   <%= @admin_school.name %>
 </p>
 
 <p>
-  <b>Course category:</b>
+  <b><%= t(".CourseCategory") %></b>
   <%= @admin_school.course_category_id %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_school_path(@admin_school) %> |
-<%= link_to 'Back', admin_schools_path %>
+<%= link_to t('Edit'), edit_admin_school_path(@admin_school) %> |
+<%= link_to t('Back'), admin_schools_path %>

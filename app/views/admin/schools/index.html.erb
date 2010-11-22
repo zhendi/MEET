@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Course category</th>
+    <th><%= t("ID") %></th>
+    <th><%= t(".Name") %></th>
+    <th><%= t(".CourseCategory") %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,9 +19,9 @@
           <%= admin_school.course_category.name %>
         <% end %>
       </td>
-      <td><%= link_to 'Show', [:admin, admin_school] %></td>
-      <td><%= link_to 'Edit', edit_admin_school_path(admin_school) %></td>
-      <td><%= link_to 'Destroy', [:admin, admin_school], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t('Show'), [:admin, admin_school] %></td>
+      <td><%= link_to t('Edit'), edit_admin_school_path(admin_school) %></td>
+      <td><%= link_to t('Delete'), [:admin, admin_school], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
