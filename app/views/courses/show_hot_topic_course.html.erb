@@ -3,13 +3,13 @@
   <%= @course_category.name %>
 <% end %>
 
-<% @subjects.each do |c| %>
+<% @subjects.each do |s| %>
   <div class="box_half">
-    <h2 class="box_title"><%= c.name %></h2>
+    <h2 class="box_title"><%= s.name %></h2>
     <ul class="mt10">
-      <% c.children.each do |s| %>
+      <% s.courses.each do |c| %>
         <li class="ml20">
-        <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :course_category_id=>c.course_category %>
+        <%= link_to c.name, study_course_course_path(c) %>
         </li>
       <% end %>
     </ul>

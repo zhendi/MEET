@@ -2,7 +2,9 @@
   <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
+<% if @school %>
 <h1 style="margin-left: 20px;" class="mt10"><%= @school.name %></h1>
+<% end %>
 
 <div style="margin-left: 20px;" class="mt10">
   <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %> 
