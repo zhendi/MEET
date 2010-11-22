@@ -1,17 +1,30 @@
 <h1 class="blue-title">
-<%= @admin_subject.course_category.name %> >> 
-<%= @admin_subject.name %>
+  <%= @admin_subject.course_category.name %> >> 
+  <%= @admin_subject.name %>
 </h1>
 
-<div style="margin-left: 50px;">
-  <ul style="list-style: square inside none;margin-left: 15px;">
-    <% @courses.each do |c| %>
-      <li> 
-      <%= link_to c.name, admin_course_path(c) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<table>
+  <tr>
+    <th>ID</th>
+    <th style="width: 610px">Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% indexNum = 0 
+  @courses.each do |course| %>
+    <tr>
+      <td><%= indexNum %>
+        <% indexNum += 1  %></td>
+      <td><%= course.name %></td>
+
+      <td><%= link_to 'Show', admin_course_path(course) %></td>
+      <td><%= link_to 'Edit', edit_admin_course_path(course) %></td>
+      <td><%= link_to 'Destroy', admin_course_path(course), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
 
 <%= link_to 'Create Course', new_admin_course_path(:category_id=>@course_category, :subject_id=>@admin_subject) %>
 <%= link_to 'Back', admin_course_category_path(@course_category) %>

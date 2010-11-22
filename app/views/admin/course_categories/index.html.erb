@@ -1,4 +1,4 @@
-﻿<%= button_to "New", new_admin_course_category_path, :method=>:get, :class=>"miniBtn left ml20 mt10" %>
+﻿<%= link_to "New", new_admin_course_category_path,  :class=>"miniBtn ml20 mt10" %>
 
 <table>
   <tr>
@@ -8,10 +8,12 @@
     <th></th>
     <th></th>
   </tr>
-  <% @course_categories.each do |cc| %>
+  <% indexNum = 0 
+    @course_categories.each do |cc| %>
     <tr>
       <td>
-        <%= cc.id %>
+        <%= indexNum %>
+        <%  indexNum += 1  %>
       </td>
       <td>
         <%= cc.name %>  

@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
-<%= link_to "Show All", admin_courses_path %> | 
+<%= link_to "Show All", admin_subject_path(@course.subject) %> | 
 <%= link_to "Edit", edit_admin_course_path(:id=>@course) %>
 
 <div id="course_show">
@@ -37,8 +37,10 @@
 <%= render  :partial=>"comment_form" %>
 
 <script type="text/javascript" charset="utf-8">
-  $(".info").click(function (event) {
+  $(".info").click(function (event)
+      {
       oid = "#" + event.target.id.replace('info', 'content');
       $(oid).slideToggle("slow"); 
-      });
-</script>
+      }
+      );
+  </script>
