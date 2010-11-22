@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>ID</th>
+    <th><%= t("ID") %></th>
     <th>Name</th>
     <th></th>
     <th></th>
@@ -13,9 +13,9 @@
   <tr>
     <td><%= role.id %></td>
     <td><%= role.name %></td>
-    <td><%= link_to 'Show', [:admin, role] %></td>
-    <td><%= link_to 'Edit', edit_admin_role_path(role) %></td>
-    <td><%= link_to 'Destroy', [:admin, role], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t('Show'), [:admin, role] %></td>
+    <td><%= link_to t('Edit'), edit_admin_role_path(role) %></td>
+    <td><%= link_to t('Destroy'), [:admin, role], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
