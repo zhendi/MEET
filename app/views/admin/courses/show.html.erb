@@ -5,12 +5,13 @@
 <%= link_to "Show All", admin_subject_path(@course.subject) %> | 
 <%= link_to "Edit", edit_admin_course_path(:id=>@course) %>
 
+<h1 class="blue-title mt10">
+  <%= @course.name %>
+</h1>
+
 <div id="course_show">
   <div class="col_riht_text">
     <ul>
-      <li class="course_description">
-      <%= @course.description %>
-      </li>
       <li class="course_info">
       <span> 等级：</span><%= @course.level.name %> 
       | <span>类别：</span><%= @course.course_category.name %> 
@@ -23,8 +24,8 @@
 </div>
 
 <div>
-  <h3><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h3>
-  <div style="margin-left: 50px;margin-right: 100px;">
+  <h2 class="blue-title mt20"><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h2>
+  <div class="box-full">
     <%= raw(@course.description) %>
   </div>
 </div>
@@ -33,7 +34,7 @@
   <%= render  :partial=>"comment", :collection=>@course.comments %>
 </ol>
 
-<h2>添加留言</h2>
+<h2 class="blue-title mt20">添加留言</h2>
 <%= render  :partial=>"comment_form" %>
 
 <script type="text/javascript" charset="utf-8">
