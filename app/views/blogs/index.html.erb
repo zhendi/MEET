@@ -4,7 +4,7 @@
 
 
 <div class="box_threequarter">
-  <h1 class="blue-title mb10"><%= t(:blog_list, :scope=>[:view, :blog, :index]) %></h1>
+  <h1 class="blue-title mb10"><%= t(".blog_list") %></h1>
 
   <ul id="bloglist">	
     <% @blogs.each do |blog| %>
@@ -25,11 +25,11 @@
           </p>
         </div>
         <p class="stat">
-        <%= t(:read_count, :scope=>[:view, :blog], :count=>blog.readcount) %>
+        <%= t(".read_count", :count=>blog.readcount) %>
         <span class="pipe">|</span>
-        <%= t(:comment_count, :scope=>[:view, :blog], :count=>blog.comments.count) %>
+        <%= t(".comment_count", :count=>blog.comments.count) %>
         <span class="pipe">|</span>
-        <%= link_to  t(:reply, :scope=>[:view, :blog, :index]), blog_path(blog) %>					
+        <%= link_to  t(".reply"), blog_path(blog) %>					
         </p>
       </div>
       </li>

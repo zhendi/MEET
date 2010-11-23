@@ -6,8 +6,8 @@
   <%= render	"/shared/application" %>
 <% end %>
 
-<h1 id="heading"><%= t(:create_blog, :scope=>[:view, :blog, :new]) %></h1>
+<h1 id="heading"><%= t(".create_blog") %></h1>
 
 <%= render  'form' %>
 
-<%= link_to t(:go_back, :scope=>[:view, :blog, :new]), blogs_path %>
+<%= link_to t(".go_back"), blogs_path %>
