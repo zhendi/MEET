@@ -3,17 +3,7 @@
   <%= @course_category.name %>
 <% end %>
 
-<% @subjects.each do |c| %>
-  <div class="box_half">
-    <h2 class="box_title"><%= c.name %></h2>
-    <ul class="mt10">
-      <% c.children.each do |s| %>
-        <li class="ml20">
-        <%= link_to s.name, :controller=>"courses", :action=>"show_subject",  :id=>s, :course_category_id=>c.course_category %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render_cell :course,  :subject_courses,  :subjects=>@subjects %>
+
 
 

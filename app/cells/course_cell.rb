@@ -5,4 +5,10 @@ class CourseCell < Cell::Rails
 
     render
   end
+
+  def subject_courses
+    @subjects = @opts[:subjects]
+
+    render
+  end
 end

@@ -129,6 +129,26 @@ ul.circle {
   margin: 0.8%;
 }
 
+.box_half ul {
+  margin-top: 14px;
+}
+
+.box_half ul li {
+  background:url("http://images.vancl.com/Others/2010/5/27/newDyn-li.gif") no-repeat scroll 14px center transparent;
+  margin-bottom:7px;
+  text-indent:22px;
+}
+
+.box_half a:link, .box_half a:visited {
+  color:#333333;
+  text-decoration:none;
+}
+
+.box_half a:link, .box_half a:visited {
+  color:#333333;
+  text-decoration:none;
+}
+
 .box_full {
   float:    left;
   overflow: hidden;

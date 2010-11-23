@@ -3,16 +3,5 @@
   <%= @course_category.name %>
 <% end %>
 
-<% @subjects.each do |s| %>
-  <div class="box_half">
-    <h2 class="box_title"><%= s.name %></h2>
-    <ul class="mt10">
-      <% s.courses.each do |c| %>
-        <li class="ml20">
-        <%= link_to c.name, study_course_course_path(c) %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render_cell :course,  :subject_courses,  :subjects=>@subjects %>
 
