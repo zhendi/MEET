@@ -1,4 +1,9 @@
-﻿<%= simple_form_for ([:admin, @course_category])  do  |f| %>
+﻿<% content_for :nav_bar  do %>
+  <%= link_to "首页", root_path %> >>
+  <%= @course_category.name %>
+<% end %>
+
+<%= simple_form_for ([:admin, @course_category])  do  |f| %>
   <%= f.error_messages %>
 
   <%= f.input :name %>

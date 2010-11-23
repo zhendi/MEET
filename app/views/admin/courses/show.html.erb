@@ -2,6 +2,12 @@
   <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
+<% content_for :nav_bar  do %>
+  <%= link_to "首页", root_path %> >>
+  <%= link_to @course.subject.name, admin_subject_path(@course.subject) %> >>
+  <%= @course.name %>
+<% end %>
+
 <%= link_to "Show All", admin_subject_path(@course.subject) %> | 
 <%= link_to "Edit", edit_admin_course_path(:id=>@course) %>
 

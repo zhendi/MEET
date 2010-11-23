@@ -23,6 +23,7 @@
       <div id="main" style="width:842px;margin-left:-3px;">
         <%= flash[:notice] %>
         <%= flash[:error] %>
+        <h3 class="blue-title"><%= yield :nav_bar %></h3>
         <%= yield %>
       </div>
     </div>

@@ -1,3 +1,9 @@
+<% content_for :nav_bar  do %>
+  <%= link_to "首页", root_path %> >>
+  <%= @course_category.name %>  >>
+  <%= t("New") %>
+<% end %>
+
 <h1>New admin_subject</h1>
 
 <%= render 'form' %>

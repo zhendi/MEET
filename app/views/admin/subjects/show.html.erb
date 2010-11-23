@@ -1,7 +1,8 @@
-<h1 class="blue-title">
-  <%= @admin_subject.course_category.name %> >> 
+<% content_for :nav_bar  do %>
+  <%= link_to "首页", root_path %> >>
+  <%= link_to @admin_subject.course_category.name, admin_course_category_path(@admin_subject.course_category) %> >> 
   <%= @admin_subject.name %>
-</h1>
+<% end %>
 
 <%= link_to t('New'), new_admin_course_path(:category_id=>@course_category, :subject_id=>@admin_subject) %>
 
