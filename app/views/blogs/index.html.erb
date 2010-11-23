@@ -3,13 +3,8 @@
 <% end %>
 
 
-<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= tag.name %>
-<% end %>
-
-<h1 class="blue-title"><%= t(:blog_list, :scope=>[:view, :blog, :index]) %></h1>
-
 <div class="box_threequarter">
+  <h1 class="blue-title mb10"><%= t(:blog_list, :scope=>[:view, :blog, :index]) %></h1>
 
   <ul id="bloglist">	
     <% @blogs.each do |blog| %>
