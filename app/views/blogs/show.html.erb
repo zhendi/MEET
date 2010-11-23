@@ -2,10 +2,6 @@
   <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
-<% content_for :sidebar do %>
-  <%= render	"/shared/application" %>
-<% end %>
-
 <div class="blog-entry na">
   <div class="info">
     <h4><%= @blog.title %>
@@ -41,5 +37,5 @@
     <%= render  @blog.comments %>
   </ol>
 
-  <h2>添加留言</h2>
+  <h2 class="blue-title mt20 mb10">添加留言</h2>
   <%= render  :partial=>"comments/form" %>

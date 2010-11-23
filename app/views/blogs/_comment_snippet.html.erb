@@ -1,11 +1,13 @@
 ﻿<p class="image">
-<%= image_tag user_pic(comment.userr), :height=>48, :width=>48 %>
+<%= image_tag user_pic(comment.user), :height=>48, :width=>48 %>
 </p>
+
 <div class="info">
-    <span class="title"><%= comment.title %></span>
-    <span class="time"><%= time_ago_in_words(comment.updated_at) %> <%= t(:ago, :scope=>[:view]) %></span>
-    <span class="delete"> <%= link_to t(:delete, :scope=>[:view]), blog_comment_path(comment.commentable, comment), :method=>:delete, :remote=>true, :class=>"Qconfirm" %></span>
+  <span class="title"><%= comment.title %></span>
+  <span class="time"><%= time_ago_in_words(comment.updated_at) %> <%= t(:ago, :scope=>[:view]) %></span>
+  <span class="delete"> <%= link_to t(:delete, :scope=>[:view]), blog_comment_path(comment.commentable, comment), :method=>:delete, :remote=>true, :class=>"Qconfirm" %></span>
 </div>
+
 <div class="content" id="content_#{comment.id}">
-    <div><%= comment.memo %></div>
+  <div><%= comment.memo %></div>
 </div>

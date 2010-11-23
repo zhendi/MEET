@@ -89,6 +89,10 @@ div {
   margin-bottom: 10px;
 }
 
+.mb20 {
+  margin-bottom: 20px;
+}
+
 .ml10 {
   margin-left: 10px;
 }
@@ -129,6 +133,24 @@ ul.circle {
   float:    left;
   overflow: hidden;
   width:    98%;
+  margin: 0.8%;
+}
+
+.box_onequarter {
+  float:  left;
+  overflow: hidden;
+  width:  30.8%;
+  /*border: 1px solid #B4B4B4;*/
+  min-height: 250px;
+  margin: 0.8% 0.8% 0.8% 0;
+}
+
+.box_threequarter {
+  float:  left;
+  overflow: hidden;
+  width:  66%;
+  border: 1px solid #B4B4B4;
+  min-height: 250px;
   margin: 0.8%;
 }
 

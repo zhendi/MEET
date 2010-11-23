@@ -18,7 +18,9 @@ module ApplicationHelper
   end
 
   def user_pic(user)
-    if user.profile.avatar_file_name.presence
+    if user == nil
+      return "male.gif"
+    elsif user.profile.avatar_file_name.presence
       return current_user.profile.avatar.url
     end
 

@@ -69,7 +69,7 @@ position: relative;
 .post .image {
 left: 0px;
 position: absolute;
-top: 0px;
+top: 20px;
 }
 .post .info {
 background: #EEE;
