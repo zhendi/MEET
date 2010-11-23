@@ -19,7 +19,8 @@
     </li>
     <li class="t_bar"></li>
     <li class="notready">
-    <%= link_to	raw(t(:faq, :scope=>[:view, :shared, :_header])), profile_path(current_user) %></li>
+    <a href="/help/index.html" target="_blank"><%= raw(t(:faq, :scope=>[:view, :shared, :_header])) %></a>
+    </li>
     <li class="t_bar"></li>
     <li>
     <%= link_to	raw(t(:logout, :scope=>[:view, :shared, :_header])), destroy_user_session_path %></li>

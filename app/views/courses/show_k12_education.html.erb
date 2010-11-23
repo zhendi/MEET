@@ -1,6 +1,5 @@
 <% content_for :nav_bar  do %>
-  <%= link_to "首页", root_path %> >>
-  <%= @course_category.name %>
+    <%= link_to @course_category.name, courses_path(@course_category) %>
 <% end %>
 
 <%= render_cell :course,  :subject_courses,  :subjects=>@subjects %>
