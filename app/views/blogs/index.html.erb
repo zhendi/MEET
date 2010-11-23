@@ -40,9 +40,9 @@
 </div>
 
 <div class="box_onequarter">
-  <%= link_to "+ 新建日记", new_blog_path, :class=>"miniBtn ml20" %> 
+  <%= link_to "+ 新建日记", new_blog_path, :class=>"miniBtn ml10" %> 
 
-  <div class="box ml20 mt10" style="width: 80%">
+  <div class="box ml10 mt10" style="width: 80%">
     <h3 class="blue-title">标签云</h3>
     <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
       <%= tag.name %>

@@ -2,11 +2,6 @@
   <%= stylesheet_link_tag	"userInfo" %>
 <% end %>
 
-<% content_for :sidebar do %>
-  <%= render  "personal_setting" %>
-  <%= render  "/shared/application" %>
-<% end %>
-
 <% if @user == current_user %>
   <%= render  "current_people" %>
 <% else %>
