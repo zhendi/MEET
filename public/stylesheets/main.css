@@ -154,6 +154,7 @@ ul.circle {
   overflow: hidden;
   width:    98%;
   margin: 0.8%;
+  border: 1px solid #B4B4B4;
 }
 
 .box_onequarter {

@@ -1,6 +1,6 @@
 <% if collected(course) %>
-  <%= link_to t(:uncollect, :scope=>[:view, :course, :_collect_link]), uncollect_course_path(course), :remote=>true, :method=>:post %>
+  <%= link_to t(".uncollect"), uncollect_course_path(course), :remote=>true, :method=>:post %>
 <% else %>
-  <%= link_to t(:collect, :scope=>[:view, :course, :_collect_link]), collect_course_path(course), :remote=>true, :method=>:post %>
+  <%= link_to t(".collect"), collect_course_path(course), :remote=>true, :method=>:post %>
 <% end %>
 

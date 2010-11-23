@@ -2,28 +2,32 @@
   <%= stylesheet_link_tag	"sns" %>
 <% end %>
 
-<% if @school %>
-<h1 style="margin-left: 20px;" class="mt10"><%= @school.name %></h1>
-<% end %>
+<div class="box_full">
+  <h1 class="box_title"><%= @course.name %></h1>
+  <% if @school %>
+    <h1 style="margin-left: 20px;" class="mt10"><%= @school.name %></h1>
+  <% end %>
 
-<div style="margin-left: 20px;" class="mt10">
-  <h3><%= t(:author, :scope=>[:view, :course, :_study_course]) %> 
-    <span id="instructor" style="color: blue;">
-      <%= @course.instructor %>
-    </span>
-  </h3>
+  <div style="margin-left: 20px;" class="mt10">
+    <h3><%= t(".author") %> 
+      <span id="instructor" style="color: blue;">
+        <%= @course.instructor %>
+      </span>
+    </h3>
 
-  <div>
-    <h3><%= t(:description, :scope=>[:view, :course, :_study_course]) %></h3>
-    <div style="margin-left: 50px;margin-right: 100px;">
-      <%= raw(@course.description) %>
+    <div>
+      <h3><%= t(".description") %></h3>
+      <div style="margin-left: 50px;margin-right: 100px;">
+        <%= raw(@course.description) %>
+      </div>
     </div>
   </div>
-</div>
 
-<ol id="comments" style="margin-top: 30px">
-  <%= render  :partial=>"comment", :collection=>@course.comments %>
-</ol>
+  <ol id="comments" style="margin-top: 30px">
+    <%= render  :partial=>"comment", :collection=>@course.comments %>
+  </ol>
+
+</div>
 
 <div id="dialog" title="Instructor" style="display:none;">
   <%= raw @course.instructor_description %>

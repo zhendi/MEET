@@ -95,6 +95,13 @@
         company_description: "公司描述 :"
         company_province: "所在省份 :"
         company_city: "所在城市 :"
+  courses:
+    collect_link:
+      uncollect: "取消收藏"
+      collect: "加入收藏"
+    study_course:
+      author: "Instructor :"
+      description:  "Course description"
   admin:
     course_categories:
       index:
@@ -167,17 +174,7 @@
         destroy: "删除"
       read_count : "阅读 %{count} 次"
       comment_count : "评论 %{count} 次"
-    course:
-      _collect_link:
-        uncollect: "取消收藏"
-        collect: "加入收藏"
-      _study_course:
-        author: "Instructor :"
-        description:  "Course description"
-      show_school:
-        add_course: "添加课程"
-      show_subject:
-        add_course: "添加课程"
+
     personal:
       _added_groups:
         title: "Groups joined  加入的群"
