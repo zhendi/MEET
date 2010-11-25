@@ -1,0 +1,5 @@
+﻿$("#lectures").append("<%= escape_javascript(render @lecture) %>");
+$(".lecture:last-child").slideDown("slow");
+$('#lecture_username').val("");
+$('#lecture_title').val("");
+$('#lecture_memo').val("");

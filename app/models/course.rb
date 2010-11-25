@@ -4,8 +4,9 @@ class Course < ActiveRecord::Base
   belongs_to    :subject
   belongs_to    :school
   has_many      :collects
+  has_many      :lectures
 
-  has_many :comments, :as => :commentable
+  has_many      :comments, :as => :commentable
   
   has_many      :collecters,  :through=>:collects, :source=>:user
   belongs_to    :author,  :class_name=>"User"

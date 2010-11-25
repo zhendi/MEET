@@ -54,6 +54,7 @@ MEET::Application.routes.draw do
     resources :subjects
     resources :users
     resources :courses  do
+      resources :lectures
       resources	:comments
     end
     resources :friendships

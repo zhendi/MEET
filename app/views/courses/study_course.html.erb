@@ -23,10 +23,13 @@
     </div>
   </div>
 
+  <ol id="lectures" style="margin-top: 30px">
+    <%= render_cell :course,  :show_lectures, :lectures=>@course.lectures %>
+  </ol>
+
   <ol id="comments" style="margin-top: 30px">
     <%= render  :partial=>"comment", :collection=>@course.comments %>
   </ol>
-
 </div>
 
 <div id="dialog" title="Instructor" style="display:none;">

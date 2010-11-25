@@ -1,6 +1,7 @@
-<%= simple_form_for([:admin, @course, Comment.new], :remote=>true) do |f| %>
+<%= simple_form_for([:admin, @course, @course.lectures.new], :remote=>true) do |f| %>
   <%= f.input :title %>
-  <%= f.input :memo,  :input_html=>{:cols=>60, :rows=>6} %>
+  <%= f.input :video_src,  :input_html=>{:cols=>60, :rows=>6} %>
+  <%= f.input :description, :as=>:text %>
 
   <%= f.button  :submit %>
 <% end %>

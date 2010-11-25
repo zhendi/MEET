@@ -36,9 +36,15 @@
   </div>
 </div>
 
+<ol id="lectures" style="margin-top: 30px">
+    <%= render_cell :course,  :show_lectures, :lectures=>@course.lectures %>
+</ol>
+
+<!--
 <ol id="comments">
   <%= render  :partial=>"comment", :collection=>@course.comments %>
 </ol>
+-->
 
 <h2 class="blue-title mt20">添加留言</h2>
 <%= render  :partial=>"comment_form" %>

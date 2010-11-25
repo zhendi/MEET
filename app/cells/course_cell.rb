@@ -11,4 +11,10 @@ class CourseCell < Cell::Rails
 
     render
   end
+  
+  def show_lectures
+    @lectures = @opts[:lectures]
+
+    render
+  end
 end
