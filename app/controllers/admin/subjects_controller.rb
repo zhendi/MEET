@@ -14,7 +14,7 @@ class Admin::SubjectsController < ApplicationController
   def show
     @admin_subject = Subject.find(params[:id])
     @course_category = @admin_subject.course_category
-    @courses = Course.find(:all)
+    @courses = Course.where("course_category_id=?", @course_category.id)
 
     respond_to do |format|
       format.html # show.html.erb

@@ -9,24 +9,43 @@
   <tr>
     <th><%= t "ID" %></th>
     <th><%= t ".Name" %></th>
-    <th><%= t ".Parent" %></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-  <% indexNum = 0 
-  @subjects.each do |admin_subject| %>
+  <% parentNum = 1 %>
+  <% @subjects.each do |admin_subject| %>
     <tr>
-      <td><%= indexNum %>
-        <% indexNum += 1  %></td>
+      <td><%= parentNum %></td>
       <td><%= admin_subject.name %></td>
-      <td><%= admin_subject.parent_id %></td>
 
       <td><%= link_to t('Show'), [:admin, admin_subject] %></td>
       <td><%= link_to t('Edit'), edit_admin_subject_path(admin_subject) %></td>
       <td><%= link_to t('Delete'), [:admin, admin_subject], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
+
+    <% childNum = 1 %>
+    <% admin_subject.children.each do |child| %>
+      <tr>
+        <td>
+          <span style="margin-left: 30px;">
+            <%= "#{parentNum}.#{childNum}" %>
+            <% childNum += 1  %>
+          </span>
+        </td>
+        <td>
+          <span style="margin-left: 30px;">
+            <%= child.name %>
+          </span>
+        </td>
+
+        <td><%= link_to t('Show'), [:admin, child] %></td>
+        <td><%= link_to t('Edit'), edit_admin_subject_path(child) %></td>
+        <td><%= link_to t('Delete'), [:admin, child], :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    <% parentNum += 1  %>
   <% end %>
 </table>
 

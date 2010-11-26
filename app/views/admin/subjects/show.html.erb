@@ -1,5 +1,4 @@
 <% content_for :nav_bar  do %>
-  <%= link_to "首页", root_path %> >>
   <%= link_to @admin_subject.course_category.name, admin_course_category_path(@admin_subject.course_category) %> >> 
   <%= @admin_subject.name %>
 <% end %>
@@ -9,19 +8,26 @@
 <table>
   <tr>
     <th><%= t "ID" %></th>
-    <th style="width: 610px"><%= t ".Name" %></th>
+    <th><%= t ".Name" %></th>
+    <th>School</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-  <% indexNum = 0 
-  @courses.each do |course| %>
+  <% indexNum = 0 %>
+  <% @courses.each do |course| %>
     <tr>
-      <td><%= indexNum %>
-        <% indexNum += 1  %></td>
+      <td>
+        <%= indexNum %>
+        <% indexNum += 1  %>
+      </td>
       <td><%= course.name %></td>
-
+      <% if course.school %>
+        <td><%= course.school.name %></td>
+      <% else %>
+        <td>Nil</td>
+      <% end %>
       <td><%= link_to t('Show'), admin_course_path(course) %></td>
       <td><%= link_to t('Edit'), edit_admin_course_path(course) %></td>
       <td><%= link_to t('Delete'), admin_course_path(course), :confirm => 'Are you sure?', :method => :delete %></td>

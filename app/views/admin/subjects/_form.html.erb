@@ -3,8 +3,10 @@
 
   <div class="inputs">
     <%= f.input :name %>
-    <%= f.association :parent,  :collection => Subject.where("course_category_id=#{@course_category.id}") %>
-    <%= f.input  :course_category_id,  :as=>:hidden, :input_html => { :value => @course_category.id } %>
+    <%= f.association :parent,  
+      :collection => Subject.where("course_category_id=? and parent_id is null", @course_category.id) %>
+
+    <%= f.input  :course_category_id,  :as=>:hidden, :input_html => {:value => @course_category.id} %>
   </div>
 
   <div class="actions">

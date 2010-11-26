@@ -3,7 +3,6 @@
 <% end %>
 
 <% content_for :nav_bar  do %>
-  <%= link_to "首页", root_path %> >>
   <%= link_to @course.subject.name, admin_subject_path(@course.subject) %> >>
   <%= @course.name %>
 <% end %>
@@ -37,7 +36,7 @@
 </div>
 
 <ol id="lectures" style="margin-top: 30px">
-    <%= render_cell :course,  :show_lectures, :lectures=>@course.lectures %>
+  <%= render_cell :course,  :show_lectures, :lectures=>@course.lectures %>
 </ol>
 
 <!--
