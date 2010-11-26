@@ -178,6 +178,7 @@ class CoursesController < ApplicationController
     @courses.each do |c|
       @subjects << c.subject
     end
+    @subjects.uniq!
   end
 
   def show_subject
