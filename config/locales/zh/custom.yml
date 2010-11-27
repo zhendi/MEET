@@ -70,6 +70,9 @@
       show:
         Name: "学校名称:"
         CourseCategory: "教程类别:"
+    courses:
+      show:
+        description: "课程描述"
   view:
     delete: "删除"
     ago: "前"

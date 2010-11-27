@@ -42,6 +42,10 @@ zh:
         instructor_description: "教师介绍:"
         school: "学校:"
         level: "级别:"
+      lecture:
+        title: "课名:"
+        video_src: "教程地址:"
+        description: "教程描述:"
       forum:
         name: "论坛名:"
         description: "论坛描述:"

@@ -3,7 +3,7 @@
   <head>
     <title><%= t(:title, :scope=>[:view, :layout, :application]) %></title>
     <%= stylesheet_link_tag 'reset', 'main', 'form','header','courses','forum', 'smoothness/jquery-ui-1.8.5.custom' %>
-    <%= javascript_include_tag "jquery-1.4.2.min","rails","jquery-ui-1.8.5.custom.min","application" %>
+    <%= javascript_include_tag "jquery-1.4.2.min","rails","jquery-ui-1.8.5.custom.min","application","swfobject" %>
     <%= csrf_meta_tag %>
     <%= yield :header %>
   </head>

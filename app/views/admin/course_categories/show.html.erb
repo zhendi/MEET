@@ -9,6 +9,7 @@
   <tr>
     <th><%= t "ID" %></th>
     <th><%= t ".Name" %></th>
+    <th>课程数</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,7 +20,7 @@
     <tr>
       <td><%= parentNum %></td>
       <td><%= admin_subject.name %></td>
-
+      <td><%= admin_subject.courses.count %></td>
       <td><%= link_to t('Show'), [:admin, admin_subject] %></td>
       <td><%= link_to t('Edit'), edit_admin_subject_path(admin_subject) %></td>
       <td><%= link_to t('Delete'), [:admin, admin_subject], :confirm => 'Are you sure?', :method => :delete %></td>
