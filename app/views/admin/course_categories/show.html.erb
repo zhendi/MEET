@@ -40,7 +40,7 @@
             <%= child.name %>
           </span>
         </td>
-
+        <td><%= child.courses.count %></td>
         <td><%= link_to t('Show'), [:admin, child] %></td>
         <td><%= link_to t('Edit'), edit_admin_subject_path(child) %></td>
         <td><%= link_to t('Delete'), [:admin, child], :confirm => 'Are you sure?', :method => :delete %></td>
