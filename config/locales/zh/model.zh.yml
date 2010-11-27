@@ -38,6 +38,10 @@ zh:
         name: "课名:"
         description: "描述:"
         gold: "金币:"
+        instructor: "教师:"
+        instructor_description: "教师介绍:"
+        school: "学校:"
+        level: "级别:"
       forum:
         name: "论坛名:"
         description: "论坛描述:"
