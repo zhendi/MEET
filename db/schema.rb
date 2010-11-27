@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101125135138) do
+ActiveRecord::Schema.define(:version => 20101127044836) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(:version => 20101125135138) do
 
   create_table "lectures", :force => true do |t|
     t.string   "title"
-    t.string   "video_src"
+    t.text     "video_src",           :limit => 255
     t.text     "description"
     t.integer  "course_id"
     t.integer  "level"
