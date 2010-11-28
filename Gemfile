@@ -58,3 +58,7 @@ end
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'aws-s3', :require => 'aws/s3'
+group :development, :test do
+  gem 'railroady'
+end
+

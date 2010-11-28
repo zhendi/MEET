@@ -18,15 +18,19 @@
   text-align: right;  
   margin-right: 5px;
 }  
-  
+
+.simple_form div {
+  overflow: hidden;
+}
+
 .simple_form div.input {  
   margin-bottom: 10px;  
 }  
-  
+
 .simple_form div.boolean, .simple_form input[type='submit'] {  
   margin-left: 120px;  
 }  
-  
+
 .simple_form div.boolean label {  
   float: none;  
   margin: 0;  

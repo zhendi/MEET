@@ -6,6 +6,20 @@
     @lectures = @lectureable.lectures
   end
 
+  def edit
+    #@course = Course.find(params[:course_id])
+    @lecture = Lecture.find(params[:id])
+    @course = @lecture.course
+
+  end
+
+  def update
+    @lecture = Lecture.find(params[:id]) 
+    if @lecture.update_attributes(params[:lecture])
+      redirect_to admin_course_path(@lecture.course)
+    end
+  end
+
   def create
     @lectureable = find_lectureable
     @lecture = @lectureable.lectures.build(params[:lecture])

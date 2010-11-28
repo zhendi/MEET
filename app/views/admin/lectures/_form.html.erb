@@ -1,0 +1,7 @@
+<%= simple_form_for([:admin, @course, @lecture]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :video_src, :as=>:text, :input_html=>{:cols=>60, :rows=>6} %>
+  <%= f.input :description, :as=>:text, :input_html=>{:cols=>60, :rows=>6} %>
+
+  <%= f.button  :submit %>
+<% end %>

@@ -9,7 +9,9 @@
   <tr>
     <th><%= t "ID" %></th>
     <th><%= t ".Name" %></th>
-    <th>School</th>
+    <% if @course_category.name.downcase.index("college education") %>
+      <th>School</th>
+    <% end %>
     <th></th>
     <th></th>
     <th></th>
@@ -22,12 +24,17 @@
         <%= indexNum %>
         <% indexNum += 1  %>
       </td>
+
       <td><%= course.name %></td>
-      <% if course.school %>
-        <td><%= course.school.name %></td>
-      <% else %>
-        <td>Nil</td>
+
+      <% if @course_category.name.downcase.index("college education") %>
+        <% if course.school %>
+          <td><%= course.school.name %></td>
+        <% else %>
+          <td>Nil</td>
+        <% end %>
       <% end %>
+      
       <td><%= link_to t('Show'), admin_course_path(course) %></td>
       <td><%= link_to t('Edit'), edit_admin_course_path(course) %></td>
       <td><%= link_to t('Delete'), admin_course_path(course), :confirm => 'Are you sure?', :method => :delete %></td>
