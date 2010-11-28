@@ -25,8 +25,8 @@
       uncollect: "取消收藏"
       collect: "加入收藏"
     study_course:
-      author: "作者:"
-      description:  "描述:"
+      author: "Instructor （授课教师）:"
+      description:  "Course description （课程简述）:"
   admin:
     courses:
       show:

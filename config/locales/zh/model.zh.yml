@@ -38,8 +38,8 @@ zh:
         name: "课名:"
         description: "描述:"
         gold: "金币:"
-        instructor: "教师:"
-        instructor_description: "教师介绍:"
+        instructor: "Instructor （授课教师）:"
+        instructor_description: "Course description （课程简述）:"
         school: "学校:"
         level: "级别:"
       lecture:
