@@ -14,6 +14,7 @@ class CourseCell < Cell::Rails
   
   def show_lectures
     @lectures = @opts[:lectures]
+    @is_admin = @opts[:is_admin]
 
     render
   end

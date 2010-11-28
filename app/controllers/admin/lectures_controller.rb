@@ -4,13 +4,13 @@
   def index
     @lectureable = find_lectureable
     @lectures = @lectureable.lectures
+    @is_admin = true
   end
 
   def edit
     #@course = Course.find(params[:course_id])
     @lecture = Lecture.find(params[:id])
     @course = @lecture.course
-
   end
 
   def update

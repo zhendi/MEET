@@ -36,7 +36,7 @@
 </div>
 
 <ol id="lectures" style="margin-top: 30px">
-  <%= render_cell :course,  :show_lectures, :lectures=>@course.lectures %>
+  <%= render_cell :course,  :show_lectures, :lectures=>@course.lectures, :is_admin=>true %>
 </ol>
 
 <!--
