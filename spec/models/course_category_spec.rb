@@ -6,6 +6,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: course_categories
@@ -15,5 +16,6 @@ end
 #  courses_count :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  user_id       :integer
 #
 

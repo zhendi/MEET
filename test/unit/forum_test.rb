@@ -7,6 +7,7 @@ class ForumTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: forums
@@ -18,5 +19,6 @@ end
 #  topics_count :integer         default(0)
 #  created_at   :datetime
 #  updated_at   :datetime
+#  user_id      :integer
 #
 

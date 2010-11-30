@@ -5,6 +5,7 @@ class Profile < ActiveRecord::Base
   belongs_to  :user
 end
 
+
 # == Schema Information
 #
 # Table name: profiles
@@ -19,7 +20,7 @@ end
 #  mobile              :string(255)
 #  home_phone          :string(255)
 #  age                 :integer
-#  sex                 :boolean         default(FALSE)
+#  sex                 :string(255)     default("f")
 #  created_at          :datetime
 #  updated_at          :datetime
 #  user_id             :integer

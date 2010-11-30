@@ -5,6 +5,7 @@ describe Lecture do
 end
 
 
+
 # == Schema Information
 #
 # Table name: lectures
@@ -21,5 +22,6 @@ end
 #  avatar_updated_at   :datetime
 #  created_at          :datetime
 #  updated_at          :datetime
+#  user_id             :integer
 #
 

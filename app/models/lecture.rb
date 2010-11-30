@@ -1,4 +1,6 @@
 class Lecture < ActiveRecord::Base
+  #include ActivityLogger
+
   belongs_to  :course
   belongs_to  :user
 
@@ -9,9 +11,10 @@ class Lecture < ActiveRecord::Base
 
   def log_activity
     activity = Activity.create!(:item => self, :user => user)
-    add_activities(:activity => activity, :person => user)
+    add_activities(:activity => activity, :user => user)
   end
 end
+
 
 
 # == Schema Information
@@ -30,5 +33,6 @@ end
 #  avatar_updated_at   :datetime
 #  created_at          :datetime
 #  updated_at          :datetime
+#  user_id             :integer
 #
 

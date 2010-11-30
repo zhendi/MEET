@@ -7,6 +7,7 @@ class CategoryTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: categories
@@ -15,5 +16,6 @@ end
 #  name       :string(12)
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
 #
 

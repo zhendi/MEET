@@ -8,6 +8,7 @@ class Subject < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: subjects
@@ -18,5 +19,6 @@ end
 #  course_category_id :integer
 #  created_at         :datetime
 #  updated_at         :datetime
+#  user_id            :integer
 #
 
