@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127044836) do
+ActiveRecord::Schema.define(:version => 20101130142953) do
+
+  create_table "activities", :force => true do |t|
+    t.boolean  "public"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -35,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.string   "name",       :limit => 12
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "cities", :force => true do |t|
@@ -67,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.integer  "courses_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "courses", :force => true do |t|
@@ -88,6 +99,13 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.text     "instructor_description"
   end
 
+  create_table "feeds", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "forum_posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -104,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.integer  "topics_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "friendships", :force => true do |t|
@@ -127,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "levels", :force => true do |t|
@@ -145,7 +165,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.string   "mobile"
     t.string   "home_phone"
     t.integer  "age"
-    t.boolean  "sex",                 :default => false
+    t.string   "sex",                 :default => "f"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -191,6 +211,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.integer  "course_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "subjects", :force => true do |t|
@@ -199,6 +220,7 @@ ActiveRecord::Schema.define(:version => 20101127044836) do
     t.integer  "course_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "taggings", :force => true do |t|

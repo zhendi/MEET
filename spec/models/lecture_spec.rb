@@ -4,13 +4,14 @@ describe Lecture do
   pending "add some examples to (or delete) #{__FILE__}"
 end
 
+
 # == Schema Information
 #
 # Table name: lectures
 #
 #  id                  :integer         not null, primary key
 #  title               :string(255)
-#  video_src           :string(255)
+#  video_src           :text(255)
 #  description         :text
 #  course_id           :integer
 #  level               :integer

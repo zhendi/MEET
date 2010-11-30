@@ -1,7 +1,18 @@
 class Lecture < ActiveRecord::Base
   belongs_to  :course
+  belongs_to  :user
 
+  has_many :activities, :foreign_key => "item_id",
+    :conditions => "item_type = 'Lecture'",
+    :dependent => :destroy
+  after_create :log_activity
+
+  def log_activity
+    activity = Activity.create!(:item => self, :user => user)
+    add_activities(:activity => activity, :person => user)
+  end
 end
+
 
 # == Schema Information
 #
@@ -9,7 +20,7 @@ end
 #
 #  id                  :integer         not null, primary key
 #  title               :string(255)
-#  video_src           :string(255)
+#  video_src           :text(255)
 #  description         :text
 #  course_id           :integer
 #  level               :integer
