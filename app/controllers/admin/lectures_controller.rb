@@ -23,6 +23,7 @@
   def create
     @lectureable = find_lectureable
     @lecture = @lectureable.lectures.build(params[:lecture])
+    @lecture.user = current_user
     if @lecture.save
       flash[:notice] = "Successfully created lecture."
     else

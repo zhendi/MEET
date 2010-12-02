@@ -25,7 +25,7 @@ module ActivityLogger
   # Return the ids of the user whose feeds need to be updated.
   # The key step is the subtraction of user who already have the activity.
   def user_to_add(user, activity, include_user)
-    all = user.contacts.map(&:id)
+    all = user.friends.map(&:id)
     all.push(user.id) if include_user
     all - already_have_activity(all, activity)
   end

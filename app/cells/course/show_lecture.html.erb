@@ -1,0 +1,16 @@
+<li class="lecture" display="none" id="lecture_<%= @lecture.id %>">
+<div class="post parent-post" style="padding: 0px 20px;min-height:30px;">
+  <div class="info" id="info_<%= @lecture.id %>" style="text-align:left;">
+    <%= @lecture.title %>
+    <% if @is_admin %>
+      <span class="right">
+        <%= link_to "Edit", edit_admin_course_lecture_path(@lecture.course, @lecture) %>
+        <%= link_to "Delete", admin_course_lecture_path(@lecture.course, @lecture), :remote=>true, :method=>:delete, :confirm=>"Are you sure to delete?" %>
+      </span>
+    <% end %>
+  </div>
+  <div class="content" id="content_<%= @lecture.id %>" style="display:none">
+    <div><%= raw @lecture.video_src %></div>
+  </div>
+</div>
+</li>

@@ -1,7 +1,7 @@
 class Activity < ActiveRecord::Base
   belongs_to :user
-  belongs_to :item, :polymorphic => true
-  has_many   :feeds, :dependent => :destroy
+  belongs_to :item,   :polymorphic => true
+  has_many   :feeds,  :dependent => :destroy
   
   GLOBAL_FEED_SIZE = 10
 

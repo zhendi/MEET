@@ -18,4 +18,11 @@ class CourseCell < Cell::Rails
 
     render
   end
+
+  def show_lecture
+    @lecture = @opts[:lecture]
+    @is_admin = @opts[:is_admin]
+
+    render
+  end
 end

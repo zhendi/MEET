@@ -1,5 +1,7 @@
+require 'activity_logger'
+
 class Lecture < ActiveRecord::Base
-  #include ActivityLogger
+  include ActivityLogger
 
   belongs_to  :course
   belongs_to  :user
@@ -7,6 +9,7 @@ class Lecture < ActiveRecord::Base
   has_many :activities, :foreign_key => "item_id",
     :conditions => "item_type = 'Lecture'",
     :dependent => :destroy
+
   after_create :log_activity
 
   def log_activity

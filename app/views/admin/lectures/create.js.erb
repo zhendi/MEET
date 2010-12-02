@@ -1,5 +1,7 @@
-﻿$("#lectures").append("<%= escape_javascript(render @lecture) %>");
+﻿$("#lectures").append("<%= escape_javascript(render_cell :course, :show_lecture, :lecture=>@lecture, :is_admin=>true) %>");
+
 $(".lecture:last-child").slideDown("slow");
-$('#lecture_username').val("");
+
+$('#lecture_video_src').val("");
 $('#lecture_title').val("");
-$('#lecture_memo').val("");
+$('#lecture_description').val("");
