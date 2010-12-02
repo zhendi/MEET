@@ -1,14 +1,20 @@
 class Blog < ActiveRecord::Base
-  	belongs_to	:user
-    has_many :comments, :as => :commentable
-  	#has_many	:comments,  :dependent=>:destroy
-  	acts_as_taggable  
+  belongs_to  :user
+  has_many    :comments, :as => :commentable
+  acts_as_taggable  
 
-	validates	:title,	:presence=>true
-	validates	:content,	:presence=>true, :length=>{:minimum=>5}
-    
-	cattr_reader :per_page
-	@@per_page = 2
+  validates	:title,	:presence=>true
+  validates	:content,	:presence=>true, :length=>{:minimum=>5}
+
+  cattr_reader :per_page
+  @@per_page = 5
+
+  after_create :log_activity
+
+  def log_activity
+    activity = Activity.create!(:item => self, :user => user)
+    add_activities(:activity => activity, :user => user)
+  end
 end
 
 # == Schema Information

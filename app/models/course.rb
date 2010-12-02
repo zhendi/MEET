@@ -7,9 +7,16 @@ class Course < ActiveRecord::Base
   has_many      :lectures
 
   has_many      :comments, :as => :commentable
-  
+
   has_many      :collecters,  :through=>:collects, :source=>:user
   belongs_to    :author,  :class_name=>"User"
+
+  after_create :log_activity
+
+  def log_activity
+    activity = Activity.create!(:item => self, :user => user)
+    add_activities(:activity => activity, :user => user)
+  end
 
   def self.school_courses(school, subject)
     where("school_id = ? and subject_id = ?", school.id, subject.id).all

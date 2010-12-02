@@ -4,6 +4,13 @@ class Topic < ActiveRecord::Base
   belongs_to  :user
 
   acts_as_taggable
+
+  after_create :log_activity
+
+  def log_activity
+    activity = Activity.create!(:item => self, :user => user)
+    add_activities(:activity => activity, :user => user)
+  end
 end
 
 

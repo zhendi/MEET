@@ -1,7 +1,14 @@
 class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true
-  
+
   belongs_to  :user
+
+  after_create :log_activity
+
+  def log_activity
+    activity = Activity.create!(:item => self, :user => user)
+    add_activities(:activity => activity, :user => user)
+  end
 end
 
 

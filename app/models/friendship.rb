@@ -2,6 +2,13 @@ class Friendship < ActiveRecord::Base
   belongs_to :user
   belongs_to :friend, :class_name => 'User'    
 
+  after_create :log_activity
+
+  def log_activity
+    activity = Activity.create!(:item => self, :user => user)
+    add_activities(:activity => activity, :user => user)
+  end
+
   # Status codes.
   ACCEPTED  = 0
   REQUESTED = 1
@@ -39,8 +46,8 @@ class Friendship < ActiveRecord::Base
           create(:user => friend, :friend => user, :status => REQUESTED)
         end
         #if send_mail
-          # The order here is important: the mail is sent *to* the friend,
-          # so the connection should be from the friend's point of view.
+        # The order here is important: the mail is sent *to* the friend,
+        # so the connection should be from the friend's point of view.
         #  connection = conn(friend, user)
         #  PersonMailer.deliver_connection_request(connection)
         #end
